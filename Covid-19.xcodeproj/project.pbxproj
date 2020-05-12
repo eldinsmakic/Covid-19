@@ -16,6 +16,7 @@
 		9923A62E2469E512009A1B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9923A62C2469E512009A1B6B /* LaunchScreen.storyboard */; };
 		9923A6392469E513009A1B6B /* Covid_19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923A6382469E513009A1B6B /* Covid_19Tests.swift */; };
 		9923A6442469E513009A1B6B /* Covid_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923A6432469E513009A1B6B /* Covid_19UITests.swift */; };
+		9923A652246AD6A3009A1B6B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9923A651246AD6A3009A1B6B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9923A63F2469E513009A1B6B /* Covid-19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Covid-19UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9923A6432469E513009A1B6B /* Covid_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid_19UITests.swift; sourceTree = "<group>"; };
 		9923A6452469E513009A1B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9923A651246AD6A3009A1B6B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		9923A6122469E50C009A1B6B = {
 			isa = PBXGroup;
 			children = (
+				9923A651246AD6A3009A1B6B /* README.md */,
 				9923A61D2469E50C009A1B6B /* Covid-19 */,
 				9923A6372469E513009A1B6B /* Covid-19Tests */,
 				9923A6422469E513009A1B6B /* Covid-19UITests */,
@@ -237,6 +240,7 @@
 			files = (
 				9923A62E2469E512009A1B6B /* LaunchScreen.storyboard in Resources */,
 				9923A62B2469E512009A1B6B /* Assets.xcassets in Resources */,
+				9923A652246AD6A3009A1B6B /* README.md in Resources */,
 				9923A6262469E50C009A1B6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
