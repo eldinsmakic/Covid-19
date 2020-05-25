@@ -21,7 +21,7 @@ learnings/improving :
  
  ## App design
  
- ![Alt text](readmeRessources/images/youtubeScreenShot.png?raw=true "iPhone")
+ ![Alt text](readmeAssets/images/youtubeScreenShot.png?raw=true "iPhone")
  **Notice** : screenshot of the youtube video
 The app will need to look like this
 
