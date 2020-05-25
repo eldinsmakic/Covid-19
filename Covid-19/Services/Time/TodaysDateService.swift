@@ -11,11 +11,20 @@ import RxSwift
 
 class TodaysDateService
 {
-   
+
     func getDate() -> Date
     {
         return Date.init()
     }
-    
+
+    func dateToString(date: Date) -> String
+    {
+        return ISO8601DateFormatter().string(from: date)
+    }
+
+    func stringToDate(strDate: String) -> Date?
+    {
+        return ISO8601DateFormatter().date(from: strDate)
+    }
 
 }

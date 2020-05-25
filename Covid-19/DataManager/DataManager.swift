@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-struct DataCovid : Decodable
+struct DataCovid: Decodable
 {
     let date: Date
     let country: String

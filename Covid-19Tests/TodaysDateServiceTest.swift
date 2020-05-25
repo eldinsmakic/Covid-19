@@ -14,12 +14,37 @@ class TodaysDateServiceTest: XCTestCase {
     let todayService = TodaysDateService()
     var date: Date!
 
-    
-
     func testGetData() {
         date = Date.init()
-        XCTAssertTrue(todayService.getDate() ==  date)
+        let testDate = todayService.getDate()
+        XCTAssertEqual(todayService.dateToString(date: date), todayService.dateToString(date: testDate))
+    }
 
+    func testStringToDateSuccess()
+    {
+        date = Date.init()
+        let strinDate = todayService.dateToString(date: date)
+        if let dateFromString = todayService.stringToDate(strDate: strinDate)
+        {
+            XCTAssertEqual(strinDate, todayService.dateToString(date: dateFromString))
+            XCTAssertTrue(true)
+        } else
+        {
+            XCTAssertTrue(false)
+        }
+    }
+
+    func testStringToDateFail()
+    {
+       let strinDate = "wazah"
+       if let dateFromString = todayService.stringToDate(strDate: strinDate)
+       {
+           XCTAssertNotEqual(strinDate, todayService.dateToString(date: dateFromString))
+           XCTAssertTrue(false)
+       } else
+       {
+           XCTAssertTrue(true)
+       }
     }
 
     func testPerformanceExample() {

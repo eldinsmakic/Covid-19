@@ -12,35 +12,27 @@ import XCTest
 class FakeLocalDataManagerTest: XCTestCase {
 
     let fakeLocalDM = FakeLocalDataManager()
-    let FranceDeath = 20
-    let EnglandDeath = 10
+    let franceDeath = 20
+    let englandDeath = 10
     let oneCountryDate21 = ["England"]
-    let twoCountryDate23 = ["France","England",]
+    let twoCountryDate23 = ["France", "England"]
+    let goodDate = ISO8601DateFormatter().date(from: "2020-05-21T09:12:23Z" )!
 
     func testGettingDataGetNilWithBadCountry()
     {
-        if fakeLocalDM.getDatas(country: "Frdaance", date: Date.init()) != nil
+        if fakeLocalDM.getDatas(country: "Frdaance", date: self.goodDate) != nil
            {
              XCTAssertTrue(false)
            }
              XCTAssertTrue(true)
     }
-       
 
-    func testGetData() {
-        
-       let caseUpdate = fakeLocalDM.getDatas(country: "France", date: Date.init())
-        XCTAssertEqual(FranceDeath, caseUpdate!.death)
-        //XCTAssertTrue(false)
-    }
-    
-   
-    func testGetDataFail()
+    func testGetDatasFail()
     {
-        let caseUpdate = fakeLocalDM.getDatas(country: "England", date: Date.init())
-        XCTAssertNotEqual(FranceDeath, caseUpdate!.death)
+        let caseUpdate = fakeLocalDM.getDatas(country: "England", date: self.goodDate)
+        XCTAssertNotEqual(franceDeath, caseUpdate!.death)
     }
-    
+
     func testGetDataFailWithDate()
     {
         let badDate = Date.init(timeIntervalSince1970: TimeInterval(exactly: 100.0)!)
@@ -53,28 +45,25 @@ class FakeLocalDataManagerTest: XCTestCase {
         {
              XCTAssertTrue(true)
         }
-        
+
     }
-    
+
     func testGetDataWinWithDate()
     {
-        let goodDate = ISO8601DateFormatter().date(from:"2020-05-21T09:12:23Z" )!
+        let goodDate = ISO8601DateFormatter().date(from: "2020-05-21T09:12:23Z" )!
         let caseUpdate = fakeLocalDM.getDatas(country: "England", date: goodDate )!
-        XCTAssertEqual(EnglandDeath, caseUpdate.death)
+        XCTAssertEqual(englandDeath, caseUpdate.death)
     }
-    
+
     func testGetAllCountry()
     {
-        let dateWithOneCountry = ISO8601DateFormatter().date(from:"2020-05-21T09:12:23Z" )!
+        let dateWithOneCountry = ISO8601DateFormatter().date(from: "2020-05-21T09:12:23Z" )!
         let country = fakeLocalDM.getAllCuntry(date: dateWithOneCountry)
         XCTAssertEqual(country, oneCountryDate21)
-        
-        let dateWithTwoCountry = ISO8601DateFormatter().date(from:"2020-05-23T09:12:23Z" )!
+
+        let dateWithTwoCountry = ISO8601DateFormatter().date(from: "2020-05-23T09:12:23Z" )!
         let countrys = fakeLocalDM.getAllCuntry(date: dateWithTwoCountry)
         XCTAssertEqual(countrys, twoCountryDate23)
-        
-        
-        
     }
 
     func testPerformanceExample() {

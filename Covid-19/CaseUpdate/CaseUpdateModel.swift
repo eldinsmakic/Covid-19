@@ -8,11 +8,9 @@
 
 import Foundation
 
-
 struct CaseUpdate: Decodable
 {
     let infected: Int
     let recovered: Int
     let death: Int
 }
-
