@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3A0D3DF4-6CC2-4F0D-864C-074490F9D88C"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7530FD87-D76D-4385-B9AA-AC4B06630CC3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Covid-19Tests/TodaysDateServiceTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "TodaysDateServiceTest"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1C3DFF55-9561-4937-8DF9-7D7D0C3BE17E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Covid-19Tests/FakeLocalDataManagerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "testGetData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1C3DFF55-9561-4937-8DF9-7D7D0C3BE17E - e803820f9153ddd8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Covid_19Tests.FakeLocalDataManagerTest.testGettingData() -&gt; ()"
+                  moduleName = "Covid-19Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eldinsmakic/Documents/Projects/iOS/Covid-19/Covid-19Tests/FakeLocalDataManagerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "78">
+               </Location>
+               <Location
+                  uuid = "1C3DFF55-9561-4937-8DF9-7D7D0C3BE17E - 37fe150c1903b49e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Covid_19.CaseUpdate) -&gt; () in Covid_19Tests.FakeLocalDataManagerTest.testGettingData() -&gt; ()"
+                  moduleName = "Covid-19Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eldinsmakic/Documents/Projects/iOS/Covid-19/Covid-19Tests/FakeLocalDataManagerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "158">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
