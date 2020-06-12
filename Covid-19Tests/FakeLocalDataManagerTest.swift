@@ -64,6 +64,10 @@ class FakeLocalDataManagerTest: XCTestCase {
         let dateWithTwoCountry = ISO8601DateFormatter().date(from: "2020-05-23T09:12:23Z" )!
         let countrys = fakeLocalDM.getAllCuntry(date: dateWithTwoCountry)
         XCTAssertEqual(countrys, twoCountryDate23)
+
+        let date = Date.init()
+        let countryEmpty = fakeLocalDM.getAllCuntry(date: date)
+        XCTAssertEqual([], countryEmpty)
     }
 
     func testPerformanceExample() {
