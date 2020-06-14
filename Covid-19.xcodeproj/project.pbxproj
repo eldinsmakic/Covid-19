@@ -29,8 +29,8 @@
 		9997A43F247814DA00FB50EF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A43E247814DA00FB50EF /* DataManager.swift */; };
 		9997A4412478156900FB50EF /* FakeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A4402478156900FB50EF /* FakeLocalDataManager.swift */; };
 		9997A44424781DFF00FB50EF /* FakeLocalDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */; };
-		999D89532494D60200593251 /* DataManager in Resources */ = {isa = PBXBuildFile; fileRef = 999D89522494D60200593251 /* DataManager */; };
 		999D89552496313800593251 /* SelectCountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D89542496313800593251 /* SelectCountryPickerView.swift */; };
+		999D895924968CFF00593251 /* DataManager in Resources */ = {isa = PBXBuildFile; fileRef = 999D895824968CFF00593251 /* DataManager */; };
 		99C448F6247BD61800878DD4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 99C448F5247BD61800878DD4 /* .swiftlint.yml */; };
 		99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448F9247C3F0000878DD4 /* SelectCountryService.swift */; };
 		99C448FC247C599900878DD4 /* SelectCountryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */; };
@@ -85,8 +85,8 @@
 		9997A4402478156900FB50EF /* FakeLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalDataManager.swift; sourceTree = "<group>"; };
 		9997A4422478165800FB50EF /* FakeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeData.json; sourceTree = "<group>"; };
 		9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalDataManagerTest.swift; sourceTree = "<group>"; };
-		999D89522494D60200593251 /* DataManager */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DataManager; sourceTree = "<group>"; };
 		999D89542496313800593251 /* SelectCountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryPickerView.swift; sourceTree = "<group>"; };
+		999D895824968CFF00593251 /* DataManager */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DataManager; sourceTree = "<group>"; };
 		99C448F5247BD61800878DD4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		99C448F9247C3F0000878DD4 /* SelectCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryService.swift; sourceTree = "<group>"; };
 		99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryServiceTest.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 				9997A43E247814DA00FB50EF /* DataManager.swift */,
 				9997A4402478156900FB50EF /* FakeLocalDataManager.swift */,
 				9997A4422478165800FB50EF /* FakeData.json */,
-				999D89522494D60200593251 /* DataManager */,
+				999D895824968CFF00593251 /* DataManager */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -274,6 +274,7 @@
 				9923A6192469E50C009A1B6B /* Resources */,
 				0F4450B88CF2EE319E91F586 /* [CP] Embed Pods Frameworks */,
 				99C448F1247BD50300878DD4 /* SwiftLint */,
+				44AA8656356A2F0A1C25499E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -312,6 +313,7 @@
 				9923A63C2469E513009A1B6B /* Frameworks */,
 				9923A63D2469E513009A1B6B /* Resources */,
 				88348437FBC0E458FAEF1AE6 /* [CP] Embed Pods Frameworks */,
+				3FE109D572A134EC05775682 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -374,7 +376,7 @@
 				9923A62E2469E512009A1B6B /* LaunchScreen.storyboard in Resources */,
 				9923A62B2469E512009A1B6B /* Assets.xcassets in Resources */,
 				99C448F6247BD61800878DD4 /* .swiftlint.yml in Resources */,
-				999D89532494D60200593251 /* DataManager in Resources */,
+				999D895924968CFF00593251 /* DataManager in Resources */,
 				9923A652246AD6A3009A1B6B /* README.md in Resources */,
 				9923621424791A8E009A7DAC /* FakeData.json in Resources */,
 				9923A6262469E50C009A1B6B /* Main.storyboard in Resources */,
@@ -437,6 +439,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FE109D572A134EC05775682 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Covid-19-Covid-19UITests/Pods-Covid-19-Covid-19UITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Covid-19-Covid-19UITests/Pods-Covid-19-Covid-19UITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Covid-19-Covid-19UITests/Pods-Covid-19-Covid-19UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44AA8656356A2F0A1C25499E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Covid-19/Pods-Covid-19-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Covid-19/Pods-Covid-19-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Covid-19/Pods-Covid-19-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		88348437FBC0E458FAEF1AE6 /* [CP] Embed Pods Frameworks */ = {

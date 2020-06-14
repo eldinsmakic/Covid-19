@@ -7,20 +7,38 @@
 //
 
 import Foundation
-import RxSwift
+import Alamofire
+import SwiftyJSON
+import PromiseKit
+
+struct Cordonate: Decodable
+{
+    let lat: Double
+    let lng: Double
+}
 
 class SelectCountryService
 {
     var country = ""
+    var cordonate: Cordonate!
 
-    func getCountrySelected() -> Observable<String>
+    func getCordonateFromACountry(country: String) -> Promise<Cordonate>
     {
-        return Observable.create { observer -> Disposable in
-            if self.country != ""
-            {
-                observer.onNext(self.country)
+        return Promise { seal in AF.request("https://maps.googleapis.com/maps/api/geocode/json?address="+country+"&language=fr&key=AIzaSyCMHnSYPacdShtvfn7h-6VwzuB7k4gCPuA").responseJSON { response in
+                let json = JSON(response.value)
+                do
+                {
+                    let location =  try json["results"][0]["geometry"]["location"].rawData()
+                                  self.cordonate = try JSONDecoder().decode(Cordonate.self, from: location)
+                    seal.fulfill(self.cordonate)
+                }
+                catch let error as NSError
+                {
+                    print(error)
+                    seal.reject(error)
+                }
+
             }
-            return Disposables.create { }
         }
     }
 

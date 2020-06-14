@@ -13,9 +13,11 @@ class SelectCountryPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewD
 
     let pays = ["France", "England", "Italy"]
     var selectCountry: String
+    let selectCountryService: SelectCountryService
 
     override init(frame: CGRect) {
         self.selectCountry = ""
+        self.selectCountryService = SelectCountryService()
         super.init(frame: frame)
         self.delegate = self
         self.dataSource = self
