@@ -11,8 +11,43 @@ import RxSwift
 import AwaitKit
 import PromiseKit
 
+let dataReady = "fr.eldinsmakic.dataReady"
+
 class FakeLocalDataManager: DataManager
 {
+    var datas: [DataCovid]
+    var dataCovid: DataCovid?
+    let goodDate = ISO8601DateFormatter().date(from: "2020-05-23T09:12:23Z" )!
+
+    init()
+    {
+       self.datas = []
+       self.dataCovid = nil
+    }
+
+    func fetchDatasByCountry(country: String, date: Date)
+    {
+        do {
+            let datas = try await(self.fetchData())
+            for data in datas
+            {
+                if  Calendar.current.isDate(date, inSameDayAs: data.date)
+                {
+                    if country == data.country
+                    {
+                        self.dataCovid = DataCovid(date: goodDate, country: country, caseUpdate: data.caseUpdate)
+                        self.postDataIsReady()
+                        break
+                    }
+                }
+            }
+        }
+        catch
+        {
+           print("error fetching")
+        }
+    }
+
     func getDatas(country: String, date: Date) -> CaseUpdate?
     {
         var result = nil as CaseUpdate?
@@ -35,6 +70,12 @@ class FakeLocalDataManager: DataManager
         {
             return result
         }
+    }
+
+    func postDataIsReady()
+    {
+        let name = Notification.Name(rawValue: dataReady)
+        NotificationCenter.default.post(name: name, object: nil)
     }
 
     func getAllCuntry(date: Date) -> [String]
@@ -79,6 +120,26 @@ class FakeLocalDataManager: DataManager
         }
     }
 
+    func fetchDatas() throws
+    {
+        guard let path = Bundle.main.path(forResource: "DataManager/FakeData", ofType: "json")
+        else {
+               throw NSError(domain: "", code: -2, userInfo: nil)
+             }
+         do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let decoder =  JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let dataCovids = try decoder.decode([DataCovid].self, from: data)
+                self.datas = dataCovids
+                self.dataCovid = self.datas[0]
+                self.postDataIsReady()
+            } catch let error as NSError{
+            print(error)
+        }
+    }
+
     private func fetchData() -> Promise<[DataCovid]>
     {
         return Promise<[DataCovid]>
@@ -100,5 +161,4 @@ class FakeLocalDataManager: DataManager
                 }
         }
     }
-
 }
