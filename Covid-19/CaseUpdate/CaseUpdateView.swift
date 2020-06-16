@@ -28,6 +28,7 @@ class CaseUpdateView: UIView {
         self.deathNumber = NumberCaseUpdateView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         self.infectedNumber.backgroundColor = .systemBlue
         super.init(frame: frame)
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.createObserver()
         self.infectedNumber.translatesAutoresizingMaskIntoConstraints = false
         self.setupDeathNumber()
@@ -96,45 +97,51 @@ class CaseUpdateView: UIView {
 
     func addConstraintsInfectedNumber()
     {
-        NSLayoutConstraint.activate([self.infectedNumber.topAnchor.constraint(equalTo: self.dateUpdateLabel.bottomAnchor, constant: 25),
-        self.infectedNumber.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-        self.infectedNumber.rightAnchor.constraint(equalTo: self.leftAnchor, constant: 112),
-        self.infectedNumber.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
+        NSLayoutConstraint.activate([
+            self.infectedNumber.topAnchor.constraint(equalTo: self.dateUpdateLabel.bottomAnchor, constant: 25),
+            self.infectedNumber.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            self.infectedNumber.rightAnchor.constraint(equalTo: self.leftAnchor, constant: 112),
+            self.infectedNumber.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
     }
 
     func addConstraintDeathNumber(infected: NumberCaseUpdateView)
     {
 
-        NSLayoutConstraint.activate([self.deathNumber.topAnchor.constraint(equalTo: self.dateUpdateLabel.bottomAnchor, constant: 25),
-                                     self.deathNumber.leftAnchor.constraint(equalTo: infected.rightAnchor, constant: 20),
-                                     self.deathNumber.rightAnchor.constraint(equalTo: infected.rightAnchor, constant: 112),
-        self.deathNumber.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
+        NSLayoutConstraint.activate([
+            self.deathNumber.topAnchor.constraint(equalTo: self.dateUpdateLabel.bottomAnchor, constant: 25),
+            self.deathNumber.leftAnchor.constraint(equalTo: infected.rightAnchor, constant: 20),
+            self.deathNumber.rightAnchor.constraint(equalTo: infected.rightAnchor, constant: 112),
+            self.deathNumber.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
     }
 
     func addConstraintRecoverNumber(death: NumberCaseUpdateView)
     {
-        NSLayoutConstraint.activate([self.recoveredNumber.topAnchor.constraint(equalTo: self.dateUpdateLabel.bottomAnchor, constant: 25),
-                                          self.recoveredNumber.leftAnchor.constraint(equalTo: death.rightAnchor, constant: 20),
-                                          self.recoveredNumber.rightAnchor.constraint(equalTo: death.rightAnchor, constant: 112),
-             self.recoveredNumber.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
+        NSLayoutConstraint.activate([
+            self.recoveredNumber.topAnchor.constraint(equalTo: self.dateUpdateLabel.bottomAnchor, constant: 25),
+            self.recoveredNumber.leftAnchor.constraint(equalTo: death.rightAnchor, constant: 20),
+            self.recoveredNumber.rightAnchor.constraint(equalTo: death.rightAnchor, constant: 112),
+            self.recoveredNumber.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
     }
 
     func addConstraintsTitleLabel()
     {
-        NSLayoutConstraint.activate([ self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
-                                      self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor)])
+        NSLayoutConstraint.activate([
+            self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor)])
     }
 
     func addConstraintsDateUpdateLabel()
     {
-        NSLayoutConstraint.activate([ self.dateUpdateLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 10),
-        self.dateUpdateLabel.leftAnchor.constraint(equalTo: self.leftAnchor)])
+        NSLayoutConstraint.activate([
+            self.dateUpdateLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 10),
+            self.dateUpdateLabel.leftAnchor.constraint(equalTo: self.leftAnchor)])
     }
 
     func addConstraintsSeeDetailsButton()
     {
-        NSLayoutConstraint.activate([ self.seeDetailsButton.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 3),
-        self.seeDetailsButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -15)])
+        NSLayoutConstraint.activate([
+            self.seeDetailsButton.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 3),
+            self.seeDetailsButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -15)])
     }
 
     func setupTitleLabel()

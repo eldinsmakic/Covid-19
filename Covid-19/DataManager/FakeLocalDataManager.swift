@@ -158,7 +158,7 @@ class FakeLocalDataManager: DataManager
                     seal.fulfill(dataCovids)
                 } catch let error as NSError{
                     seal.reject(error)
-                }
+            }
         }
     }
 }
