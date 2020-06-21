@@ -22,5 +22,4 @@ protocol DataManager
 {
     /// Return data with an observable
     func getData(country: String, date: Date) -> Observable<[DataCovid]>
-   
 }

@@ -24,10 +24,7 @@ class NumberCaseUpdateView: UIView {
         self.addSubview(self.circle)
         self.setupCaseLabel()
         self.setupNumberCaseLabel()
-        NSLayoutConstraint.activate([self.circle.topAnchor.constraint(equalTo: self.topAnchor),
-        self.circle.leftAnchor.constraint(equalTo: self.leftAnchor)])
-        self.addConstraintCaseLabel()
-        self.addConstraintNumberCaseLabel()
+        self.setupConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -50,26 +47,33 @@ class NumberCaseUpdateView: UIView {
         self.numberCaseLabel.text = String(number)
     }
 
-    private func addConstraintCaseLabel()
+    private func setupConstraints()
     {
-        NSLayoutConstraint.activate([ self.caseLabel.topAnchor.constraint(equalTo: self.numberCaseLabel.bottomAnchor, constant: 10),
-                                         self.caseLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
-                                         self.caseLabel.rightAnchor.constraint(equalTo: self.rightAnchor)])
-    }
+        NSLayoutConstraint.activate([
+            self.circle.topAnchor.constraint(equalTo: self.topAnchor),
+            self.circle.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.circle.rightAnchor.constraint(equalTo: self.rightAnchor),
+            self.circle.heightAnchor.constraint(equalToConstant: 40),
 
-    private func addConstraintNumberCaseLabel()
-    {
-        NSLayoutConstraint.activate([ self.numberCaseLabel.topAnchor.constraint(equalTo: self.circle.bottomAnchor, constant: 10),
-                                         self.numberCaseLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
-                                        self.numberCaseLabel.rightAnchor.constraint(equalTo: self.rightAnchor)])
+            self.caseLabel.topAnchor.constraint(equalTo: self.numberCaseLabel.bottomAnchor, constant: 10),
+            self.caseLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.caseLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            self.caseLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+
+            self.numberCaseLabel.topAnchor.constraint(equalTo: self.circle.bottomAnchor, constant: 10),
+            self.numberCaseLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.numberCaseLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            self.numberCaseLabel.heightAnchor.constraint(equalToConstant: 48)
+            ])
     }
 
     private func setupCaseLabel()
     {
         self.caseLabel.text = "infected"
         self.caseLabel.textAlignment = .center
-        self.caseLabel.font = .systemFont(ofSize: 12)
-        self.caseLabel.backgroundColor = .red
+        self.caseLabel.textColor = UIColor(cgColor: CGColor(srgbRed: 168/255, green: 163/255, blue: 163/255, alpha: 1))
+        self.caseLabel.font = .systemFont(ofSize: 12, weight: .bold)
+//        self.caseLabel.backgroundColor = .red
         self.addSubview(self.caseLabel)
         self.caseLabel.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -78,8 +82,7 @@ class NumberCaseUpdateView: UIView {
     {
         self.numberCaseLabel.textColor = UIColor(cgColor: CGColor(srgbRed: 224.0/255.0, green: 173.0/255.0, blue: 33.0/255.0, alpha: 1))
         self.numberCaseLabel.textAlignment = .center
-        self.numberCaseLabel.font = .systemFont(ofSize: 40)
-        self.numberCaseLabel.backgroundColor = .systemGray
+        self.numberCaseLabel.font = .systemFont(ofSize: 40, weight: .bold)
         self.addSubview(self.numberCaseLabel)
         self.numberCaseLabel.translatesAutoresizingMaskIntoConstraints = false
     }

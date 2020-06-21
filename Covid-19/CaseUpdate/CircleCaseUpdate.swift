@@ -28,9 +28,10 @@ class CircleCaseUpdate: UIView {
         self.shapeLayer.path = circularPath.cgPath
         self.shapeLayer.lineWidth = 6
         self.shapeLayer.fillColor = UIColor.white.cgColor
-        let secondShapeLayer = CAShapeLayer()
+
         let secondCircularPath = UIBezierPath(arcCenter: center, radius: 21, startAngle: 0, endAngle: (CGFloat(2.0 * Float.pi)), clockwise: true)
-        secondShapeLayer.path = secondCircularPath.cgPath
+
+        self.secondShapeLayer.path = secondCircularPath.cgPath
         self.layer.addSublayer(self.secondShapeLayer)
         self.layer.addSublayer(self.shapeLayer)
     }
