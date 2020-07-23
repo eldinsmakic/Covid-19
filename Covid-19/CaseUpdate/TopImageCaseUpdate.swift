@@ -14,14 +14,8 @@ class TopImageCaseUpdate: UIView {
         let context = UIGraphicsGetCurrentContext()!
         let colorTop = UIColor(red: 51.0 / 255.0, green: 131.0 / 255.0, blue: 205.0 / 255.0, alpha: 1.0).cgColor
         let colorBottom = UIColor(red: 16.0 / 255.0, green: 33.0 / 255.0, blue: 159.0 / 255.0, alpha: 1.0).cgColor
-//        let colorBottomFake = UIColor(red: 255.0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1.0).cgColor
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = [colorBottom, colorTop]
-//        gradientLayer.locations = [0.0, 1.0]
-//        gradientLayer.frame = view.bounds
-//        gradientLayer.startPoint = CGPoint(x: 0, y: 1)
-//        gradientLayer.endPoint = CGPoint(x: 1, y: 0 )
          context.saveGState()
+        
         let roundedPath = UIBezierPath()
         roundedPath.move(to: CGPoint(x: 0, y: 0))
         roundedPath.addLine(to: CGPoint(x: 0, y: rect.maxY - 80))

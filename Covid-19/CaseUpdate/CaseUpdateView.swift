@@ -104,7 +104,7 @@ class CaseUpdateView: UIView {
             self.recoveredNumber.leftAnchor.constraint(equalTo: deathNumber.rightAnchor, constant: 20),
             self.recoveredNumber.rightAnchor.constraint(equalTo: deathNumber.rightAnchor, constant: 112),
             self.recoveredNumber.heightAnchor.constraint(equalToConstant: 120),
- 
+
             self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
             self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
             self.titleLabel.heightAnchor.constraint(equalToConstant: 20),

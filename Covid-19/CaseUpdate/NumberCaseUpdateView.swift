@@ -20,6 +20,11 @@ class NumberCaseUpdateView: UIView {
         self.circle = CircleCaseUpdate(frame: CGRect(x: 12, y: 0, width: 40, height: 40))
         self.circle.backgroundColor = UIColor.clear
         super.init(frame: frame)
+        setupUI()
+    }
+    
+    func setupUI()
+    {
         self.backgroundColor = UIColor.white
         self.addSubview(self.circle)
         self.setupCaseLabel()
@@ -73,7 +78,6 @@ class NumberCaseUpdateView: UIView {
         self.caseLabel.textAlignment = .center
         self.caseLabel.textColor = UIColor(cgColor: CGColor(srgbRed: 168/255, green: 163/255, blue: 163/255, alpha: 1))
         self.caseLabel.font = .systemFont(ofSize: 12, weight: .bold)
-//        self.caseLabel.backgroundColor = .red
         self.addSubview(self.caseLabel)
         self.caseLabel.translatesAutoresizingMaskIntoConstraints = false
     }
