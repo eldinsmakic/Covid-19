@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     let caseUpdateView = CaseUpdateView(frame: CGRect(x: 0, y: 200, width: 364, height: 200))
     let countryPicker = SelectCountryPickerView()
-    let spreadOfVirus = SpreadOfVirusView(frame: CGRect(x: 0, y: 200, width: 364, height: 200))
+    let spreadOfVirus = SpreadOfVirusView()
     let topImage = TopCaseUpdate()
     var camera: GMSCameraPosition!
     var mapView: GMSMapView!
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         view.addSubview(self.caseUpdateView)
         view.addSubview(countryPicker)
-        view.addSubview(spreadOfVirus)
+        view.addSubview(spreadOfVirus.view)
         view.addSubview(topImage.view)
 //        self.camera = GMSCameraPosition.camera(withLatitude: 46.227638, longitude: 2.213749, zoom: 6.0)
 //        self.mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
@@ -43,7 +43,6 @@ class ViewController: UIViewController {
 //        self.caseUpdateView.backgroundColor = .green
         super.viewDidLoad()
         self.countryPicker.translatesAutoresizingMaskIntoConstraints = false
-        self.spreadOfVirus.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.topImage.view.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.topImage.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -60,10 +59,10 @@ class ViewController: UIViewController {
             self.caseUpdateView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             self.caseUpdateView.heightAnchor.constraint(equalToConstant: 272),
 
-            spreadOfVirus.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            spreadOfVirus.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            spreadOfVirus.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
-            spreadOfVirus.topAnchor.constraint(equalTo: caseUpdateView.bottomAnchor)
+            spreadOfVirus.view.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            spreadOfVirus.view.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            spreadOfVirus.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            spreadOfVirus.view.topAnchor.constraint(equalTo: caseUpdateView.bottomAnchor)
         ])
     }
 
@@ -74,11 +73,11 @@ class ViewController: UIViewController {
         async {
             do
             {
-                    let cordonate = try await(self.countryPicker.selectCountryService.getCordonateFromACountry(country: country))
-                    self.camera = GMSCameraPosition.camera(withLatitude: cordonate.lat, longitude: cordonate.lng, zoom: 6.0)
-                    DispatchQueue.main.async {
-                        self.spreadOfVirus.map.animate(toLocation: CLLocationCoordinate2D(latitude: cordonate.lat, longitude: cordonate.lng))
-                    }
+                let cordonate = try await(self.countryPicker.selectCountryService.getCordonateFromACountry(country: country))
+                self.camera = GMSCameraPosition.camera(withLatitude: cordonate.lat, longitude: cordonate.lng, zoom: 6.0)
+                DispatchQueue.main.async {
+                    self.spreadOfVirus.map.animate(toLocation: CLLocationCoordinate2D(latitude: cordonate.lat, longitude: cordonate.lng))
+                }
             }
             catch let error as NSError
             {

@@ -24,12 +24,12 @@ class CircleCaseUpdate: UIView {
     override func draw(_ rect: CGRect) {
 
         let center = self.center
-        let circularPath = UIBezierPath(arcCenter: center, radius: 8, startAngle: 0, endAngle: (CGFloat(2.0 * Float.pi)), clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: 7, startAngle: 0, endAngle: (CGFloat(2.0 * Float.pi)), clockwise: true)
         self.shapeLayer.path = circularPath.cgPath
-        self.shapeLayer.lineWidth = 6
+        self.shapeLayer.lineWidth = 4
         self.shapeLayer.fillColor = UIColor.white.cgColor
 
-        let secondCircularPath = UIBezierPath(arcCenter: center, radius: 21, startAngle: 0, endAngle: (CGFloat(2.0 * Float.pi)), clockwise: true)
+        let secondCircularPath = UIBezierPath(arcCenter: center, radius: 17, startAngle: 0, endAngle: (CGFloat(2.0 * Float.pi)), clockwise: true)
 
         self.secondShapeLayer.path = secondCircularPath.cgPath
         self.layer.addSublayer(self.secondShapeLayer)

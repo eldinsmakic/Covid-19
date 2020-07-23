@@ -88,69 +88,39 @@ class CaseUpdateView: UIView {
 
     func addAllConstraints()
     {
-        self.addConstraintsTitleLabel()
-        self.addConstraintsDateUpdateLabel()
-        self.addConstraintsSeeDetailsButton()
-        self.addConstraintsInfectedNumber()
-        self.addConstraintDeathNumber(infected: self.infectedNumber)
-        self.addConstraintRecoverNumber(death: self.deathNumber)
-    }
-
-    func addConstraintsInfectedNumber()
-    {
         NSLayoutConstraint.activate([
+
             self.infectedNumber.topAnchor.constraint(equalTo: self.dateUpdateLabel.bottomAnchor, constant: 78),
             self.infectedNumber.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
             self.infectedNumber.rightAnchor.constraint(equalTo: self.leftAnchor, constant: 112),
-            self.infectedNumber.heightAnchor.constraint(equalToConstant: 120)])
-    }
+            self.infectedNumber.heightAnchor.constraint(equalToConstant: 120),
 
-    func addConstraintDeathNumber(infected: NumberCaseUpdateView)
-    {
-
-        NSLayoutConstraint.activate([
             self.deathNumber.topAnchor.constraint(equalTo: self.infectedNumber.topAnchor),
-            self.deathNumber.leftAnchor.constraint(equalTo: infected.rightAnchor, constant: 20),
-            self.deathNumber.rightAnchor.constraint(equalTo: infected.rightAnchor, constant: 112),
-            self.deathNumber.heightAnchor.constraint(equalToConstant: 120)])
-    }
+            self.deathNumber.leftAnchor.constraint(equalTo: infectedNumber.rightAnchor, constant: 20),
+            self.deathNumber.rightAnchor.constraint(equalTo: infectedNumber.rightAnchor, constant: 112),
+            self.deathNumber.heightAnchor.constraint(equalToConstant: 120),
 
-    func addConstraintRecoverNumber(death: NumberCaseUpdateView)
-    {
-        NSLayoutConstraint.activate([
             self.recoveredNumber.topAnchor.constraint(equalTo: self.infectedNumber.topAnchor),
-            self.recoveredNumber.leftAnchor.constraint(equalTo: death.rightAnchor, constant: 20),
-            self.recoveredNumber.rightAnchor.constraint(equalTo: death.rightAnchor, constant: 112),
-            self.recoveredNumber.heightAnchor.constraint(equalToConstant: 120)])
-    }
-
-    func addConstraintsTitleLabel()
-    {
-        NSLayoutConstraint.activate([
+            self.recoveredNumber.leftAnchor.constraint(equalTo: deathNumber.rightAnchor, constant: 20),
+            self.recoveredNumber.rightAnchor.constraint(equalTo: deathNumber.rightAnchor, constant: 112),
+            self.recoveredNumber.heightAnchor.constraint(equalToConstant: 120),
+ 
             self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
             self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
-            self.titleLabel.heightAnchor.constraint(equalToConstant: 20)])
-    }
+            self.titleLabel.heightAnchor.constraint(equalToConstant: 20),
 
-    func addConstraintsDateUpdateLabel()
-    {
-        NSLayoutConstraint.activate([
             self.dateUpdateLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 10),
-            self.dateUpdateLabel.leftAnchor.constraint(equalTo: self.leftAnchor)])
-    }
+            self.dateUpdateLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
 
-    func addConstraintsSeeDetailsButton()
-    {
-        NSLayoutConstraint.activate([
             self.seeDetailsButton.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 3),
-            self.seeDetailsButton.rightAnchor.constraint(equalTo: self.rightAnchor)])
+            self.seeDetailsButton.rightAnchor.constraint(equalTo: self.rightAnchor)
+        ])
     }
 
     func setupTitleLabel()
     {
         self.titleLabel.text = "Case Update"
         self.titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
-//        self.titleLabel.backgroundColor = .red
         self.addSubview(self.titleLabel)
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -158,7 +128,6 @@ class CaseUpdateView: UIView {
     func setupDateUpdateLabel()
     {
         self.dateUpdateLabel.text = "newest update on march 28"
-//        self.dateUpdateLabel.backgroundColor = .orange
         self.dateUpdateLabel.textColor =  UIColor(cgColor: CGColor(srgbRed: 168/255, green: 163/255, blue: 163/255, alpha: 1))
         self.dateUpdateLabel.font = .systemFont(ofSize: 12, weight: .bold)
         self.addSubview(self.dateUpdateLabel)
@@ -170,7 +139,6 @@ class CaseUpdateView: UIView {
         self.seeDetailsButton.setTitle("See details", for: .normal)
         self.seeDetailsButton.setTitleColor(.systemBlue, for: .normal)
         self.seeDetailsButton.titleLabel!.font = .systemFont(ofSize: 12, weight: .bold)
-//        self.seeDetailsButton.backgroundColor = .blue
         self.seeDetailsButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.seeDetailsButton)
     }
