@@ -22,7 +22,7 @@ class NumberCaseUpdateView: UIView {
         super.init(frame: frame)
         setupUI()
     }
-    
+
     func setupUI()
     {
         self.backgroundColor = UIColor.white

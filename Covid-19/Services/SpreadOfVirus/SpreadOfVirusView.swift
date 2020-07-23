@@ -40,21 +40,9 @@ class SpreadOfVirusView: UIViewController {
 
     }
 
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Spread of Virus"
-        label.font = .systemFont(ofSize: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let titleLabel = DesignSystem.title(name: "Spread of Virus")
 
-    let seeDetailsButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("See details", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    let seeDetailsButton: UIButton = DesignSystem.Button()
 
     let jsonStyle = """
     [

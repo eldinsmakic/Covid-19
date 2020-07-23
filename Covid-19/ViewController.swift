@@ -35,14 +35,17 @@ class ViewController: UIViewController {
         view.addSubview(countryPicker)
         view.addSubview(spreadOfVirus.view)
         view.addSubview(topImage.view)
-//        self.camera = GMSCameraPosition.camera(withLatitude: 46.227638, longitude: 2.213749, zoom: 6.0)
-//        self.mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-//        self.view.addSubview(mapView)
 
         view.backgroundColor = .white
-//        self.caseUpdateView.backgroundColor = .green
+
         super.viewDidLoad()
         self.countryPicker.translatesAutoresizingMaskIntoConstraints = false
+        addConstraint()
+
+    }
+
+    func addConstraint()
+    {
         NSLayoutConstraint.activate([
             self.topImage.view.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.topImage.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),

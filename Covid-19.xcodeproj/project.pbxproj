@@ -22,6 +22,9 @@
 		9923A62E2469E512009A1B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9923A62C2469E512009A1B6B /* LaunchScreen.storyboard */; };
 		9923A6442469E513009A1B6B /* Covid_19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923A6432469E513009A1B6B /* Covid_19UITests.swift */; };
 		9923A652246AD6A3009A1B6B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9923A651246AD6A3009A1B6B /* README.md */; };
+		9931EA1524CA21E90096646D /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9931EA1424CA21E90096646D /* DesignSystem.swift */; };
+		9931EA1924CA223D0096646D /* DesignSystem+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9931EA1824CA223D0096646D /* DesignSystem+Title.swift */; };
+		9931EA1B24CA2C130096646D /* DesignSystem+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9931EA1A24CA2C120096646D /* DesignSystem+Button.swift */; };
 		9944F5D224770C1A000CD576 /* CaseUpdateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5D124770C1A000CD576 /* CaseUpdateTest.swift */; };
 		9944F5D524770D72000CD576 /* CaseUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5D424770D72000CD576 /* CaseUpdateModel.swift */; };
 		9944F5DF24771114000CD576 /* TodaysDateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5DE24771114000CD576 /* TodaysDateService.swift */; };
@@ -80,6 +83,9 @@
 		9923A6432469E513009A1B6B /* Covid_19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid_19UITests.swift; sourceTree = "<group>"; };
 		9923A6452469E513009A1B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9923A651246AD6A3009A1B6B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9931EA1424CA21E90096646D /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		9931EA1824CA223D0096646D /* DesignSystem+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Title.swift"; sourceTree = "<group>"; };
+		9931EA1A24CA2C120096646D /* DesignSystem+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Button.swift"; sourceTree = "<group>"; };
 		9944F5D124770C1A000CD576 /* CaseUpdateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseUpdateTest.swift; sourceTree = "<group>"; };
 		9944F5D424770D72000CD576 /* CaseUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseUpdateModel.swift; sourceTree = "<group>"; };
 		9944F5DE24771114000CD576 /* TodaysDateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysDateService.swift; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 		9923A61D2469E50C009A1B6B /* Covid-19 */ = {
 			isa = PBXGroup;
 			children = (
+				9931EA1224CA21BE0096646D /* DesignSystem */,
 				9997A43D247814CB00FB50EF /* DataManager */,
 				9944F5DA247710EE000CD576 /* Services */,
 				9944F5D324770C9F000CD576 /* CaseUpdate */,
@@ -216,6 +223,24 @@
 				9923A6452469E513009A1B6B /* Info.plist */,
 			);
 			path = "Covid-19UITests";
+			sourceTree = "<group>";
+		};
+		9931EA1224CA21BE0096646D /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				9931EA1424CA21E90096646D /* DesignSystem.swift */,
+				9931EA1324CA21CA0096646D /* Elements */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		9931EA1324CA21CA0096646D /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				9931EA1824CA223D0096646D /* DesignSystem+Title.swift */,
+				9931EA1A24CA2C120096646D /* DesignSystem+Button.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 		9944F5D324770C9F000CD576 /* CaseUpdate */ = {
@@ -580,10 +605,13 @@
 				9923A6232469E50C009A1B6B /* ViewController.swift in Sources */,
 				9944F5D524770D72000CD576 /* CaseUpdateModel.swift in Sources */,
 				9923A61F2469E50C009A1B6B /* AppDelegate.swift in Sources */,
+				9931EA1B24CA2C130096646D /* DesignSystem+Button.swift in Sources */,
 				99908E18248ACFD1000E281E /* CircleCaseUpdate.swift in Sources */,
 				99FF54282488284300F7AB2F /* CaseUpdateView.swift in Sources */,
 				9997A43F247814DA00FB50EF /* DataManager.swift in Sources */,
+				9931EA1524CA21E90096646D /* DesignSystem.swift in Sources */,
 				9997A4412478156900FB50EF /* FakeLocalDataManager.swift in Sources */,
+				9931EA1924CA223D0096646D /* DesignSystem+Title.swift in Sources */,
 				99FF542A2488526300F7AB2F /* NumberCaseUpdateView.swift in Sources */,
 				9923A6212469E50C009A1B6B /* SceneDelegate.swift in Sources */,
 				999D8960249E140600593251 /* TopImageCaseUpdate.swift in Sources */,
