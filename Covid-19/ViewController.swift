@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     @objc func updateCountry(notification: NSNotification)
     {
         let country = self.countryPicker.selectCountry
-        self.caseUpdateView.dataManager.fetchDatasByCountry(country: country, date: self.caseUpdateView.dataManager.goodDate)
+        self.caseUpdateView.dataManager.getData(fromCountry: country, at: Date())
         async {
             do
             {
