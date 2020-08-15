@@ -24,12 +24,13 @@ class SelectCountryService
 
     func getCordonateFromACountry(country: String) -> Promise<Cordonate>
     {
-        return Promise { seal in AF.request("https://maps.googleapis.com/maps/api/geocode/json?address="+country+"&language=fr&key=AIzaSyCMHnSYPacdShtvfn7h-6VwzuB7k4gCPuA").responseJSON { response in
-                let json = JSON(response.value)
+        let url =   "https://maps.googleapis.com/maps/api/geocode/json?address=\(country)&language=fr&key=AIzaSyCC7CdkXanscNcI8j4WQ9I3Sk7YztLJcE8"
+        return Promise { seal in AF.request(url).responseJSON { response in
+             let json = JSON(response.value)
                 do
                 {
                     let location =  try json["results"][0]["geometry"]["location"].rawData()
-                                  self.cordonate = try JSONDecoder().decode(Cordonate.self, from: location)
+                    self.cordonate = try JSONDecoder().decode(Cordonate.self, from: location)
                     seal.fulfill(self.cordonate)
                 }
                 catch let error as NSError

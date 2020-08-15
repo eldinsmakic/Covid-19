@@ -68,7 +68,8 @@ class NumberCaseUpdateView: UIView {
             self.numberCaseLabel.topAnchor.constraint(equalTo: self.circle.bottomAnchor, constant: 10),
             self.numberCaseLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
             self.numberCaseLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            self.numberCaseLabel.heightAnchor.constraint(equalToConstant: 48)
+            self.numberCaseLabel.heightAnchor.constraint(equalToConstant: 48),
+            self.numberCaseLabel.widthAnchor.constraint(equalToConstant: 70)
             ])
     }
 
@@ -86,7 +87,8 @@ class NumberCaseUpdateView: UIView {
     {
         self.numberCaseLabel.textColor = UIColor(cgColor: CGColor(srgbRed: 224.0/255.0, green: 173.0/255.0, blue: 33.0/255.0, alpha: 1))
         self.numberCaseLabel.textAlignment = .center
-        self.numberCaseLabel.font = .systemFont(ofSize: 40, weight: .bold)
+        self.numberCaseLabel.adjustsFontSizeToFitWidth = true
+        self.numberCaseLabel.font = .systemFont(ofSize: 30, weight: .bold)
         self.addSubview(self.numberCaseLabel)
         self.numberCaseLabel.translatesAutoresizingMaskIntoConstraints = false
     }
