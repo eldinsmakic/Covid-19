@@ -28,8 +28,7 @@ public class OwidDataManager {
                 switch response.result {
                 case .success:
                     do {
-                        print("HHH working 1")
-                        print("HHH working 2")
+                        
                         self.postDataIsReady()
                     } catch {
                     }

@@ -215,11 +215,9 @@
 		9923A61D2469E50C009A1B6B /* Covid-19 */ = {
 			isa = PBXGroup;
 			children = (
-				99767A6824E315B50073D535 /* Covid-Data */,
-				9931EA1224CA21BE0096646D /* DesignSystem */,
 				9997A43D247814CB00FB50EF /* DataManager */,
 				9944F5DA247710EE000CD576 /* Services */,
-				9944F5D324770C9F000CD576 /* CaseUpdate */,
+				99D0EC8524E80BDA00E246A9 /* UI */,
 				9923A61E2469E50C009A1B6B /* AppDelegate.swift */,
 				9923A6202469E50C009A1B6B /* SceneDelegate.swift */,
 				9923A6222469E50C009A1B6B /* ViewController.swift */,
@@ -275,12 +273,9 @@
 		9944F5D324770C9F000CD576 /* CaseUpdate */ = {
 			isa = PBXGroup;
 			children = (
-				9944F5D424770D72000CD576 /* CaseUpdateModel.swift */,
-				99FF54272488284300F7AB2F /* CaseUpdateView.swift */,
-				99FF54292488526300F7AB2F /* NumberCaseUpdateView.swift */,
-				99908E17248ACFD1000E281E /* CircleCaseUpdate.swift */,
-				999D895F249E140600593251 /* TopImageCaseUpdate.swift */,
-				992194CF249E862300E22D4B /* TopCaseUpdate.swift */,
+				99D0EC8124E80B1C00E246A9 /* SubElements */,
+				99D0EC8024E80B0500E246A9 /* View */,
+				99D0EC7F24E80B0000E246A9 /* Model */,
 			);
 			path = CaseUpdate;
 			sourceTree = "<group>";
@@ -288,8 +283,6 @@
 		9944F5DA247710EE000CD576 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				999D895A24996CA100593251 /* SpreadOfVirus */,
-				99C448F8247C3E3A00878DD4 /* SelectCountry */,
 				9944F5DB247710F7000CD576 /* Time */,
 			);
 			path = Services;
@@ -303,20 +296,12 @@
 			path = Time;
 			sourceTree = "<group>";
 		};
-		99767A6824E315B50073D535 /* Covid-Data */ = {
-			isa = PBXGroup;
-			children = (
-				9913CBFC24E32E6300510114 /* owid-covid-data */,
-			);
-			path = "Covid-Data";
-			sourceTree = "<group>";
-		};
 		9997A43D247814CB00FB50EF /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				99D0EC7D24E808DE00E246A9 /* FakeDataManager */,
+				9913CBFC24E32E6300510114 /* owid-covid-data */,
 				9997A43E247814DA00FB50EF /* DataManager.swift */,
-				9997A4402478156900FB50EF /* FakeLocalDataManager.swift */,
-				9997A4422478165800FB50EF /* FakeData.json */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -333,10 +318,105 @@
 		99C448F8247C3E3A00878DD4 /* SelectCountry */ = {
 			isa = PBXGroup;
 			children = (
-				99C448F9247C3F0000878DD4 /* SelectCountryService.swift */,
+				99D0EC7E24E80A2000E246A9 /* Service */,
 				999D89542496313800593251 /* SelectCountryPickerView.swift */,
 			);
 			path = SelectCountry;
+			sourceTree = "<group>";
+		};
+		99D0EC7D24E808DE00E246A9 /* FakeDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				9997A4402478156900FB50EF /* FakeLocalDataManager.swift */,
+				9997A4422478165800FB50EF /* FakeData.json */,
+			);
+			path = FakeDataManager;
+			sourceTree = "<group>";
+		};
+		99D0EC7E24E80A2000E246A9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				99C448F9247C3F0000878DD4 /* SelectCountryService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		99D0EC7F24E80B0000E246A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9944F5D424770D72000CD576 /* CaseUpdateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99D0EC8024E80B0500E246A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99FF54272488284300F7AB2F /* CaseUpdateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99D0EC8124E80B1C00E246A9 /* SubElements */ = {
+			isa = PBXGroup;
+			children = (
+				99D0EC8224E80B2E00E246A9 /* NumberCaseUpdate */,
+			);
+			path = SubElements;
+			sourceTree = "<group>";
+		};
+		99D0EC8224E80B2E00E246A9 /* NumberCaseUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				99FF54292488526300F7AB2F /* NumberCaseUpdateView.swift */,
+				99D0EC8324E80B3C00E246A9 /* SubElements */,
+			);
+			path = NumberCaseUpdate;
+			sourceTree = "<group>";
+		};
+		99D0EC8324E80B3C00E246A9 /* SubElements */ = {
+			isa = PBXGroup;
+			children = (
+				99908E17248ACFD1000E281E /* CircleCaseUpdate.swift */,
+			);
+			path = SubElements;
+			sourceTree = "<group>";
+		};
+		99D0EC8424E80BBF00E246A9 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				999D895F249E140600593251 /* TopImageCaseUpdate.swift */,
+				992194CF249E862300E22D4B /* TopCaseUpdate.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		99D0EC8524E80BDA00E246A9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				99D0EC8724E80C1500E246A9 /* Atoms */,
+				99D0EC8624E80BFA00E246A9 /* Molecules */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		99D0EC8624E80BFA00E246A9 /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				999D895A24996CA100593251 /* SpreadOfVirus */,
+				99C448F8247C3E3A00878DD4 /* SelectCountry */,
+				99D0EC8424E80BBF00E246A9 /* Banner */,
+				9944F5D324770C9F000CD576 /* CaseUpdate */,
+			);
+			path = Molecules;
+			sourceTree = "<group>";
+		};
+		99D0EC8724E80C1500E246A9 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				9931EA1224CA21BE0096646D /* DesignSystem */,
+			);
+			path = Atoms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
