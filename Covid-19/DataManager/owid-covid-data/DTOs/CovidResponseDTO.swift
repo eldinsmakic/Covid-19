@@ -8,9 +8,9 @@
 
 public struct CovidResponseDTO: Decodable
 {
-    public let continent: String
-    public let location: String
-    public let population: Double
-    public let populationDensity: Double
-    public let data: [DataResponseDTO]
+    public let continent: String?
+    public let location: String?
+    public let population: Double?
+    public let populationDensity: Double?
+    public let data: [DataResponseDTO]?
 }

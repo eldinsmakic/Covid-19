@@ -10,13 +10,13 @@ import Foundation
 
 public struct DataResponseDTO: Decodable
 {
-    public let date: String
-    public let totalCases: Double
-    public let newCases: Double
-    public let totalDeaths: Double
-    public let newDeaths: Double
-    public let totalCasesPerMillion: Double
-    public let newCasesPerMillion: Double
-    public let totalDeathsPerMillion: Double
-    public let newDeathsPerMillion: Double
+    public let date: String?
+    public let totalCases: Double?
+    public let newCases: Double?
+    public let totalDeaths: Double?
+    public let newDeaths: Double?
+    public let totalCasesPerMillion: Double?
+    public let newCasesPerMillion: Double?
+    public let totalDeathsPerMillion: Double?
+    public let newDeathsPerMillion: Double?
 }

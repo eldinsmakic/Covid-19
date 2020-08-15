@@ -11,7 +11,7 @@ let countryIsSelected = NSNotification.Name("fr.eldinsmakic.countryIsSelected")
 
 class SelectCountryPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    let pays = ["France", "England", "Italy"]
+    var pays: [String] = []
     var selectCountry: String
     let selectCountryService: SelectCountryService
 

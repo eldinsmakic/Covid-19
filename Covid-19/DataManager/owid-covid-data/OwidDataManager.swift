@@ -20,22 +20,21 @@ public class OwidDataManager {
         self.datas = [:]
         self.dataCovid = nil
 
-        let jsonDecoder  = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        self.loadLocalData()
+    }
 
-        AF.request(urlString)
-            .responseData { response in
-                switch response.result {
-                case .success:
-                    do {
-                        
-                        self.postDataIsReady()
-                    } catch {
-                    }
-                case .failure:
-                    self.datas = [:]
-                    print("HHH Not working")
-               }
+    func loadLocalData() {
+        guard let url = Bundle.main.url(forResource: "localData", withExtension: "json")  else { return }
+
+        do {
+            let data = try Data(contentsOf: url)
+
+            let jsonDecoder  = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+            datas = try jsonDecoder.decode([String: CovidResponseDTO].self, from: data)
+        } catch let error
+        {
+            print("HHH \(error)")
         }
     }
 
@@ -49,12 +48,12 @@ public class OwidDataManager {
         guard let country = converterToISO(fromCountry: country) else { return }
 
         let dataFromCountry = datas[country]
-        guard let data = dataFromCountry?.data.first(where: { isSameDate(data: $0.date, inSameDaysAs: date) }) else { return }
+        guard let data = dataFromCountry?.data?.first(where: { isSameDate(data: $0.date!, inSameDaysAs: date) }) else { return }
 
         self.dataCovid = DataCovid(
             date: date,
             country: country,
-            caseUpdate: CaseUpdate(infected: Int(data.totalCases), recovered: 0, death: Int(data.newDeaths )))
+            caseUpdate: CaseUpdate(infected: Int(data.totalCases!), recovered: 0, death: Int(data.totalDeaths! )))
         self.postDataIsReady()
     }
 
@@ -81,11 +80,12 @@ public class OwidDataManager {
         }
     }
 
-    private lazy var dictIsoToCountry: [String: String] = {
+    public lazy var dictIsoToCountry: [String: String] = {
         var dict: [String: String] = [:]
         for data in self.datas {
-            dict[data.value.location] = data.key
-            print("HHH \(data.key)")
+            if let location = data.value.location {
+                dict[location] = data.key
+            }
         }
         return dict
     }()

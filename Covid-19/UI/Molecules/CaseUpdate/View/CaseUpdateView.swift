@@ -14,11 +14,10 @@ class CaseUpdateView: UIView {
     let infectedNumber: NumberCaseUpdateView
     let deathNumber: NumberCaseUpdateView
     let recoveredNumber: NumberCaseUpdateView
-    let dataManager: OwidDataManager
+    var dataManager: OwidDataManager!
 
     override init(frame: CGRect) {
         self.dateUpdateLabel = UILabel()
-        self.dataManager = OwidDataManager()
         self.infectedNumber = NumberCaseUpdateView(frame: CGRect(x: 0, y: 60, width: 100, height: 111))
         self.recoveredNumber = NumberCaseUpdateView(frame: CGRect(x: 0, y: 0, width: 100, height: 111))
         self.deathNumber = NumberCaseUpdateView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

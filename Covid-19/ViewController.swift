@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     let topImage = TopCaseUpdate()
     var camera: GMSCameraPosition!
     var mapView: GMSMapView!
+    let dataManager = OwidDataManager()
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
@@ -37,8 +38,16 @@ class ViewController: UIViewController {
         view.addSubview(topImage.view)
 
         view.backgroundColor = .white
+        let sorted = self.dataManager.dictIsoToCountry.sorted {
+            $0 < $1
+        }
+
+        for (key, _) in sorted {
+            self.countryPicker.pays.append(key)
+        }
 
         super.viewDidLoad()
+        self.caseUpdateView.dataManager = self.dataManager
         self.countryPicker.translatesAutoresizingMaskIntoConstraints = false
         addConstraint()
 
