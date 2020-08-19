@@ -16,6 +16,8 @@ struct DataCovid: Decodable
     let caseUpdate: CaseUpdate
 }
 
+let dataReady = "fr.eldinsmakic.dataReady"
+
 /// Manage data from Covid-19
 /// will fetch data and return an observable
 protocol DataManager

@@ -23,13 +23,36 @@ public class OwidDataManager {
         self.loadLocalData()
     }
 
+    func loadData() {
+        let jsonDecoder  = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        AF.request(urlString, method: .get)
+        .validate()
+        .responseData { response in
+               switch response.result {
+               case .success:
+                   do {
+                    self.datas = try jsonDecoder.decode([String: CovidResponseDTO].self, from: response.value!)
+                    print(self.datas[self.datas.keys.startIndex])
+                    self.postDataIsReady()
+                   } catch let error {
+                      print("HHH \(error)")
+                   }
+               case .failure:
+                   self.datas = [:]
+                   print("HHH Not working")
+              }
+        }
+    }
+
     func loadLocalData() {
         guard let url = Bundle.main.url(forResource: "localData", withExtension: "json")  else { return }
 
         do {
             let data = try Data(contentsOf: url)
 
-            let jsonDecoder  = JSONDecoder()
+            let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             datas = try jsonDecoder.decode([String: CovidResponseDTO].self, from: data)
         } catch let error
@@ -48,12 +71,28 @@ public class OwidDataManager {
         guard let country = converterToISO(fromCountry: country) else { return }
 
         let dataFromCountry = datas[country]
-        guard let data = dataFromCountry?.data?.first(where: { isSameDate(data: $0.date!, inSameDaysAs: date) }) else { return }
 
-        self.dataCovid = DataCovid(
-            date: date,
+        if let data = dataFromCountry?.data? .first(where: { isSameDate(data: $0.date!, inSameDaysAs: date) }) {
+            self.dataCovid = DataCovid(
+               date: date,
+               country: country,
+               caseUpdate: CaseUpdate(infected: Int(data.totalCases!), recovered: 0, death: Int(data.totalDeaths! )))
+        } else {
+            guard let data = dataFromCountry?.data?.last else {
+                print("HHH ERROR no new data for country \(country)")
+                return
+            }
+            let dateFormater = DateFormatter()
+            dateFormater.dateFormat = "yyyy-MM-dd"
+
+            let dataDate = dateFormater.date(from: data.date!)!
+
+            self.dataCovid = DataCovid(
+                date: dataDate,
             country: country,
             caseUpdate: CaseUpdate(infected: Int(data.totalCases!), recovered: 0, death: Int(data.totalDeaths! )))
+        }
+
         self.postDataIsReady()
     }
 

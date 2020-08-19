@@ -11,8 +11,6 @@ import RxSwift
 import AwaitKit
 import PromiseKit
 
-let dataReady = "fr.eldinsmakic.dataReady"
-
 class FakeLocalDataManager: DataManager
 {
     var datas: [DataCovid]
