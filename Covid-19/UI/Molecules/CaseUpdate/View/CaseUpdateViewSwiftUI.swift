@@ -18,6 +18,7 @@ struct CaseUpdateViewSwiftUI: View {
                     .font(.title)
                 Spacer()
             }
+
             HStack {
                 Text("Newest update \(owidDataManager.dataCovid?.formatedDate ?? " Fetching..")")
                     .foregroundColor(.gray)
@@ -25,12 +26,30 @@ struct CaseUpdateViewSwiftUI: View {
                 Text("See details")
                     .foregroundColor(.blue)
             }.padding(.bottom, 10)
+
             HStack {
-                NumberView(number: owidDataManager.dataCovid?.caseUpdate.infected, color: .orange, subtitle: "infected")
+                NumberView(
+                    number: owidDataManager.dataCovid?.caseUpdate.infected,
+                    color: .orange,
+                    subtitle: "infected"
+                )
+
                 Spacer()
-                NumberView(number: owidDataManager.dataCovid?.caseUpdate.death, color: .red, subtitle: "deaths")
+
+                NumberView(
+                    number: owidDataManager.dataCovid?.caseUpdate.death,
+                    color: .red,
+                    subtitle: "deaths"
+                )
+
                 Spacer()
-                NumberView(number: owidDataManager.dataCovid?.caseUpdate.recovered, color: .green, subtitle: "Recovered")
+
+                NumberView(
+                    number: owidDataManager.dataCovid?.caseUpdate.recovered,
+                    color: .green,
+                    subtitle: "Recovered"
+                )
+
             }.frame(width: nil, height: 100)
 
         }
