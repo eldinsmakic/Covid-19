@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CaseUpdateViewSwiftUI: View {
-    @State var dataCovid: DataCovid?
+    @ObservedObject var owidDataManager: OwidDataManager
 
     var body: some View {
         VStack {
@@ -19,18 +19,18 @@ struct CaseUpdateViewSwiftUI: View {
                 Spacer()
             }
             HStack {
-                Text("Newest update \(dataCovid?.formatedDate ?? " Fetching..")")
+                Text("Newest update \(owidDataManager.dataCovid?.formatedDate ?? " Fetching..")")
                     .foregroundColor(.gray)
                 Spacer()
                 Text("See details")
                     .foregroundColor(.blue)
             }.padding(.bottom, 10)
             HStack {
-                NumberView(number: dataCovid?.caseUpdate.infected, color: .orange, subtitle: "infected")
+                NumberView(number: owidDataManager.dataCovid?.caseUpdate.infected, color: .orange, subtitle: "infected")
                 Spacer()
-                NumberView(number: dataCovid?.caseUpdate.death, color: .red, subtitle: "deaths")
+                NumberView(number: owidDataManager.dataCovid?.caseUpdate.death, color: .red, subtitle: "deaths")
                 Spacer()
-                NumberView(number: dataCovid?.caseUpdate.recovered, color: .green, subtitle: "Recovered")
+                NumberView(number: owidDataManager.dataCovid?.caseUpdate.recovered, color: .green, subtitle: "Recovered")
             }.frame(width: nil, height: 100)
 
         }
@@ -51,6 +51,7 @@ struct NumberView: View {
                 .font(.title)
                 .foregroundColor(Color(color))
                 .frame(width: 100, height: nil, alignment: .center)
+                .animation(.easeOut(duration: 2))
 
             Spacer()
 

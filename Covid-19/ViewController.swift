@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
         self.dataManager = OwidDataManager()
-        self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(dataCovid: self.dataManager.dataCovid))
+        self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(owidDataManager: self.dataManager))
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountry(notification:)), name: countryIsSelected, object: nil)
 
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 
     required init?(coder: NSCoder) {
         self.dataManager = OwidDataManager()
-        self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(dataCovid: self.dataManager.dataCovid))
+        self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(owidDataManager: self.dataManager))
         super.init(coder: coder)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountry(notification:)), name: countryIsSelected, object: nil)
     }
@@ -56,7 +56,6 @@ class ViewController: UIViewController {
         }
 
         super.viewDidLoad()
-//        self.caseUpdateView.dataManager = self.dataManager
         self.countryPicker.translatesAutoresizingMaskIntoConstraints = false
         addConstraint()
 
