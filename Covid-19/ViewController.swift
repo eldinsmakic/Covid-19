@@ -6,33 +6,42 @@
 //  Copyright © 2020 eldin smakic. All rights reserved.
 //
 
+import SwiftUI
 import UIKit
 import GoogleMaps
 import AwaitKit
 
 class ViewController: UIViewController {
 
-    let caseUpdateView = CaseUpdateView(frame: CGRect(x: 0, y: 200, width: 364, height: 200))
+    let dataManager: OwidDataManager
+    let caseUpdateView: UIViewController
     let countryPicker = SelectCountryPickerView()
     let spreadOfVirus = SpreadOfVirusView()
     let topImage = TopCaseUpdate()
     var camera: GMSCameraPosition!
     var mapView: GMSMapView!
-    let dataManager = OwidDataManager()
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
+        self.dataManager = OwidDataManager()
+        self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(dataCovid: self.dataManager.dataCovid))
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountry(notification:)), name: countryIsSelected, object: nil)
+
     }
 
     required init?(coder: NSCoder) {
+        self.dataManager = OwidDataManager()
+        self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(dataCovid: self.dataManager.dataCovid))
         super.init(coder: coder)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountry(notification:)), name: countryIsSelected, object: nil)
     }
 
     override func viewDidLoad() {
-        view.addSubview(self.caseUpdateView)
+        self.caseUpdateView.view.translatesAutoresizingMaskIntoConstraints = false
+        addChild(self.caseUpdateView)
+
+        view.addSubview(self.caseUpdateView.view)
         view.addSubview(countryPicker)
         view.addSubview(spreadOfVirus.view)
         view.addSubview(topImage.view)
@@ -47,7 +56,7 @@ class ViewController: UIViewController {
         }
 
         super.viewDidLoad()
-        self.caseUpdateView.dataManager = self.dataManager
+//        self.caseUpdateView.dataManager = self.dataManager
         self.countryPicker.translatesAutoresizingMaskIntoConstraints = false
         addConstraint()
 
@@ -66,22 +75,23 @@ class ViewController: UIViewController {
             self.countryPicker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 20),
             self.countryPicker.heightAnchor.constraint(equalToConstant: 50),
 
-            self.caseUpdateView.topAnchor.constraint(equalTo: self.countryPicker.bottomAnchor, constant: 20),
-            self.caseUpdateView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            self.caseUpdateView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            self.caseUpdateView.heightAnchor.constraint(equalToConstant: 272),
+            self.caseUpdateView.view.topAnchor.constraint(equalTo: self.countryPicker.bottomAnchor, constant: 20),
+            self.caseUpdateView.view.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            self.caseUpdateView.view.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            self.caseUpdateView.view.heightAnchor.constraint(equalToConstant: 272),
 
             spreadOfVirus.view.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             spreadOfVirus.view.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             spreadOfVirus.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
-            spreadOfVirus.view.topAnchor.constraint(equalTo: caseUpdateView.bottomAnchor)
+            spreadOfVirus.view.topAnchor.constraint(equalTo: caseUpdateView.view.bottomAnchor)
         ])
     }
 
     @objc func updateCountry(notification: NSNotification)
     {
         let country = self.countryPicker.selectCountry
-        self.caseUpdateView.dataManager.getData(fromCountry: country, at: Date())
+        dataManager.getData(fromCountry: country, at: Date())
+//        self.caseUpdateView.dataManager.getData(fromCountry: country, at: Date())
         async {
             do
             {
