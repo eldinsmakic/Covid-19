@@ -16,15 +16,18 @@ class ViewController: UIViewController {
     let dataManager: OwidDataManager
     let caseUpdateView: UIViewController
     let countryPicker = SelectCountryPickerView()
-    let spreadOfVirus = SpreadOfVirusView()
+    let spreadOfVirus: UIViewController
     let topImage = TopCaseUpdate()
     var camera: GMSCameraPosition!
     var mapView: GMSMapView!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
+        
         self.dataManager = OwidDataManager()
         self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(owidDataManager: self.dataManager))
+        self.spreadOfVirus = UIHostingController(rootView: SpreadOfVirusSwiftUI())
+
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountry(notification:)), name: countryIsSelected, object: nil)
 
@@ -33,12 +36,13 @@ class ViewController: UIViewController {
     required init?(coder: NSCoder) {
         self.dataManager = OwidDataManager()
         self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(owidDataManager: self.dataManager))
+        self.spreadOfVirus = UIHostingController(rootView: SpreadOfVirusSwiftUI())
+
         super.init(coder: coder)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountry(notification:)), name: countryIsSelected, object: nil)
     }
 
     override func viewDidLoad() {
-        self.caseUpdateView.view.translatesAutoresizingMaskIntoConstraints = false
         addChild(self.caseUpdateView)
 
         view.addSubview(self.caseUpdateView.view)
@@ -57,6 +61,8 @@ class ViewController: UIViewController {
 
         super.viewDidLoad()
         self.countryPicker.translatesAutoresizingMaskIntoConstraints = false
+        self.caseUpdateView.view.translatesAutoresizingMaskIntoConstraints = false
+        self.spreadOfVirus.view.translatesAutoresizingMaskIntoConstraints = false
         addConstraint()
 
     }
@@ -94,10 +100,11 @@ class ViewController: UIViewController {
             do
             {
                 let cordonate = try await(self.countryPicker.selectCountryService.getCordonateFromACountry(country: country))
-                self.camera = GMSCameraPosition.camera(withLatitude: cordonate.lat, longitude: cordonate.lng, zoom: 6.0)
-                DispatchQueue.main.async {
-                    self.spreadOfVirus.map.animate(toLocation: CLLocationCoordinate2D(latitude: cordonate.lat, longitude: cordonate.lng))
-                }
+
+//                self.camera = GMSCameraPosition.camera(withLatitude: cordonate.lat, longitude: cordonate.lng, zoom: 6.0)
+//                DispatchQueue.main.async {
+//                    self.spreadOfVirus.map.animate(toLocation: CLLocationCoordinate2D(latitude: cordonate.lat, longitude: cordonate.lng))
+//                }
             }
             catch let error as NSError
             {
