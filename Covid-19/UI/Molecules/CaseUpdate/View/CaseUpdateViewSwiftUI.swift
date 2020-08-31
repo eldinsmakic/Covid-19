@@ -15,10 +15,9 @@ struct CaseUpdateViewSwiftUI: View {
         VStack {
             HStack {
                 Text("Case update")
-                    .font(.title)
+                    .font(.system(size: 19, weight: .bold))
                 Spacer()
             }
-
             HStack {
                 Text("Newest update \(owidDataManager.dataCovid?.formatedDate ?? " Fetching..")")
                     .foregroundColor(.gray)
@@ -55,7 +54,6 @@ struct CaseUpdateViewSwiftUI: View {
                 )
 
             }.frame(width: nil, height: 100)
-
         }
     }
 }

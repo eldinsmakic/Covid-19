@@ -74,7 +74,7 @@ class ViewController: UIViewController {
             self.countryPicker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 20),
             self.countryPicker.heightAnchor.constraint(equalToConstant: 50),
 
-            self.caseUpdateView.view.topAnchor.constraint(equalTo: self.countryPicker.bottomAnchor, constant: 20),
+            self.caseUpdateView.view.topAnchor.constraint(equalTo: self.countryPicker.bottomAnchor, constant: -50),
             self.caseUpdateView.view.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             self.caseUpdateView.view.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             self.caseUpdateView.view.heightAnchor.constraint(equalToConstant: 272),
