@@ -22,7 +22,11 @@ struct CaseUpdateViewSwiftUI: View {
             HStack {
                 Text("Newest update \(owidDataManager.dataCovid?.formatedDate ?? " Fetching..")")
                     .foregroundColor(.gray)
+                    .animation(.linear(duration: 2))
+                    .transition(.opacity)
+
                 Spacer()
+
                 Text("See details")
                     .foregroundColor(.blue)
             }.padding(.bottom, 10)
@@ -103,18 +107,9 @@ struct CircleCaseUpdateView: View {
     }
 }
 
-class TestDataCovid: ObservableObject {
-    @Published var dataCovid: DataCovid?
-
-    init()
-    {
-        self.dataCovid = DataCovid(date: Date(), country: "France", caseUpdate: CaseUpdate(infected: 20, recovered: 25, death: 30))
-    }
-}
-
-//struct CaseUpdate_Previews: PreviewProvider {
-//    let testData = TestDataCovid()
+//struct CaseUpdateViewSwiftUI_Previews: PreviewProvider {
+//    let testData = OwidDataManager()
 //    static var previews: some View {
-//        CaseUpdateViewSwiftUI(dataCovid: tes)
+//        CaseUpdateViewSwiftUI(owidDataManager: testData)
 //    }
 //}

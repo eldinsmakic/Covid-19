@@ -90,7 +90,6 @@ class ViewController: UIViewController {
     {
         let country = self.countryPicker.selectCountry
         dataManager.getData(fromCountry: country, at: Date())
-//        self.caseUpdateView.dataManager.getData(fromCountry: country, at: Date())
         async {
             do
             {
