@@ -64,6 +64,7 @@ class ViewController: UIViewController {
         self.countryPicker.translatesAutoresizingMaskIntoConstraints = false
         self.caseUpdateView.view.translatesAutoresizingMaskIntoConstraints = false
         self.spreadOfVirus.view.translatesAutoresizingMaskIntoConstraints = false
+        self.topImage.view.translatesAutoresizingMaskIntoConstraints = false
         addConstraint()
 
     }
