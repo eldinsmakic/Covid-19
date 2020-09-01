@@ -14,8 +14,7 @@ struct CaseUpdateViewSwiftUI: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Case update")
-                    .font(.system(size: 19, weight: .bold))
+                DesignSystem.Title(title: "Case update")
                 Spacer()
             }
             HStack {

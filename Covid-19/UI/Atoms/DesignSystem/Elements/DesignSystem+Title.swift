@@ -5,21 +5,16 @@
 //  Created by eldin smakic on 23/07/2020.
 //  Copyright © 2020 eldin smakic. All rights reserved.
 //
-import UIKit
+
+import SwiftUI
 
 extension DesignSystem {
 
-    public class title: UILabel {
-
-        public init(name: String) {
-            super.init(frame: CGRect())
-            text = name
-            font = .systemFont(ofSize: 20, weight: .bold)
-            translatesAutoresizingMaskIntoConstraints = false
-        }
-
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+    public struct Title: View {
+        let title: String
+        var body: some View {
+            return Text(title)
+                .font(.system(size: 19, weight: .bold))
         }
     }
 }

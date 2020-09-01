@@ -11,7 +11,6 @@
 		56E7FC3F7F21DC3B33CC6EB6 /* Pods_Covid_19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B401530C830764916082CD4 /* Pods_Covid_19Tests.framework */; };
 		9913CBFB24E32B1A00510114 /* DataSetResponseDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913CBFA24E32B1A00510114 /* DataSetResponseDTOTests.swift */; };
 		9913CBFF24E3334000510114 /* OwidDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913CBFE24E3334000510114 /* OwidDataManager.swift */; };
-		992194D0249E862300E22D4B /* TopCaseUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992194CF249E862300E22D4B /* TopCaseUpdate.swift */; };
 		9923621424791A8E009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
 		9923621524791AB8009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
 		9923621624791BD0009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
@@ -37,7 +36,6 @@
 		9997A4412478156900FB50EF /* FakeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A4402478156900FB50EF /* FakeLocalDataManager.swift */; };
 		9997A44424781DFF00FB50EF /* FakeLocalDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */; };
 		999D89552496313800593251 /* SelectCountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D89542496313800593251 /* SelectCountryPickerView.swift */; };
-		999D8960249E140600593251 /* TopImageCaseUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D895F249E140600593251 /* TopImageCaseUpdate.swift */; };
 		99B9891C24FC242800406760 /* localData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B9891B24FC242800406760 /* localData.json */; };
 		99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EA24FD7EAA005268CF /* NumberView.swift */; };
 		99BE59ED24FD7EE0005268CF /* CircleCaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */; };
@@ -74,7 +72,6 @@
 		8E8EBEA3C35E847F340F95B7 /* Pods-Covid-19-Covid-19UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19-Covid-19UITests.debug.xcconfig"; path = "Target Support Files/Pods-Covid-19-Covid-19UITests/Pods-Covid-19-Covid-19UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9913CBFA24E32B1A00510114 /* DataSetResponseDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSetResponseDTOTests.swift; sourceTree = "<group>"; };
 		9913CBFE24E3334000510114 /* OwidDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwidDataManager.swift; sourceTree = "<group>"; };
-		992194CF249E862300E22D4B /* TopCaseUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCaseUpdate.swift; sourceTree = "<group>"; };
 		9923A61B2469E50C009A1B6B /* Covid-19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9923A61E2469E50C009A1B6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9923A6222469E50C009A1B6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 		9997A4422478165800FB50EF /* FakeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeData.json; sourceTree = "<group>"; };
 		9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalDataManagerTest.swift; sourceTree = "<group>"; };
 		999D89542496313800593251 /* SelectCountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryPickerView.swift; sourceTree = "<group>"; };
-		999D895F249E140600593251 /* TopImageCaseUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopImageCaseUpdate.swift; sourceTree = "<group>"; };
 		99B9891B24FC242800406760 /* localData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localData.json; sourceTree = "<group>"; };
 		99BE59EA24FD7EAA005268CF /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCaseUpdateView.swift; sourceTree = "<group>"; };
@@ -363,8 +359,6 @@
 		99D0EC8424E80BBF00E246A9 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				999D895F249E140600593251 /* TopImageCaseUpdate.swift */,
-				992194CF249E862300E22D4B /* TopCaseUpdate.swift */,
 				99BE59F024FEA4F6005268CF /* TopImageBannerSwiftUI.swift */,
 			);
 			path = Banner;
@@ -698,7 +692,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				99767A6A24E315D00073D535 /* CovidResponseDTO.swift in Sources */,
-				992194D0249E862300E22D4B /* TopCaseUpdate.swift in Sources */,
 				9923A6232469E50C009A1B6B /* ViewController.swift in Sources */,
 				99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */,
 				9944F5D524770D72000CD576 /* CaseUpdateModel.swift in Sources */,
@@ -711,7 +704,6 @@
 				9997A4412478156900FB50EF /* FakeLocalDataManager.swift in Sources */,
 				9931EA1924CA223D0096646D /* DesignSystem+Title.swift in Sources */,
 				9913CBFF24E3334000510114 /* OwidDataManager.swift in Sources */,
-				999D8960249E140600593251 /* TopImageCaseUpdate.swift in Sources */,
 				9923A6292469E50C009A1B6B /* Covid_19.xcdatamodeld in Sources */,
 				99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */,
 				99BE59F124FEA4F6005268CF /* TopImageBannerSwiftUI.swift in Sources */,
