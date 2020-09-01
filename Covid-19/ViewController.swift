@@ -17,16 +17,16 @@ class ViewController: UIViewController {
     let caseUpdateView: UIViewController
     let countryPicker = SelectCountryPickerView()
     let spreadOfVirus: UIViewController
-    let topImage = TopCaseUpdate()
+    let topImage: UIViewController
     var camera: GMSCameraPosition!
     var mapView: GMSMapView!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
-        
         self.dataManager = OwidDataManager()
         self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(owidDataManager: self.dataManager))
         self.spreadOfVirus = UIHostingController(rootView: SpreadOfVirusSwiftUI())
+        self.topImage = UIHostingController(rootView: TopImageBanner())
 
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountry(notification:)), name: countryIsSelected, object: nil)
@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         self.dataManager = OwidDataManager()
         self.caseUpdateView = UIHostingController(rootView: CaseUpdateViewSwiftUI(owidDataManager: self.dataManager))
         self.spreadOfVirus = UIHostingController(rootView: SpreadOfVirusSwiftUI())
+        self.topImage = UIHostingController(rootView: TopImageBanner())
 
         super.init(coder: coder)
         NotificationCenter.default.addObserver(self, selector: #selector(updateCountry(notification:)), name: countryIsSelected, object: nil)

@@ -42,6 +42,7 @@
 		99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EA24FD7EAA005268CF /* NumberView.swift */; };
 		99BE59ED24FD7EE0005268CF /* CircleCaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */; };
 		99BE59EF24FD8863005268CF /* SpreadOfVirusSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EE24FD8863005268CF /* SpreadOfVirusSwiftUI.swift */; };
+		99BE59F124FEA4F6005268CF /* TopImageBannerSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59F024FEA4F6005268CF /* TopImageBannerSwiftUI.swift */; };
 		99C448F6247BD61800878DD4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 99C448F5247BD61800878DD4 /* .swiftlint.yml */; };
 		99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448F9247C3F0000878DD4 /* SelectCountryService.swift */; };
 		99C448FC247C599900878DD4 /* SelectCountryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */; };
@@ -108,6 +109,7 @@
 		99BE59EA24FD7EAA005268CF /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCaseUpdateView.swift; sourceTree = "<group>"; };
 		99BE59EE24FD8863005268CF /* SpreadOfVirusSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadOfVirusSwiftUI.swift; sourceTree = "<group>"; };
+		99BE59F024FEA4F6005268CF /* TopImageBannerSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopImageBannerSwiftUI.swift; sourceTree = "<group>"; };
 		99C448F5247BD61800878DD4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		99C448F9247C3F0000878DD4 /* SelectCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryService.swift; sourceTree = "<group>"; };
 		99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryServiceTest.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			children = (
 				999D895F249E140600593251 /* TopImageCaseUpdate.swift */,
 				992194CF249E862300E22D4B /* TopCaseUpdate.swift */,
+				99BE59F024FEA4F6005268CF /* TopImageBannerSwiftUI.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				999D8960249E140600593251 /* TopImageCaseUpdate.swift in Sources */,
 				9923A6292469E50C009A1B6B /* Covid_19.xcdatamodeld in Sources */,
 				99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */,
+				99BE59F124FEA4F6005268CF /* TopImageBannerSwiftUI.swift in Sources */,
 				9944F5DF24771114000CD576 /* TodaysDateService.swift in Sources */,
 				999D89552496313800593251 /* SelectCountryPickerView.swift in Sources */,
 				9984AEFE24FBEAED00CC0340 /* CaseUpdateViewSwiftUI.swift in Sources */,
@@ -806,7 +810,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -860,7 +864,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
