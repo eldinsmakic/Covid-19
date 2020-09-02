@@ -8,8 +8,7 @@
 
 import SwiftUI
 
-@available(iOS 14.0, *)
-struct TopImageBanner: View {
+struct TopImageBannerView: View {
     let colorTop = Color(UIColor(red: 51.0 / 255.0, green: 131.0 / 255.0, blue: 205.0 / 255.0, alpha: 1.0).cgColor)
     let colorBottom = Color(UIColor(red: 16.0 / 255.0, green: 33.0 / 255.0, blue: 159.0 / 255.0, alpha: 1.0).cgColor)
     var body: some View {
@@ -71,7 +70,7 @@ struct CustomImageShape: Shape {
         maskPath.addLine(to: CGPoint(x: 0, y: 0))
         maskPath.close()
         maskPath.addClip()
-        
+
         return Path(maskPath.cgPath)
     }
 }
@@ -79,10 +78,9 @@ struct CustomImageShape: Shape {
 struct CaseUpdate_Previews: PreviewProvider {
     static var previews: some View {
         if #available(iOS 14.0, *) {
-            TopImageBanner()
+            TopImageBannerView()
         } else {
             Text("Not available")
         }
     }
 }
-

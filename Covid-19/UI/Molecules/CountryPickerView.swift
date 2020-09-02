@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CountryPickerSwiftUI: View {
+struct CountryPickerView: View {
 
     @ObservedObject var container: ContainerCovid
     var body: some View {
@@ -26,9 +26,4 @@ struct CountryPickerSwiftUI: View {
 class CountryPicker: ObservableObject {
     @Published var countrys: [String] = []
     @Published var selectedCountry: Int = 0
-}
-
-class Container: ObservableObject {
-    var dataManager = OwidDataManager()
-    var countryPicker = CountryPicker()
 }

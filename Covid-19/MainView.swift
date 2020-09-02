@@ -13,14 +13,14 @@ struct MainView: View {
     @State var container = ContainerCovid()
 
     var body: some View {
-        TopImageBanner()
+        TopImageBannerView()
 
         if container.owidDataManager.dataIsLoaded {
-            CountryPickerSwiftUI(container: container)
+            CountryPickerView(container: container)
         }
 
         CaseUpdateViewSwiftUI(owidDataManager: container.owidDataManager)
-        SpreadOfVirusSwiftUI()
+        SpreadOfVirusView()
     }
 }
 
