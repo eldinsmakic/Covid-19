@@ -19,7 +19,7 @@ struct MainView: View {
             CountryPickerView(container: container)
         }
 
-        CaseUpdateViewSwiftUI(owidDataManager: container.owidDataManager)
+        CaseUpdateView(owidDataManager: container.owidDataManager)
         SpreadOfVirusView()
     }
 }

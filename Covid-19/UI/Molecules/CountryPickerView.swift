@@ -1,5 +1,5 @@
 //
-//  CountryPickerSwiftUI.swift
+//  CountryPickerView.swift
 //  Covid-19
 //
 //  Created by eldin smakic on 01/09/2020.

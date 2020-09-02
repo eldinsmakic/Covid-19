@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct NumberView: View {
     let number: Int?
     let color: UIColor

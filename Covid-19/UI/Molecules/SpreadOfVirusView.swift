@@ -1,5 +1,5 @@
 //
-//  SpreadOfVirusSwiftUI.swift
+//  SpreadOfVirusView.swift
 //  Covid-19
 //
 //  Created by eldin smakic on 31/08/2020.
