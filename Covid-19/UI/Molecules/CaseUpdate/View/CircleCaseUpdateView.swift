@@ -30,4 +30,3 @@ struct CircleCaseUpdateView: View {
              .frame(width: 40, height: 40, alignment: .center)
     }
 }
-

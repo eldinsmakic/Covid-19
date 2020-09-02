@@ -14,6 +14,7 @@ import SwiftUI
 public class OwidDataManager: ObservableObject {
 
     var datas: [String: CovidResponseDTO]
+    @Published var dataIsLoaded = false
     @Published var dataCovid: DataCovid?
     let urlString = "https://covid.ourworldindata.org/data/owid-covid-data.json"
 
@@ -56,6 +57,7 @@ public class OwidDataManager: ObservableObject {
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             datas = try jsonDecoder.decode([String: CovidResponseDTO].self, from: data)
+            dataIsLoaded = true
         } catch let error
         {
             print("HHH \(error)")

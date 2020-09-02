@@ -25,11 +25,7 @@ struct SpreadOfVirusSwiftUI: View {
                 Text("See details")
                     .foregroundColor(.blue)
             }.padding(.bottom, 10)
-            if #available(iOS 14.0, *) {
-                Map(coordinateRegion: $region)
-            } else {
-                Text("need ios14 for map")
-            }
+            Map(coordinateRegion: $region)
         }
     }
 }

@@ -33,8 +33,8 @@ struct TopImageBanner: View {
                                 .lineLimit(2)
                                 .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.white)
-                                .frame(width: geometry.size.width/2)
-                                
+                                .frame(width: geometry.size.width/2 - 20)
+
                         }.frame(width: geometry.size.width)
                         Spacer()
                     }.frame(width: geo.size.width, height: geometry.size.height)
