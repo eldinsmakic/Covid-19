@@ -6,6 +6,8 @@ where the autor create the app with **Flutter** but we will just reuse its desig
 
 Check his Youtube channel, great content.
 
+**Notice** Changing framework from UIKit to SwiftUI
+
 ## Purpose of this app
 
 Trying knew things and improving my knowledge of swift and building apps.
@@ -14,7 +16,7 @@ learnings/improving :
 - Designing app with Adobe XD
 - Design business logic with UML
 - Create the business logic 
-- Learn how to inject business logic into the UI
+- Learn how to inject business logic into the UI 
 - improve in using Interface Builder and auto-layout
 - Improve in data request
 - improve in buildings app
@@ -24,5 +26,12 @@ learnings/improving :
  ![Alt text](readmeAssets/images/youtubeScreenShot.png?raw=true "iPhone")
  **Notice** : screenshot of the youtube video
 The app will need to look like this
+
+
+## App Advancement
+
+Right now the app is looking like this
+![Alt text](readmeAssets/images/appAdvancement.png?raw=true "iPhone")
+
 
 
