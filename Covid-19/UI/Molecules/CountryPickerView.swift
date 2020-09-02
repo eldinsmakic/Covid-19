@@ -16,7 +16,8 @@ struct CountryPickerView: View {
             ForEach(0..<container.countryPicker.countrys.count) { index in
                 Text(container.countryPicker.countrys[index]).tag(index)
                 }
-            }.pickerStyle(InlinePickerStyle())
+            }.pickerStyle(WheelPickerStyle())
+        .frame(width: nil, height: 40, alignment: .center)
         .onReceive(container.countryPicker.$selectedCountry) { (index) in
             container.owidDataManager.getData(fromCountry: container.countryPicker.countrys[index], at: Date())
         }

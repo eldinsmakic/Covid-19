@@ -29,7 +29,7 @@ class ContainerCovid: ObservableObject {
     var owidDataManager = OwidDataManager()
 
     init() {
-        owidDataManager.$dataIsLoaded.sink { [self] bool in
+        owidDataManager.$dataIsLoaded.sink { [self] _ in
 
             let sorted = self.owidDataManager.dictIsoToCountry.sorted {
                 $0 < $1

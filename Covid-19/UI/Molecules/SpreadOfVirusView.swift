@@ -22,8 +22,7 @@ struct SpreadOfVirusView: View {
             HStack {
                 Spacer()
 
-                Text("See details")
-                    .foregroundColor(.blue)
+                DesignSystem.Button()
             }.padding(.bottom, 10)
             Map(coordinateRegion: $region)
         }

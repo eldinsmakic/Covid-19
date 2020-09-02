@@ -1,5 +1,5 @@
 //
-//  CaseUpdateViewSwiftUI.swift
+//  CaseUpdateView.swift
 //  Covid-19
 //
 //  Created by eldin smakic on 30/08/2020.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CaseUpdateViewSwiftUI: View {
+struct CaseUpdateView: View {
     @ObservedObject var owidDataManager: OwidDataManager
 
     var body: some View {
@@ -25,8 +25,7 @@ struct CaseUpdateViewSwiftUI: View {
 
                 Spacer()
 
-                Text("See details")
-                    .foregroundColor(.blue)
+                DesignSystem.Button()
             }.padding(.bottom, 10)
 
             HStack {
