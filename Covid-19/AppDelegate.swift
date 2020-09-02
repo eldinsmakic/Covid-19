@@ -6,7 +6,7 @@
 //  Copyright © 2020 eldin smakic. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 import CoreData
 import GoogleMaps
 import GooglePlaces
@@ -18,15 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyCMHnSYPacdShtvfn7h-6VwzuB7k4gCPuA")
-        GMSPlacesClient.provideAPIKey("AIzaSyCMHnSYPacdShtvfn7h-6VwzuB7k4gCPuA")
         
-        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        let contentView = MainView().environment(\.managedObjectContext, context)
         
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
-        window?.rootViewController?.present(ViewController(), animated: false, completion: nil)
+        window?.rootViewController = UIHostingController(rootView: contentView)
+//        window?.rootViewController?.present(ViewController(), animated: false, completion: nil)
         window?.makeKeyAndVisible()
 
         return true

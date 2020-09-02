@@ -6,23 +6,16 @@
 //  Copyright © 2020 eldin smakic. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
 extension DesignSystem {
 
-    public class Button: UIButton
+    public struct Button: View
     {
-        public init()
+        var body: some View
         {
-            super.init(frame: CGRect())
-            setTitle("See details", for: .normal)
-            setTitleColor(.systemBlue, for: .normal)
-            titleLabel!.font = .systemFont(ofSize: 12, weight: .bold)
-            translatesAutoresizingMaskIntoConstraints = false
-        }
-
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+            Text("See details")
+                .foregroundColor(.blue)
         }
     }
 }

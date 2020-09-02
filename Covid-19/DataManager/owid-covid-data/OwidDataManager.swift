@@ -9,11 +9,13 @@
 import Foundation
 import PromiseKit
 import Alamofire
+import SwiftUI
 
-public class OwidDataManager {
+public class OwidDataManager: ObservableObject {
 
     var datas: [String: CovidResponseDTO]
-    var dataCovid: DataCovid?
+    @Published var dataIsLoaded = false
+    @Published var dataCovid: DataCovid?
     let urlString = "https://covid.ourworldindata.org/data/owid-covid-data.json"
 
     init() {
@@ -55,6 +57,7 @@ public class OwidDataManager {
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
             datas = try jsonDecoder.decode([String: CovidResponseDTO].self, from: data)
+            dataIsLoaded = true
         } catch let error
         {
             print("HHH \(error)")
@@ -91,6 +94,7 @@ public class OwidDataManager {
                 date: dataDate,
             country: country,
             caseUpdate: CaseUpdate(infected: Int(data.totalCases!), recovered: 0, death: Int(data.totalDeaths! )))
+            print("HHH \(dataCovid)")
         }
 
         self.postDataIsReady()
