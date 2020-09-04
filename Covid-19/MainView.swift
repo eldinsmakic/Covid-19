@@ -8,36 +8,49 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 struct MainView: View {
-    @State var container = ContainerCovid()
+    @StateObject var container = ContainerCovid()
 
     var body: some View {
-        TopImageBannerView()
+        TopImageBannerView().onAppear{
+            container.fetchData()
+        }
 
-        if container.owidDataManager.dataIsLoaded {
+        if container.dataIsLoaded {
             CountryPickerView(container: container)
         }
 
         CaseUpdateView(owidDataManager: container.owidDataManager)
+            .padding(.bottom, 20)
         SpreadOfVirusView()
     }
 }
 
 class ContainerCovid: ObservableObject {
-    var countryPicker = CountryPicker()
-    var owidDataManager = OwidDataManager()
+    @ObservedObject var countryPicker = CountryPicker()
+    @ObservedObject var owidDataManager = OwidDataManager()
+    @Published var dataIsLoaded = false
+    var cancelable: AnyCancellable?
 
-    init() {
-        owidDataManager.$dataIsLoaded.sink { [self] _ in
+    func fetchData()
+    {
+        cancelable = owidDataManager.loadData()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { _ in
+            }, receiveValue: { (datas) in
+                    self.owidDataManager.datas = datas
 
-            let sorted = self.owidDataManager.dictIsoToCountry.sorted {
-                $0 < $1
-            }
+                    let sorted = self.owidDataManager.dictIsoToCountry.sorted {
+                        $0 < $1
+                    }
 
-            for (key, _) in sorted {
-                countryPicker.countrys.append(key)
-            }
-        }
+                    for (key, _) in sorted {
+                        self.countryPicker.countrys.append(key)
+                    }
+                    self.owidDataManager.dataIsLoaded = true
+                    self.dataIsLoaded = true
+            })
     }
 }
