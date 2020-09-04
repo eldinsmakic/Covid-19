@@ -29,8 +29,8 @@ struct MainView: View {
 }
 
 class ContainerCovid: ObservableObject {
-    @ObservedObject var countryPicker = CountryPicker()
-    @ObservedObject var owidDataManager = OwidDataManager()
+    var countryPicker = CountryPicker()
+    var owidDataManager = OwidDataManager()
     @Published var dataIsLoaded = false
     var cancelable: AnyCancellable?
 
