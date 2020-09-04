@@ -9,6 +9,14 @@
 import SwiftUI
 
 struct TopImageBannerView: View {
+    @State var isDataLoaded: Bool = false
+
+    var repeatingAnimation: Animation {
+          Animation
+              .linear(duration: 5)
+              .repeatForever()
+      }
+
     let colorTop = Color(UIColor(red: 51.0 / 255.0, green: 131.0 / 255.0, blue: 205.0 / 255.0, alpha: 1.0).cgColor)
     let colorBottom = Color(UIColor(red: 16.0 / 255.0, green: 33.0 / 255.0, blue: 159.0 / 255.0, alpha: 1.0).cgColor)
     var body: some View {
@@ -22,7 +30,12 @@ struct TopImageBannerView: View {
                     .offset(x: -40, y: 80)
                     .clipShape(CustomImageShape())
                 Image("virus")
-                    .offset(x: 10, y: 0)
+                    .onAppear {
+                        self.isDataLoaded = true
+                    }
+                    .offset(x: !isDataLoaded ? -geo.size.width : geo.size.width)
+                    .animation(Animation.linear(duration: 3).repeatForever(autoreverses: false))
+
                 GeometryReader { geometry in
                     VStack {
                         Spacer()
@@ -75,12 +88,12 @@ struct CustomImageShape: Shape {
     }
 }
 
-struct CaseUpdate_Previews: PreviewProvider {
-    static var previews: some View {
-        if #available(iOS 14.0, *) {
-            TopImageBannerView()
-        } else {
-            Text("Not available")
-        }
-    }
-}
+//struct CaseUpdate_Previews: PreviewProvider {
+//    static var previews: some View {
+//        if #available(iOS 14.0, *) {
+//            TopImageBannerView()
+//        } else {
+//            Text("Not available")
+//        }
+//    }
+//}

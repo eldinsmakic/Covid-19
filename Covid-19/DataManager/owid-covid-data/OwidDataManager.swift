@@ -10,30 +10,42 @@ import Foundation
 import PromiseKit
 import Alamofire
 import SwiftUI
-import Combine
 
 public class OwidDataManager: ObservableObject {
 
     var datas: [String: CovidResponseDTO]
     @Published var dataIsLoaded = false
     @Published var dataCovid: DataCovid?
-
     let urlString = "https://covid.ourworldindata.org/data/owid-covid-data.json"
 
     init() {
         self.datas = [:]
         self.dataCovid = nil
 
+        self.loadLocalData()
     }
 
-    func loadData() -> AnyPublisher<[String: CovidResponseDTO], Error> {
+    func loadData() {
         let jsonDecoder  = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 
-        return URLSession.shared.dataTaskPublisher(for: URL(string: urlString)!)
-            .map(\.data)
-            .decode(type: [String: CovidResponseDTO].self, decoder: jsonDecoder)
-            .eraseToAnyPublisher()
+        AF.request(urlString, method: .get)
+        .validate()
+        .responseData { response in
+               switch response.result {
+               case .success:
+                   do {
+                    self.datas = try jsonDecoder.decode([String: CovidResponseDTO].self, from: response.value!)
+                    print(self.datas[self.datas.keys.startIndex])
+                    self.postDataIsReady()
+                   } catch let error {
+                      print("HHH \(error)")
+                   }
+               case .failure:
+                   self.datas = [:]
+                   print("HHH Not working")
+              }
+        }
     }
 
     func loadLocalData() {
@@ -82,6 +94,7 @@ public class OwidDataManager: ObservableObject {
                 date: dataDate,
             country: country,
             caseUpdate: CaseUpdate(infected: Int(data.totalCases!), recovered: 0, death: Int(data.totalDeaths! )))
+            print("HHH \(dataCovid)")
         }
 
         self.postDataIsReady()
