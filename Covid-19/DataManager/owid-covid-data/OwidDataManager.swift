@@ -10,42 +10,30 @@ import Foundation
 import PromiseKit
 import Alamofire
 import SwiftUI
+import Combine
 
 public class OwidDataManager: ObservableObject {
 
     var datas: [String: CovidResponseDTO]
     @Published var dataIsLoaded = false
     @Published var dataCovid: DataCovid?
+
     let urlString = "https://covid.ourworldindata.org/data/owid-covid-data.json"
 
     init() {
         self.datas = [:]
         self.dataCovid = nil
 
-        self.loadLocalData()
     }
 
-    func loadData() {
+    func loadData() -> AnyPublisher<[String: CovidResponseDTO], Error> {
         let jsonDecoder  = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 
-        AF.request(urlString, method: .get)
-        .validate()
-        .responseData { response in
-               switch response.result {
-               case .success:
-                   do {
-                    self.datas = try jsonDecoder.decode([String: CovidResponseDTO].self, from: response.value!)
-                    print(self.datas[self.datas.keys.startIndex])
-                    self.postDataIsReady()
-                   } catch let error {
-                      print("HHH \(error)")
-                   }
-               case .failure:
-                   self.datas = [:]
-                   print("HHH Not working")
-              }
-        }
+        return URLSession.shared.dataTaskPublisher(for: URL(string: urlString)!)
+            .map(\.data)
+            .decode(type: [String: CovidResponseDTO].self, decoder: jsonDecoder)
+            .eraseToAnyPublisher()
     }
 
     func loadLocalData() {
@@ -62,12 +50,6 @@ public class OwidDataManager: ObservableObject {
         {
             print("HHH \(error)")
         }
-    }
-
-    func postDataIsReady()
-    {
-       let name = Notification.Name(rawValue: dataReady)
-       NotificationCenter.default.post(name: name, object: nil)
     }
 
     func getData(fromCountry country: String, at date: Date) {
@@ -94,10 +76,7 @@ public class OwidDataManager: ObservableObject {
                 date: dataDate,
             country: country,
             caseUpdate: CaseUpdate(infected: Int(data.totalCases!), recovered: 0, death: Int(data.totalDeaths! )))
-            print("HHH \(dataCovid)")
         }
-
-        self.postDataIsReady()
     }
 
     private func converterToISO(fromCountry country: String) -> String? {
