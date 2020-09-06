@@ -7,18 +7,17 @@
 //
 
 import Foundation
-import PromiseKit
-import Alamofire
 import SwiftUI
 import Combine
 
 public class OwidDataManager: ObservableObject {
 
+    let urlString = "https://covid.ourworldindata.org/data/owid-covid-data.json"
+
     var datas: [String: CovidResponseDTO]
+
     @Published var dataIsLoaded = false
     @Published var dataCovid: DataCovid?
-
-    let urlString = "https://covid.ourworldindata.org/data/owid-covid-data.json"
 
     init() {
         self.datas = [:]
@@ -102,6 +101,7 @@ public class OwidDataManager: ObservableObject {
                 dict[location] = data.key
             }
         }
+
         return dict
     }()
 
@@ -115,7 +115,7 @@ public class OwidDataManager: ObservableObject {
     public lazy var dateFormater: DateFormatter = {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd"
-        
+
         return dateFormater
     }()
 }
