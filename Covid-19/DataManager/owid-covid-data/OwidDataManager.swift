@@ -27,12 +27,9 @@ public class OwidDataManager: ObservableObject {
     }
 
     func loadData() -> AnyPublisher<[String: CovidResponseDTO], Error> {
-        let jsonDecoder  = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-
         return URLSession.shared.dataTaskPublisher(for: URL(string: urlString)!)
             .map(\.data)
-            .decode(type: [String: CovidResponseDTO].self, decoder: jsonDecoder)
+            .decode(type: [String: CovidResponseDTO].self, decoder: self.jsonDecoder)
             .eraseToAnyPublisher()
     }
 
@@ -42,9 +39,7 @@ public class OwidDataManager: ObservableObject {
         do {
             let data = try Data(contentsOf: url)
 
-            let jsonDecoder = JSONDecoder()
-            jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-            datas = try jsonDecoder.decode([String: CovidResponseDTO].self, from: data)
+            datas = try self.jsonDecoder.decode([String: CovidResponseDTO].self, from: data)
             dataIsLoaded = true
         } catch let error
         {
@@ -67,10 +62,8 @@ public class OwidDataManager: ObservableObject {
                 print("HHH ERROR no new data for country \(country)")
                 return
             }
-            let dateFormater = DateFormatter()
-            dateFormater.dateFormat = "yyyy-MM-dd"
 
-            let dataDate = dateFormater.date(from: data.date!)!
+            let dataDate = self.dateFormater.date(from: data.date!)!
 
             self.dataCovid = DataCovid(
                 date: dataDate,
@@ -110,5 +103,19 @@ public class OwidDataManager: ObservableObject {
             }
         }
         return dict
+    }()
+
+    public lazy var jsonDecoder: JSONDecoder = {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        return jsonDecoder
+    }()
+
+    public lazy var dateFormater: DateFormatter = {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd"
+        
+        return dateFormater
     }()
 }
