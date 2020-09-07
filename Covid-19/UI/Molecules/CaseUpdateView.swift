@@ -26,11 +26,13 @@ struct CaseUpdateView: View {
                 Spacer()
 
                 DesignSystem.Button()
+
             }.padding(.bottom, 10)
 
             HStack {
                 NumberView(
-                    number: owidDataManager.dataCovid?.caseUpdate.infected,
+                    totalNumber: owidDataManager.dataCovid?.caseUpdate.totalInfecteds,
+                    newNumber: owidDataManager.dataCovid?.caseUpdate.newInfecteds,
                     color: .orange,
                     subtitle: "infected"
                 )
@@ -38,7 +40,8 @@ struct CaseUpdateView: View {
                 Spacer()
 
                 NumberView(
-                    number: owidDataManager.dataCovid?.caseUpdate.death,
+                    totalNumber: owidDataManager.dataCovid?.caseUpdate.totalDeaths,
+                    newNumber: owidDataManager.dataCovid?.caseUpdate.newDeaths,
                     color: .red,
                     subtitle: "deaths"
                 )
@@ -46,18 +49,13 @@ struct CaseUpdateView: View {
                 Spacer()
 
                 NumberView(
-                    number: owidDataManager.dataCovid?.caseUpdate.recovered,
+                    totalNumber: owidDataManager.dataCovid?.caseUpdate.totalRecovereds,
+                    newNumber: owidDataManager.dataCovid?.caseUpdate.newRecovereds,
                     color: .green,
                     subtitle: "Recovered"
                 )
-
+                
             }.frame(width: nil, height: 100)
         }
     }
 }
-//struct CaseUpdateViewSwiftUI_Previews: PreviewProvider {
-//    let testData = OwidDataManager()
-//    static var previews: some View {
-//        CaseUpdateViewSwiftUI(owidDataManager: testData)
-//    }
-//}
