@@ -13,6 +13,7 @@ import Combine
 public class OwidDataManager: ObservableObject {
 
     let urlString = "https://covid.ourworldindata.org/data/owid-covid-data.json"
+    let caseUpdateBuilder = Builder()
 
     var datas: [String: CovidResponseDTO]
 
@@ -55,7 +56,7 @@ public class OwidDataManager: ObservableObject {
             self.dataCovid = DataCovid(
                date: date,
                country: country,
-               caseUpdate: CaseUpdate(infected: Int(data.totalCases!), recovered: 0, death: Int(data.totalDeaths! )))
+                caseUpdate: caseUpdateBuilder.build(fromData: data))
         } else {
             guard let data = dataFromCountry?.data?.last else {
                 print("HHH ERROR no new data for country \(country)")
@@ -67,7 +68,7 @@ public class OwidDataManager: ObservableObject {
             self.dataCovid = DataCovid(
                 date: dataDate,
             country: country,
-            caseUpdate: CaseUpdate(infected: Int(data.totalCases!), recovered: 0, death: Int(data.totalDeaths! )))
+            caseUpdate: caseUpdateBuilder.build(fromData: data))
         }
     }
 

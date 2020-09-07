@@ -14,7 +14,7 @@ struct DataCovid: Decodable
     let date: Date
     let country: String
     let caseUpdate: CaseUpdate
-    
+
     var formatedDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d"

@@ -10,7 +10,25 @@ import Foundation
 
 struct CaseUpdate: Decodable
 {
-    let infected: Int
-    let recovered: Int
-    let death: Int
+    let newDeaths: Double
+    let newInfecteds: Double
+    let newRecovereds: Double
+    let totalDeaths: Double
+    let totalInfecteds: Double
+    let totalRecovereds: Double
+}
+
+class Builder {
+
+    static var builder = Builder()
+
+    func build(fromData data: DataResponseDTO) -> CaseUpdate {
+        return CaseUpdate(
+            newDeaths: data.newDeaths ?? 0,
+            newInfecteds: data.newCases ?? 0,
+            newRecovereds: 0,
+            totalDeaths: data.totalDeaths ?? 0,
+            totalInfecteds: data.totalCases ?? 0,
+            totalRecovereds: 0)
+    }
 }
