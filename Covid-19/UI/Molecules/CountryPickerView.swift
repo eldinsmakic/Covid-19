@@ -11,15 +11,17 @@ import SwiftUI
 struct CountryPickerView: View {
 
     @ObservedObject var container: ContainerCovid
+    @State var selectedCountry: String = "Countrys"
     var body: some View {
-            Picker("Country", selection: $container.countryPicker.selectedCountry) {
+        Picker(selectedCountry, selection: $container.countryPicker.selectedCountry) {
                 ForEach(0..<container.countryPicker.countrys.count) { index in
                     Text(container.countryPicker.countrys[index]).tag(index)
                     }
-                }.pickerStyle(WheelPickerStyle())
+                }.pickerStyle(MenuPickerStyle())
             .frame(width: nil, height: 40, alignment: .center)
             .onReceive(container.countryPicker.$selectedCountry) { (index) in
                 container.owidDataManager.getData(fromCountry: container.countryPicker.countrys[index], at: Date())
+                selectedCountry = container.countryPicker.countrys[index]
             }
     }
 }
