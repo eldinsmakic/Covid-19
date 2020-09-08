@@ -187,6 +187,14 @@
 			path = DTOs;
 			sourceTree = "<group>";
 		};
+		9923910B2507B20400C68769 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				99BE59F424FFDF43005268CF /* MainView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		9923A6122469E50C009A1B6B = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				9923A61E2469E50C009A1B6B /* AppDelegate.swift */,
-				99BE59F424FFDF43005268CF /* MainView.swift */,
 				99BE59F624FFED67005268CF /* Models */,
 				9997A43D247814CB00FB50EF /* DataManager */,
 				9944F5DA247710EE000CD576 /* Services */,
@@ -319,6 +326,7 @@
 			children = (
 				99D0EC8724E80C1500E246A9 /* Atoms */,
 				99D0EC8624E80BFA00E246A9 /* Molecules */,
+				9923910B2507B20400C68769 /* Screens */,
 			);
 			path = UI;
 			sourceTree = "<group>";
