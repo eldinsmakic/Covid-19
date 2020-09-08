@@ -214,13 +214,12 @@
 		9923A61D2469E50C009A1B6B /* Covid-19 */ = {
 			isa = PBXGroup;
 			children = (
+				9923A61E2469E50C009A1B6B /* AppDelegate.swift */,
+				99BE59F424FFDF43005268CF /* MainView.swift */,
 				99BE59F624FFED67005268CF /* Models */,
 				9997A43D247814CB00FB50EF /* DataManager */,
 				9944F5DA247710EE000CD576 /* Services */,
-				99C448F9247C3F0000878DD4 /* SelectCountryService.swift */,
 				99D0EC8524E80BDA00E246A9 /* UI */,
-				99BE59F424FFDF43005268CF /* MainView.swift */,
-				9923A61E2469E50C009A1B6B /* AppDelegate.swift */,
 				9923A62A2469E512009A1B6B /* Assets.xcassets */,
 				9923A62F2469E512009A1B6B /* Info.plist */,
 				99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */,
@@ -274,6 +273,7 @@
 		9944F5DA247710EE000CD576 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				99C448F9247C3F0000878DD4 /* SelectCountryService.swift */,
 				9944F5DB247710F7000CD576 /* Time */,
 			);
 			path = Services;

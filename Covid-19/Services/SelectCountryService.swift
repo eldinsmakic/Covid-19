@@ -42,9 +42,4 @@ class SelectCountryService
             }
         }
     }
-
-    func fireCountrySelected(country: String)
-    {
-        self.country = country
-    }
 }
