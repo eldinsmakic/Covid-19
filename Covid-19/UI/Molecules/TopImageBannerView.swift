@@ -10,6 +10,10 @@ import SwiftUI
 
 struct TopImageBannerView: View {
 
+    let imageName: String
+    let imageOffset: CGFloat
+    let text: String
+
     @State var isDataLoaded: Bool = false
 
     var repeatingAnimation: Animation {
@@ -27,9 +31,11 @@ struct TopImageBannerView: View {
                     .fill(LinearGradient(gradient: Gradient(colors: [colorTop, colorBottom]), startPoint: .bottom, endPoint: .top))
                     .clipShape(CustomRectShape())
                     .frame(width: nil, height: nil, alignment: .top)
-                Image("Drcorona")
-                    .offset(x: -40, y: 80)
+                Image(imageName)
+//                    .frame(width: nil, height: geo.size.height, alignment: .center)
+                    .offset(x: -40, y: 80 + imageOffset)
                     .clipShape(CustomImageShape())
+
                 Image("virus")
                     .onAppear {
                         self.isDataLoaded = true
@@ -42,7 +48,7 @@ struct TopImageBannerView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            Text("All you need is to stay at home")
+                            Text(text)
                                 .lineLimit(2)
                                 .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.white)
