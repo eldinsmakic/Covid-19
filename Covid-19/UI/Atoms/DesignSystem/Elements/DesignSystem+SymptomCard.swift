@@ -1,5 +1,5 @@
 //
-//  DesignSystem+SymptomsCard.swift
+//  DesignSystem+SymptomCard.swift
 //  Covid-19
 //
 //  Created by eldin smakic on 08/09/2020.
@@ -10,7 +10,7 @@ import SwiftUI
 
 extension DesignSystem {
 
-    public struct SymptomsCard: View
+    public struct SymptomCard: View
     {
         let imageName: String
 
@@ -20,6 +20,9 @@ extension DesignSystem {
                 Image(imageName)
                 Text(imageName)
             }.cornerRadius(15)
+            .padding(10)
+            .background(Color.white)
+            .cornerRadius(15)
             .shadow(radius: 10)
         }
     }
