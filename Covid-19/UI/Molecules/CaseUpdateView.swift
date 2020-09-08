@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct CaseUpdateView: View {
+
     @ObservedObject var owidDataManager: OwidDataManager
 
     var body: some View {
@@ -52,7 +53,7 @@ struct CaseUpdateView: View {
                     color: .green,
                     subtitle: "Recovered"
                 )
-                
+
             }.frame(width: nil, height: 100)
         }
     }

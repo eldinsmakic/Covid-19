@@ -12,6 +12,7 @@ struct CountryPickerView: View {
 
     @ObservedObject var container: ContainerCovid
     @State var selectedCountry: String = "Countrys"
+
     var body: some View {
         Picker(selectedCountry, selection: $container.countryPicker.selectedCountry) {
                 ForEach(0..<container.countryPicker.countrys.count) { index in
@@ -27,6 +28,7 @@ struct CountryPickerView: View {
 }
 
 class CountryPicker: ObservableObject {
+
     @Published var countrys: [String] = []
     @Published var selectedCountry: Int = 0
 }

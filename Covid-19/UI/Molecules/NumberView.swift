@@ -9,10 +9,12 @@
 import SwiftUI
 
 struct NumberView: View {
+
     let totalNumber: Double?
     let newNumber: Double?
     let color: UIColor
     let subtitle: String
+
     var body: some View {
         VStack {
             CircleCaseUpdateView(color: color)

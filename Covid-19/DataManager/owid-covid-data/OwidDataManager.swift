@@ -13,7 +13,7 @@ import Combine
 public class OwidDataManager: ObservableObject {
 
     let urlString = "https://covid.ourworldindata.org/data/owid-covid-data.json"
-    let caseUpdateBuilder = Builder()
+    let caseUpdateBuilder = CaseUpdateFactory()
 
     var datas: [String: CovidResponseDTO]
 

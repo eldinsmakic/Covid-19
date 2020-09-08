@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct CircleCaseUpdateView: View {
+
     let color: UIColor
+
     var body: some View {
     return Circle()
              .fill(Color(color.withAlphaComponent(0.2)))

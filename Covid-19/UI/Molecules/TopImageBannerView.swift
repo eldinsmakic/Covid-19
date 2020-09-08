@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct TopImageBannerView: View {
+
     @State var isDataLoaded: Bool = false
 
     var repeatingAnimation: Animation {
@@ -57,6 +58,7 @@ struct TopImageBannerView: View {
 }
 
 struct CustomRectShape: Shape {
+
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: 0))
@@ -74,6 +76,7 @@ struct CustomRectShape: Shape {
 }
 
 struct CustomImageShape: Shape {
+
     func path(in rect: CGRect) -> Path {
         let maskPath = UIBezierPath()
         maskPath.move(to: CGPoint(x: -40, y: 0))

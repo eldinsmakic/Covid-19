@@ -18,9 +18,10 @@ struct CaseUpdate: Decodable
     let totalRecovereds: Double
 }
 
-class Builder {
+class CaseUpdateFactory
+{
 
-    static var builder = Builder()
+    static var builder = CaseUpdateFactory()
 
     func build(fromData data: DataResponseDTO) -> CaseUpdate {
         return CaseUpdate(

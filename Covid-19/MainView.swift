@@ -11,6 +11,7 @@ import SwiftUI
 import Combine
 
 struct MainView: View {
+
     @StateObject var container = ContainerCovid()
 
     var body: some View {
@@ -29,10 +30,13 @@ struct MainView: View {
 }
 
 class ContainerCovid: ObservableObject {
+
     var countryPicker = CountryPicker()
     var owidDataManager = OwidDataManager()
-    @Published var dataIsLoaded = false
+
     var cancelable: AnyCancellable?
+
+    @Published var dataIsLoaded = false
 
     func fetchData()
     {
