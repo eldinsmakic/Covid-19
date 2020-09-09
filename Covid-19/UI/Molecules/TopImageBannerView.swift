@@ -24,6 +24,7 @@ struct TopImageBannerView: View {
 
     let colorTop = Color(UIColor(red: 51.0 / 255.0, green: 131.0 / 255.0, blue: 205.0 / 255.0, alpha: 1.0).cgColor)
     let colorBottom = Color(UIColor(red: 16.0 / 255.0, green: 33.0 / 255.0, blue: 159.0 / 255.0, alpha: 1.0).cgColor)
+
     var body: some View {
         GeometryReader { geo in
             ZStack{
@@ -31,8 +32,7 @@ struct TopImageBannerView: View {
                     .fill(LinearGradient(gradient: Gradient(colors: [colorTop, colorBottom]), startPoint: .bottom, endPoint: .top))
                     .clipShape(CustomRectShape())
                     .frame(width: nil, height: nil, alignment: .top)
-                Image(imageName)
-//                    .frame(width: nil, height: geo.size.height, alignment: .center)
+                Image(imageName)                 
                     .offset(x: -40, y: 80 + imageOffset)
                     .clipShape(CustomImageShape())
 
@@ -58,8 +58,9 @@ struct TopImageBannerView: View {
                         Spacer()
                     }.frame(width: geo.size.width, height: geometry.size.height)
                 }
-            }.frame(width: geo.size.width, height: 300, alignment: .bottom)
-        }
+            }
+        }.frame(width: UIScreen.main.bounds.width, height: 350, alignment: .bottom)
+        .ignoresSafeArea(.all, edges: .top)
     }
 }
 
@@ -96,13 +97,3 @@ struct CustomImageShape: Shape {
         return Path(maskPath.cgPath)
     }
 }
-
-//struct CaseUpdate_Previews: PreviewProvider {
-//    static var previews: some View {
-//        if #available(iOS 14.0, *) {
-//            TopImageBannerView()
-//        } else {
-//            Text("Not available")
-//        }
-//    }
-//}
