@@ -18,7 +18,8 @@ extension DesignSystem {
         {
             VStack {
                 Image(imageName)
-                Text(imageName)
+                Text(imageName.capitalized)
+                    .font(.system(size: 16, weight: .bold, design: .default))
             }.cornerRadius(15)
             .padding(10)
             .background(Color.white)
