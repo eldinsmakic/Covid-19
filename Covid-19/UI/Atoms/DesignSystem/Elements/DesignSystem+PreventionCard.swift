@@ -20,14 +20,21 @@ extension DesignSystem {
         {
             HStack {
                 Image(imageName)
-
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 175, height: 156, alignment: .leading)
+//                    .clipped()
                 VStack {
                     Text(title).font(.system(size: 16, weight: .bold, design: .default))
                     Spacer()
                     Text(text)
                     Spacer()
-                }.shadow(radius: 15)
+                }
             }
+            .frame(width: nil, height: 150, alignment: .leading)
+            .background(Color.white)
+            .cornerRadius(15)
+            .shadow(radius: 10)
         }
     }
 }
