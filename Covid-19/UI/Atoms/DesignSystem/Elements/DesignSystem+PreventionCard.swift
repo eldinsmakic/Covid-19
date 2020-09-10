@@ -36,7 +36,7 @@ extension DesignSystem {
                 .frame(width: nil, height: 134, alignment: .leading)
                 .background(Color.white)
                 .cornerRadius(15)
-                .shadow(radius: 10)
+                .shadow(radius: 5)
 
                 Image(imageName)
                     .resizable()
