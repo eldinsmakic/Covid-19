@@ -32,7 +32,8 @@ struct TopImageBannerView: View {
                     .fill(LinearGradient(gradient: Gradient(colors: [colorTop, colorBottom]), startPoint: .bottom, endPoint: .top))
                     .clipShape(CustomRectShape())
                     .frame(width: nil, height: nil, alignment: .top)
-                Image(imageName)                 
+
+                Image(imageName)
                     .offset(x: -40, y: 80 + imageOffset)
                     .clipShape(CustomImageShape())
 
