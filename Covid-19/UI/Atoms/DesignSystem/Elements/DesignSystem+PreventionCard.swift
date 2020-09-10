@@ -18,23 +18,33 @@ extension DesignSystem {
 
         var body: some View
         {
-            HStack {
+            ZStack(alignment: .leading) {
+
+                HStack {
+                    Spacer()
+
+                    VStack(alignment: .leading) {
+                        Text(title).font(.system(size: 16, weight: .bold, design: .default))
+                        Spacer()
+                        Text(text)
+                            .font(.system(size: 10))
+                        Spacer()
+                    }
+                    .padding()
+                    .frame(width: UIScreen.main.bounds.size.width/2 + 50, height: nil, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
+                .frame(width: nil, height: 134, alignment: .leading)
+                .background(Color.white)
+                .cornerRadius(15)
+                .shadow(radius: 10)
+
                 Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 175, height: 156, alignment: .leading)
-//                    .clipped()
-                VStack {
-                    Text(title).font(.system(size: 16, weight: .bold, design: .default))
-                    Spacer()
-                    Text(text)
-                    Spacer()
-                }
+                    .clipped()
+                    .offset(y: -2.0)
             }
-            .frame(width: nil, height: 150, alignment: .leading)
-            .background(Color.white)
-            .cornerRadius(15)
-            .shadow(radius: 10)
         }
     }
 }
