@@ -20,7 +20,12 @@ struct CaseUpdateView: View {
                 Spacer()
             }
             HStack {
-                Text("Newest update \(owidDataManager.dataCovid?.formatedDate ?? " Fetching..")")
+                Text("Newest update")
+                    .font(.system(size: 10))
+                    .foregroundColor(.gray)
+
+                Text("\(owidDataManager.dataCovid?.formatedDate ?? " Fetching..")")
+                    .font(.system(size: 10, weight: .bold, design: .default ))
                     .foregroundColor(.gray)
 
                 Spacer()
