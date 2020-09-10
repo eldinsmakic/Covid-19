@@ -26,6 +26,7 @@ struct HomeView: View {
                 VStack {
                     if container.dataIsLoaded {
                         CountryPickerView(container: container)
+                            .padding(.top, 10)
                     }
 
                     CaseUpdateView(owidDataManager: container.owidDataManager)
