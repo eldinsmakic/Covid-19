@@ -56,10 +56,11 @@ struct CaseUpdateView: View {
                 )
 
             }
+            .frame(width: nil, height: 130)
+            .padding(.vertical, 16.5)
             .background(Color.white)
             .cornerRadius(15)
             .shadow(radius: 5)
-            .frame(width: nil, height: 130)
         }
         .padding(.horizontal, 16.5)
     }
