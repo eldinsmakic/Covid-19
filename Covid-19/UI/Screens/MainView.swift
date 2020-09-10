@@ -20,10 +20,12 @@ struct MainView: View {
 
             HomeView(container: container)
                 .tabItem {
+                    Image(systemName: "home")
                     Text("Home")
                 }
             InfosAboutCovid()
                 .tabItem {
+                    Image(systemName: "info.circle.fill")
                     Text("Infos")
                 }
         }
