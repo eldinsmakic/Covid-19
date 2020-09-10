@@ -26,7 +26,6 @@ struct TopImageBannerView: View {
     let colorBottom = Color(UIColor(red: 16.0 / 255.0, green: 33.0 / 255.0, blue: 159.0 / 255.0, alpha: 1.0).cgColor)
 
     var body: some View {
-        GeometryReader { geo in
             ZStack{
                 Rectangle()
                     .fill(LinearGradient(gradient: Gradient(colors: [colorTop, colorBottom]), startPoint: .bottom, endPoint: .top))
@@ -41,10 +40,9 @@ struct TopImageBannerView: View {
                     .onAppear {
                         self.isDataLoaded = true
                     }
-                    .offset(x: !isDataLoaded ? -geo.size.width : geo.size.width)
+                    .offset(x: !isDataLoaded ? -UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width)
                     .animation(Animation.linear(duration: 3).repeatForever(autoreverses: false))
 
-                GeometryReader { geometry in
                     VStack {
                         Spacer()
                         HStack {
@@ -53,13 +51,11 @@ struct TopImageBannerView: View {
                                 .lineLimit(2)
                                 .font(.system(size: 24, weight: .bold))
                                 .foregroundColor(.white)
-                                .frame(width: geometry.size.width/2 - 20)
+                                .frame(width: UIScreen.main.bounds.width/2 - 20)
 
-                        }.frame(width: geometry.size.width)
+                        }
                         Spacer()
-                    }.frame(width: geo.size.width, height: geometry.size.height)
-                }
-            }
+                    }
         }.frame(width: UIScreen.main.bounds.width, height: 350, alignment: .bottom)
         .ignoresSafeArea(.all, edges: .top)
     }
