@@ -15,17 +15,20 @@ struct MainView: View {
     @StateObject var container = ContainerCovid()
 
     var body: some View {
-        TopImageBannerView().onAppear{
-            container.fetchData()
-        }
 
-        if container.dataIsLoaded {
-            CountryPickerView(container: container)
-        }
+        TabView {
 
-        CaseUpdateView(owidDataManager: container.owidDataManager)
-            .padding(.bottom, 20)
-        SpreadOfVirusView()
+            HomeView(container: container)
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            InfosAboutCovid()
+                .tabItem {
+                    Image(systemName: "info.circle.fill")
+                    Text("Infos")
+                }
+        }
     }
 }
 

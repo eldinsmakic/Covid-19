@@ -14,6 +14,9 @@
 		9923621424791A8E009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
 		9923621524791AB8009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
 		9923621624791BD0009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
+		9923910D2507D21300C68769 /* InfosAboutCovid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923910C2507D21300C68769 /* InfosAboutCovid.swift */; };
+		9923910F2507D7BC00C68769 /* DesignSystem+SymptomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923910E2507D7BC00C68769 /* DesignSystem+SymptomCard.swift */; };
+		992391132507D9ED00C68769 /* DesignSystem+PreventionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992391122507D9ED00C68769 /* DesignSystem+PreventionCard.swift */; };
 		9923A61F2469E50C009A1B6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923A61E2469E50C009A1B6B /* AppDelegate.swift */; };
 		9923A6292469E50C009A1B6B /* Covid_19.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9923A6272469E50C009A1B6B /* Covid_19.xcdatamodeld */; };
 		9923A62B2469E512009A1B6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9923A62A2469E512009A1B6B /* Assets.xcassets */; };
@@ -25,6 +28,7 @@
 		9944F5D224770C1A000CD576 /* CaseUpdateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5D124770C1A000CD576 /* CaseUpdateTest.swift */; };
 		9944F5D524770D72000CD576 /* CaseUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5D424770D72000CD576 /* CaseUpdateModel.swift */; };
 		9944F5DF24771114000CD576 /* TodaysDateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5DE24771114000CD576 /* TodaysDateService.swift */; };
+		995A2B342509020800AB37A9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995A2B332509020800AB37A9 /* HomeView.swift */; };
 		99767A6A24E315D00073D535 /* CovidResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99767A6924E315D00073D535 /* CovidResponseDTO.swift */; };
 		99767A6C24E316A00073D535 /* DataResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99767A6B24E316A00073D535 /* DataResponseDTO.swift */; };
 		99767A6E24E317ED0073D535 /* DataResponseDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99767A6D24E317ED0073D535 /* DataResponseDTOTests.swift */; };
@@ -72,6 +76,9 @@
 		8E8EBEA3C35E847F340F95B7 /* Pods-Covid-19-Covid-19UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19-Covid-19UITests.debug.xcconfig"; path = "Target Support Files/Pods-Covid-19-Covid-19UITests/Pods-Covid-19-Covid-19UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9913CBFA24E32B1A00510114 /* DataSetResponseDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSetResponseDTOTests.swift; sourceTree = "<group>"; };
 		9913CBFE24E3334000510114 /* OwidDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwidDataManager.swift; sourceTree = "<group>"; };
+		9923910C2507D21300C68769 /* InfosAboutCovid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosAboutCovid.swift; sourceTree = "<group>"; };
+		9923910E2507D7BC00C68769 /* DesignSystem+SymptomCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+SymptomCard.swift"; sourceTree = "<group>"; };
+		992391122507D9ED00C68769 /* DesignSystem+PreventionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+PreventionCard.swift"; sourceTree = "<group>"; };
 		9923A61B2469E50C009A1B6B /* Covid-19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9923A61E2469E50C009A1B6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9923A6282469E50C009A1B6B /* Covid_19.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Covid_19.xcdatamodel; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		9944F5D124770C1A000CD576 /* CaseUpdateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseUpdateTest.swift; sourceTree = "<group>"; };
 		9944F5D424770D72000CD576 /* CaseUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseUpdateModel.swift; sourceTree = "<group>"; };
 		9944F5DE24771114000CD576 /* TodaysDateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysDateService.swift; sourceTree = "<group>"; };
+		995A2B332509020800AB37A9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		99767A6924E315D00073D535 /* CovidResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidResponseDTO.swift; sourceTree = "<group>"; };
 		99767A6B24E316A00073D535 /* DataResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseDTO.swift; sourceTree = "<group>"; };
 		99767A6D24E317ED0073D535 /* DataResponseDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseDTOTests.swift; sourceTree = "<group>"; };
@@ -191,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				99BE59F424FFDF43005268CF /* MainView.swift */,
+				9923910C2507D21300C68769 /* InfosAboutCovid.swift */,
+				995A2B332509020800AB37A9 /* HomeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -273,6 +283,8 @@
 			children = (
 				9931EA1824CA223D0096646D /* DesignSystem+Title.swift */,
 				9931EA1A24CA2C120096646D /* DesignSystem+Button.swift */,
+				9923910E2507D7BC00C68769 /* DesignSystem+SymptomCard.swift */,
+				992391122507D9ED00C68769 /* DesignSystem+PreventionCard.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -657,6 +669,7 @@
 				9944F5D524770D72000CD576 /* CaseUpdateModel.swift in Sources */,
 				9923A61F2469E50C009A1B6B /* AppDelegate.swift in Sources */,
 				9931EA1B24CA2C130096646D /* DesignSystem+Button.swift in Sources */,
+				9923910F2507D7BC00C68769 /* DesignSystem+SymptomCard.swift in Sources */,
 				99BE59F524FFDF43005268CF /* MainView.swift in Sources */,
 				99BE59EF24FD8863005268CF /* SpreadOfVirusView.swift in Sources */,
 				9997A43F247814DA00FB50EF /* DataManager.swift in Sources */,
@@ -668,7 +681,10 @@
 				9923A6292469E50C009A1B6B /* Covid_19.xcdatamodeld in Sources */,
 				99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */,
 				99BE59F124FEA4F6005268CF /* TopImageBannerView.swift in Sources */,
+				992391132507D9ED00C68769 /* DesignSystem+PreventionCard.swift in Sources */,
 				9944F5DF24771114000CD576 /* TodaysDateService.swift in Sources */,
+				9923910D2507D21300C68769 /* InfosAboutCovid.swift in Sources */,
+				995A2B342509020800AB37A9 /* HomeView.swift in Sources */,
 				9984AEFE24FBEAED00CC0340 /* CaseUpdateView.swift in Sources */,
 				99BE59ED24FD7EE0005268CF /* CircleCaseUpdateView.swift in Sources */,
 			);

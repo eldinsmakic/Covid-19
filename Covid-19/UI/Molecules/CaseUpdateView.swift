@@ -16,10 +16,16 @@ struct CaseUpdateView: View {
         VStack {
             HStack {
                 DesignSystem.Title(title: "Case update")
+
                 Spacer()
             }
             HStack {
-                Text("Newest update \(owidDataManager.dataCovid?.formatedDate ?? " Fetching..")")
+                Text("Newest update")
+                    .font(.system(size: 10))
+                    .foregroundColor(.gray)
+
+                Text("\(owidDataManager.dataCovid?.formatedDate ?? " Fetching..")")
+                    .font(.system(size: 10, weight: .bold, design: .default ))
                     .foregroundColor(.gray)
 
                 Spacer()
@@ -54,7 +60,13 @@ struct CaseUpdateView: View {
                     subtitle: "Recovered"
                 )
 
-            }.frame(width: nil, height: 100)
+            }
+            .frame(width: nil, height: 130)
+            .padding(.vertical, 16.5)
+            .background(Color.white)
+            .cornerRadius(15)
+            .shadow(radius: 5)
         }
+        .padding(.horizontal, 16.5)
     }
 }

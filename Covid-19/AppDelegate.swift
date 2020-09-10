@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIHostingController(rootView: contentView)
-//        window?.rootViewController?.present(ViewController(), animated: false, completion: nil)
         window?.makeKeyAndVisible()
 
         return true

@@ -11,10 +11,15 @@ import SwiftUI
 extension DesignSystem {
 
     public struct Title: View {
+
         let title: String
+
         var body: some View {
-            return Text(title)
-                .font(.system(size: 19, weight: .bold))
+            HStack {
+                Text(title)
+                    .font(.system(size: 19, weight: .bold))
+                Spacer()
+            }
         }
     }
 }

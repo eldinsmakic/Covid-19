@@ -19,7 +19,7 @@ struct CountryPickerView: View {
                     Text(container.countryPicker.countrys[index]).tag(index)
                     }
                 }.pickerStyle(MenuPickerStyle())
-            .frame(width: nil, height: 40, alignment: .center)
+        .frame(width: UIScreen.main.bounds.width, height: 40, alignment: .center)
             .onReceive(container.countryPicker.$selectedCountry) { (index) in
                 container.owidDataManager.getData(fromCountry: container.countryPicker.countrys[index], at: Date())
                 selectedCountry = container.countryPicker.countrys[index]

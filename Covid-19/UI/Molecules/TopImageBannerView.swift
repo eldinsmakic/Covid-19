@@ -10,6 +10,11 @@ import SwiftUI
 
 struct TopImageBannerView: View {
 
+    let imageName: String
+    let imageOffset: CGFloat
+    let imageIsRezisable: Bool
+    let text: String
+
     @State var isDataLoaded: Bool = false
 
     var repeatingAnimation: Animation {
@@ -20,40 +25,45 @@ struct TopImageBannerView: View {
 
     let colorTop = Color(UIColor(red: 51.0 / 255.0, green: 131.0 / 255.0, blue: 205.0 / 255.0, alpha: 1.0).cgColor)
     let colorBottom = Color(UIColor(red: 16.0 / 255.0, green: 33.0 / 255.0, blue: 159.0 / 255.0, alpha: 1.0).cgColor)
+
     var body: some View {
-        GeometryReader { geo in
             ZStack{
                 Rectangle()
                     .fill(LinearGradient(gradient: Gradient(colors: [colorTop, colorBottom]), startPoint: .bottom, endPoint: .top))
                     .clipShape(CustomRectShape())
                     .frame(width: nil, height: nil, alignment: .top)
-                Image("Drcorona")
-                    .offset(x: -40, y: 80)
-                    .clipShape(CustomImageShape())
+
+                if imageIsRezisable {
+                    Image(imageName)
+                        .offset(x: -40, y: 180 + imageOffset)
+                        .clipShape(CustomImageShape())
+                } else {
+                    Image(imageName)
+                        .offset(x: -40, y: 180 + imageOffset)
+                        .clipShape(CustomImageShape())
+                }
+
                 Image("virus")
                     .onAppear {
                         self.isDataLoaded = true
                     }
-                    .offset(x: !isDataLoaded ? -geo.size.width : geo.size.width)
+                    .offset(x: !isDataLoaded ? -UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width)
                     .animation(Animation.linear(duration: 3).repeatForever(autoreverses: false))
-
-                GeometryReader { geometry in
                     VStack {
-                        Spacer()
-                        HStack {
                             Spacer()
-                            Text("All you need is to stay at home")
-                                .lineLimit(2)
-                                .font(.system(size: 24, weight: .bold))
-                                .foregroundColor(.white)
-                                .frame(width: geometry.size.width/2 - 20)
-
-                        }.frame(width: geometry.size.width)
-                        Spacer()
-                    }.frame(width: geo.size.width, height: geometry.size.height)
-                }
-            }.frame(width: geo.size.width, height: 300, alignment: .bottom)
-        }
+                            HStack {
+                                Spacer()
+                                Text(text)
+                                    .lineLimit(2)
+                                    .font(.system(size: 24, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .frame(width: UIScreen.main.bounds.width/2)
+                                    .padding(.bottom, 20)
+                                    .padding(.trailing, 10)
+                            }
+                    }.frame(width: UIScreen.main.bounds.width, height: 235)
+        }.frame(width: UIScreen.main.bounds.width, height: 235, alignment: .bottom)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
@@ -90,13 +100,3 @@ struct CustomImageShape: Shape {
         return Path(maskPath.cgPath)
     }
 }
-
-//struct CaseUpdate_Previews: PreviewProvider {
-//    static var previews: some View {
-//        if #available(iOS 14.0, *) {
-//            TopImageBannerView()
-//        } else {
-//            Text("Not available")
-//        }
-//    }
-//}
