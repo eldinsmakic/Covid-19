@@ -20,7 +20,7 @@ struct MainView: View {
 
             HomeView(container: container)
                 .tabItem {
-                    Image(systemName: "home")
+                    Image(systemName: "house")
                     Text("Home")
                 }
             InfosAboutCovid()
