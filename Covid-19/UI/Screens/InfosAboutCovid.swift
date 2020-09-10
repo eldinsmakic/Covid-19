@@ -14,7 +14,8 @@ struct InfosAboutCovid: View {
         VStack {
             TopImageBannerView(
                 imageName: "coronadr",
-                imageOffset: 80,
+                imageOffset: 0,
+                imageIsRezisable: true,
                 text: "Get to know About Covid-19."
             )
 
@@ -39,7 +40,7 @@ struct InfosAboutCovid: View {
                     .padding(.horizontal, 16.5)
 
             }
-            .background(Color(CGColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)))
+            .background(Color(red: 0.98, green: 0.98, blue: 0.98))
             .offset(y: -50)
         }
     }

@@ -13,23 +13,31 @@ struct HomeView: View {
     @ObservedObject var container: ContainerCovid
 
     var body: some View {
-        VStack {
-            TopImageBannerView(
-                imageName: "Drcorona",
-                imageOffset: 0,
-                text: "All you need is to stay at home"
-            ).onAppear{
-                container.fetchData()
-            }
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                TopImageBannerView(
+                    imageName: "Drcorona",
+                    imageOffset: 0,
+                    imageIsRezisable: false,
+                    text: "All you need is to stay at home"
+                ).onAppear{
+                    container.fetchData()
+                }
+                VStack {
+                    if container.dataIsLoaded {
+                        CountryPickerView(container: container)
+                    }
 
-            if container.dataIsLoaded {
-                CountryPickerView(container: container)
-            }
+                    CaseUpdateView(owidDataManager: container.owidDataManager)
+                        .padding(10)
 
-            CaseUpdateView(owidDataManager: container.owidDataManager)
-                .padding(.bottom, 20)
-            SpreadOfVirusView()
-        }
+                    SpreadOfVirusView()
+                        .padding(10)
+                }
+                .offset(y: -50)
+            }
+            .background(Color(red: 0.98, green: 0.98, blue: 0.98))
+        }.edgesIgnoringSafeArea(.top)
     }
 
 }
