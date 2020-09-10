@@ -12,6 +12,7 @@ struct TopImageBannerView: View {
 
     let imageName: String
     let imageOffset: CGFloat
+    let imageIsRezisable: Bool
     let text: String
 
     @State var isDataLoaded: Bool = false
@@ -32,9 +33,15 @@ struct TopImageBannerView: View {
                     .clipShape(CustomRectShape())
                     .frame(width: nil, height: nil, alignment: .top)
 
-                Image(imageName)
-                    .offset(x: -40, y: 80 + imageOffset)
-                    .clipShape(CustomImageShape())
+                if imageIsRezisable {
+                    Image(imageName)
+                        .offset(x: -40, y: 180 + imageOffset)
+                        .clipShape(CustomImageShape())
+                } else {
+                    Image(imageName)
+                        .offset(x: -40, y: 180 + imageOffset)
+                        .clipShape(CustomImageShape())
+                }
 
                 Image("virus")
                     .onAppear {
@@ -42,22 +49,21 @@ struct TopImageBannerView: View {
                     }
                     .offset(x: !isDataLoaded ? -UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width)
                     .animation(Animation.linear(duration: 3).repeatForever(autoreverses: false))
-
                     VStack {
-                        Spacer()
-                        HStack {
                             Spacer()
-                            Text(text)
-                                .lineLimit(2)
-                                .font(.system(size: 24, weight: .bold))
-                                .foregroundColor(.white)
-                                .frame(width: UIScreen.main.bounds.width/2 - 20)
-
-                        }
-                        Spacer()
-                    }
-        }.frame(width: UIScreen.main.bounds.width, height: 350, alignment: .bottom)
-        .ignoresSafeArea(.all, edges: .top)
+                            HStack {
+                                Spacer()
+                                Text(text)
+                                    .lineLimit(2)
+                                    .font(.system(size: 24, weight: .bold))
+                                    .foregroundColor(.white)
+                                    .frame(width: UIScreen.main.bounds.width/2)
+                                    .padding(.bottom, 20)
+                                    .padding(.trailing, 10)
+                            }
+                    }.frame(width: UIScreen.main.bounds.width, height: 235)
+        }.frame(width: UIScreen.main.bounds.width, height: 235, alignment: .bottom)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
