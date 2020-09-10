@@ -29,8 +29,10 @@ struct InfosAboutCovid: View {
 
                 DesignSystem.Title(title: "Prevention")
                     .padding(.top, 20)
+
                 DesignSystem.PreventionCard(imageName: "wash_hands", title: "Wash your hands", text: "Check how many people are effected and how many already died and recovered. It also showing the symptoms of COVID-19 and how you can keep yourself safe.")
                 DesignSystem.PreventionCard(imageName: "wash_hands", title: "Wash your hands", text: "Check how many people are effected and how many already died and recovered. It also showing the symptoms of COVID-19 and how you can keep yourself safe.")
+
             }.background(Color(CGColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)))
             .offset(y: -100)
         }
