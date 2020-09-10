@@ -16,6 +16,7 @@ struct CaseUpdateView: View {
         VStack {
             HStack {
                 DesignSystem.Title(title: "Case update")
+
                 Spacer()
             }
             HStack {
@@ -54,7 +55,12 @@ struct CaseUpdateView: View {
                     subtitle: "Recovered"
                 )
 
-            }.frame(width: nil, height: 100)
+            }
+            .background(Color.white)
+            .cornerRadius(15)
+            .shadow(radius: 5)
+            .frame(width: nil, height: 130)
         }
+        .padding(.horizontal, 16.5)
     }
 }
