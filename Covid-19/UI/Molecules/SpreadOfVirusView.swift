@@ -18,14 +18,21 @@ struct SpreadOfVirusView: View {
             HStack {
                 Text("Spread of Virus")
                     .font(.system(size: 19, weight: .bold))
+
                 Spacer()
             }
             HStack {
                 Spacer()
 
                 DesignSystem.Button()
+
             }.padding(.bottom, 10)
             Map(coordinateRegion: $region)
+                .background(Color.white)
+                .cornerRadius(15)
+                .shadow(radius: 2)
+                .frame(width: nil, height: 250, alignment: .leading)
         }
+        .padding(.horizontal, 16.5)
     }
 }
