@@ -26,22 +26,6 @@ struct MainView: View {
                 .tabItem {
                     Text("Infos")
                 }
-
-//            TopImageBannerView(
-//                imageName: "Drcorona",
-//                imageOffset: 0,
-//                text: "All you need is to stay at home"
-//            ).onAppear{
-//                container.fetchData()
-//            }
-//
-//            if container.dataIsLoaded {
-//                CountryPickerView(container: container)
-//            }
-//
-//            CaseUpdateView(owidDataManager: container.owidDataManager)
-//                .padding(.bottom, 20)
-//            SpreadOfVirusView()
         }
     }
 }
