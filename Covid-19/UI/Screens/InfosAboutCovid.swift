@@ -14,12 +14,13 @@ struct InfosAboutCovid: View {
         VStack {
             TopImageBannerView(
                 imageName: "coronadr",
-                imageOffset: 120,
+                imageOffset: 80,
                 text: "Get to know About Covid-19."
             )
 
             VStack {
                 DesignSystem.Title(title: "Symptomps")
+                    .padding(.leading, 16.5)
 
                 HStack {
                     DesignSystem.SymptomCard(imageName: "headache")
@@ -29,12 +30,17 @@ struct InfosAboutCovid: View {
 
                 DesignSystem.Title(title: "Prevention")
                     .padding(.top, 20)
+                    .padding(.leading, 16.5)
 
                 DesignSystem.PreventionCard(imageName: "wash_hands", title: "Wash your hands", text: "Check how many people are effected and how many already died and recovered. It also showing the symptoms of COVID-19 and how you can keep yourself safe.")
-                DesignSystem.PreventionCard(imageName: "wash_hands", title: "Wash your hands", text: "Check how many people are effected and how many already died and recovered. It also showing the symptoms of COVID-19 and how you can keep yourself safe.")
+                    .padding(.horizontal, 16.5)
 
-            }.background(Color(CGColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)))
-            .offset(y: -100)
+                DesignSystem.PreventionCard(imageName: "wear_mask", title: "Wear your mask", text: "Masks can help prevent people who wear them from spreading the virus to others. Wearing the mask alone does not protect against VIDOC-19. It should be combined with physical distancing and hand hygiene measures. Follow the advice of local health authorities.")
+                    .padding(.horizontal, 16.5)
+
+            }
+            .background(Color(CGColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)))
+            .offset(y: -50)
         }
     }
 }
