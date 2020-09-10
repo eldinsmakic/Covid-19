@@ -31,12 +31,13 @@ extension DesignSystem {
                         Spacer()
                     }
                     .padding()
-                    .frame(width: UIScreen.main.bounds.size.width/2 + 50, height: nil, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: UIScreen.main.bounds.size.width/2 + 15, height: nil, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
-                .frame(width: nil, height: 134, alignment: .leading)
+                .frame(height: 134)
                 .background(Color.white)
                 .cornerRadius(15)
                 .shadow(radius: 5)
+                .padding(.leading, 56)
 
                 Image(imageName)
                     .resizable()
