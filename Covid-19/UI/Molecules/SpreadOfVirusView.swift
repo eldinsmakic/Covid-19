@@ -11,7 +11,7 @@ import SwiftUI
 
 struct SpreadOfVirusView: View {
 
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    @ObservedObject var countryPicker: CountryPicker
 
     var body: some View {
         VStack {
@@ -28,7 +28,7 @@ struct SpreadOfVirusView: View {
 
             }.padding(.bottom, 10)
 
-            DesignSystem.Maps()
+            Map(coordinateRegion: $countryPicker.countryCoordonate)
                 .background(Color.white)
                 .cornerRadius(15)
                 .shadow(radius: 2)

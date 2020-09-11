@@ -49,6 +49,9 @@
 		99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448F9247C3F0000878DD4 /* SelectCountryService.swift */; };
 		99C448FC247C599900878DD4 /* SelectCountryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */; };
 		99D0EC8924E8457A00E246A9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */; };
+		99EC2DF3250BCEE50025A218 /* countryCoordonate.json in Resources */ = {isa = PBXBuildFile; fileRef = 99EC2DF2250BCEE50025A218 /* countryCoordonate.json */; };
+		99EC2DF5250BCF810025A218 /* DesignSystem+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */; };
+		99EC2DF7250BDDBF0025A218 /* styleMap.json in Resources */ = {isa = PBXBuildFile; fileRef = 99EC2DF6250BDDBF0025A218 /* styleMap.json */; };
 		F931DF10D472F501CA457373 /* Pods_Covid_19.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C337F535182890AC499CA2 /* Pods_Covid_19.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +121,9 @@
 		99C448F9247C3F0000878DD4 /* SelectCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryService.swift; sourceTree = "<group>"; };
 		99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryServiceTest.swift; sourceTree = "<group>"; };
 		99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		99EC2DF2250BCEE50025A218 /* countryCoordonate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countryCoordonate.json; sourceTree = "<group>"; };
+		99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Map.swift"; sourceTree = "<group>"; };
+		99EC2DF6250BDDBF0025A218 /* styleMap.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = styleMap.json; sourceTree = "<group>"; };
 		DF657AD1F19B39D0586988C8 /* Pods-Covid-19Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19Tests.debug.xcconfig"; path = "Target Support Files/Pods-Covid-19Tests/Pods-Covid-19Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8143A1E563B3E65364CB289 /* Pods_Covid_19_Covid_19UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Covid_19_Covid_19UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE12212C7E8DF2146133BC7F /* Pods-Covid-19.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19.debug.xcconfig"; path = "Target Support Files/Pods-Covid-19/Pods-Covid-19.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,8 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				99BE59F424FFDF43005268CF /* MainView.swift */,
-				9923910C2507D21300C68769 /* InfosAboutCovid.swift */,
 				995A2B332509020800AB37A9 /* HomeView.swift */,
+				9923910C2507D21300C68769 /* InfosAboutCovid.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -285,6 +291,8 @@
 				9931EA1A24CA2C120096646D /* DesignSystem+Button.swift */,
 				9923910E2507D7BC00C68769 /* DesignSystem+SymptomCard.swift */,
 				992391122507D9ED00C68769 /* DesignSystem+PreventionCard.swift */,
+				99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */,
+				99EC2DF6250BDDBF0025A218 /* styleMap.json */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				99C448F9247C3F0000878DD4 /* SelectCountryService.swift */,
+				99EC2DF2250BCEE50025A218 /* countryCoordonate.json */,
 				9944F5DB247710F7000CD576 /* Time */,
 			);
 			path = Services;
@@ -477,8 +486,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				99D0EC8924E8457A00E246A9 /* Launch Screen.storyboard in Resources */,
+				99EC2DF3250BCEE50025A218 /* countryCoordonate.json in Resources */,
 				99B9891C24FC242800406760 /* localData.json in Resources */,
 				9923A62B2469E512009A1B6B /* Assets.xcassets in Resources */,
+				99EC2DF7250BDDBF0025A218 /* styleMap.json in Resources */,
 				99C448F6247BD61800878DD4 /* .swiftlint.yml in Resources */,
 				9923A652246AD6A3009A1B6B /* README.md in Resources */,
 				9923621424791A8E009A7DAC /* FakeData.json in Resources */,
@@ -664,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99767A6A24E315D00073D535 /* CovidResponseDTO.swift in Sources */,
+				99EC2DF5250BCF810025A218 /* DesignSystem+Map.swift in Sources */,
 				99BE59F324FEAD38005268CF /* CountryPickerView.swift in Sources */,
 				99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */,
 				9944F5D524770D72000CD576 /* CaseUpdateModel.swift in Sources */,
@@ -889,7 +901,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PL39FQM22S;
 				INFOPLIST_FILE = "Covid-19Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -912,7 +924,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PL39FQM22S;
 				INFOPLIST_FILE = "Covid-19Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
