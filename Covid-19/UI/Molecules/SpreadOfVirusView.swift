@@ -27,7 +27,8 @@ struct SpreadOfVirusView: View {
                 DesignSystem.Button()
 
             }.padding(.bottom, 10)
-            Map(coordinateRegion: $region)
+
+            DesignSystem.Maps()
                 .background(Color.white)
                 .cornerRadius(15)
                 .shadow(radius: 2)
