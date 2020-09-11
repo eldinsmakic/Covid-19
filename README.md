@@ -38,4 +38,4 @@ The app will need to look like this
 
 
 ### 7 September 2020
-<img src="readmeAssets/images/appAdvancement.png.png" alt="drawing" width="200"/>
+<img src="readmeAssets/images/appAdvancement.png" alt="drawing" width="200"/>
