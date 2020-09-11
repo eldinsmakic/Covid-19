@@ -23,7 +23,7 @@ learnings/improving :
  
  ## App design
  
- ![Alt text](readmeAssets/images/youtubeScreenShot.png?raw=true "iPhone")
+ <img src="readmeAssets/images/youtubeScreenShot.png" alt="drawing" width="200"/>
  **Notice** : screenshot of the youtube video
 The app will need to look like this
 
@@ -32,7 +32,7 @@ The app will need to look like this
 
 Right now the app is looking like this  (11 September 2020)
 ![Alt text](readmeAssets/images/appAdvancement-home-11-10-2020.png?raw=true "iPhone")
-![Alt text](readmeAssets/images/appAdvancement-info-11-10-2020.png?raw=true "iPhone")
+![Alt text](readmeAssets/images/appAdvancement-home-11-10-2020.png?raw=true "iPhone")
 
 
 
