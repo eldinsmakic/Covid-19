@@ -13,6 +13,7 @@ import PromiseKit
 
 public struct Coordonate: Decodable
 {
+    public let name: String
     public let countryCode: String
     let latlng: [Double]
 
@@ -44,9 +45,9 @@ public class SelectCountryService
         }
     }
 
-    func getCoordonate(fromCountry country: String) -> Coordonate
+    public func getCoordonate(fromCountry country: String) -> Coordonate?
     {
-        return self.countrysCoordonate!.first(where: { $0.countryCode == country })!
+        return self.countrysCoordonate?.first(where: { $0.name == country })
     }
 
     lazy var jsonDecoder: JSONDecoder = {
