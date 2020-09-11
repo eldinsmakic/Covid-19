@@ -34,7 +34,7 @@ Change to reactive programming.
  ## App design
  
  <img src="readmeAssets/images/youtubeScreenShot.png" alt="drawing" width="200"/>
- **Notice** : screenshot of the youtube video
+
 The app will need to look like this
 
 
