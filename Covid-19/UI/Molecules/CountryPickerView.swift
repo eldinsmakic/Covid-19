@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct CountryPickerView: View {
 
@@ -15,20 +16,42 @@ struct CountryPickerView: View {
 
     var body: some View {
         Picker(selectedCountry, selection: $container.countryPicker.selectedCountry) {
-                ForEach(0..<container.countryPicker.countrys.count) { index in
-                    Text(container.countryPicker.countrys[index]).tag(index)
+                ForEach(container.countryPicker.countrys.sorted(by: <), id: \.key) { key, value  in
+                    Text(key).tag(value)
                     }
                 }.pickerStyle(MenuPickerStyle())
         .frame(width: UIScreen.main.bounds.width, height: 40, alignment: .center)
             .onReceive(container.countryPicker.$selectedCountry) { (index) in
-                container.owidDataManager.getData(fromCountry: container.countryPicker.countrys[index], at: Date())
-                selectedCountry = container.countryPicker.countrys[index]
+                container.owidDataManager.getData(fromCountry: selectedCountry, at: Date())
+                selectedCountry = index
             }
     }
 }
 
 class CountryPicker: ObservableObject {
 
-    @Published var countrys: [String] = []
-    @Published var selectedCountry: Int = 0
+    @Published var countrys: [String: String] = [:]
+    @Published var selectedCountry: String = "" {
+        didSet {
+            countryCoordonate = changeCoordonate()
+        }
+    }
+
+    let selectedCountryService = SelectCountryService()
+
+    @Published var countryCoordonate = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+
+    func changeCoordonate() -> MKCoordinateRegion {
+        if countrys.isEmpty {
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        } else {
+            guard let coordonate = selectedCountryService.getCoordonate(fromCountry: selectedCountry) else {
+                return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+            }
+
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: coordonate.lat, longitude: coordonate.lng), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        }
+
+    }
+
 }

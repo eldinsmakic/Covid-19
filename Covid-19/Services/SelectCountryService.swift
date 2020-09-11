@@ -11,35 +11,49 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 
-struct Cordonate: Decodable
+public struct Coordonate: Decodable
 {
-    let lat: Double
-    let lng: Double
+    public let name: String
+    public let countryCode: String
+    let latlng: [Double]
+
+    public var lat: Double { latlng[0] }
+    public var lng: Double { latlng[1] }
 }
 
-class SelectCountryService
+public class SelectCountryService
 {
-    var country = ""
-    var cordonate: Cordonate!
 
-    func getCordonateFromACountry(country: String) -> Promise<Cordonate>
+    public var countrysCoordonate: [Coordonate]?
+
+    init() {
+        self.countrysCoordonate = getCoordonate()!
+    }
+
+    private func getCoordonate() -> [Coordonate]?
     {
-        let url =   "https://maps.googleapis.com/maps/api/geocode/json?address=\(country)&language=fr&key=AIzaSyCC7CdkXanscNcI8j4WQ9I3Sk7YztLJcE8"
-        return Promise { seal in AF.request(url).responseJSON { response in
-             let json = JSON(response.value)
-                do
-                {
-                    let location =  try json["results"][0]["geometry"]["location"].rawData()
-                    self.cordonate = try JSONDecoder().decode(Cordonate.self, from: location)
-                    seal.fulfill(self.cordonate)
-                }
-                catch let error as NSError
-                {
-                    print(error)
-                    seal.reject(error)
-                }
+        guard let url = Bundle.main.url(forResource: "countryCoordonate", withExtension: "json")  else { return nil }
 
-            }
+        do {
+            let data = try Data(contentsOf: url)
+
+            return try self.jsonDecoder.decode([Coordonate].self, from: data)
+        } catch let error
+        {
+            print("HHH \(error)")
+            return nil
         }
     }
+
+    public func getCoordonate(fromCountry country: String) -> Coordonate?
+    {
+        return self.countrysCoordonate?.first(where: { $0.name == country })
+    }
+
+    lazy var jsonDecoder: JSONDecoder = {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        return jsonDecoder
+    }()
 }

@@ -32,7 +32,7 @@ struct HomeView: View {
                     CaseUpdateView(owidDataManager: container.owidDataManager)
                         .padding([.leading, .trailing, .bottom], 16.5)
 
-                    SpreadOfVirusView()
+                    SpreadOfVirusView(countryPicker: container.countryPicker)
                         .padding(16.5)
                 }
                 .offset(y: -50)
