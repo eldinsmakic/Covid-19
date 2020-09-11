@@ -23,6 +23,7 @@ struct HomeView: View {
                 ).onAppear{
                     container.fetchData()
                 }
+
                 VStack {
                     if container.dataIsLoaded {
                         CountryPickerView(container: container)

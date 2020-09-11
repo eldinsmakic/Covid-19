@@ -23,6 +23,7 @@ struct MainView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
+
             InfosAboutCovid()
                 .tabItem {
                     Image(systemName: "info.circle.fill")
