@@ -31,6 +31,7 @@
 		99A558EF250D4A670069EA37 /* TestHelper+DataFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A558EE250D4A670069EA37 /* TestHelper+DataFromJson.swift */; };
 		99A558F1250D4A800069EA37 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A558F0250D4A800069EA37 /* TestHelper.swift */; };
 		99A558F3250D55450069EA37 /* FakeDataResponseDTO-with-less-param.json in Resources */ = {isa = PBXBuildFile; fileRef = 99A558F2250D55450069EA37 /* FakeDataResponseDTO-with-less-param.json */; };
+		99A558F6250D58660069EA37 /* Helper+DataFromJsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A558F5250D58660069EA37 /* Helper+DataFromJsonTests.swift */; };
 		99B9891C24FC242800406760 /* localData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B9891B24FC242800406760 /* localData.json */; };
 		99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EA24FD7EAA005268CF /* NumberView.swift */; };
 		99BE59ED24FD7EE0005268CF /* CircleCaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */; };
@@ -106,6 +107,7 @@
 		99A558EE250D4A670069EA37 /* TestHelper+DataFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestHelper+DataFromJson.swift"; sourceTree = "<group>"; };
 		99A558F0250D4A800069EA37 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		99A558F2250D55450069EA37 /* FakeDataResponseDTO-with-less-param.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "FakeDataResponseDTO-with-less-param.json"; sourceTree = "<group>"; };
+		99A558F5250D58660069EA37 /* Helper+DataFromJsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+DataFromJsonTests.swift"; sourceTree = "<group>"; };
 		99B9891B24FC242800406760 /* localData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localData.json; sourceTree = "<group>"; };
 		99BE59EA24FD7EAA005268CF /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCaseUpdateView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				99A558ED250D4A2C0069EA37 /* TestHelper */,
 				99F09ED3250D3FDB00D2C012 /* Ressources */,
 				99F09ED2250D3E1C00D2C012 /* Builders */,
+				99A558F4250D583E0069EA37 /* Helper */,
 				9923A63A2469E513009A1B6B /* Info.plist */,
 				9944F5D124770C1A000CD576 /* CaseUpdateTest.swift */,
 			);
@@ -325,6 +328,14 @@
 				99A558EE250D4A670069EA37 /* TestHelper+DataFromJson.swift */,
 			);
 			path = TestHelper;
+			sourceTree = "<group>";
+		};
+		99A558F4250D583E0069EA37 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				99A558F5250D58660069EA37 /* Helper+DataFromJsonTests.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		99BE59F624FFED67005268CF /* Models */ = {
@@ -759,6 +770,7 @@
 			files = (
 				99F09ED1250D3E1700D2C012 /* Builder+CaseUpdateModelTests.swift in Sources */,
 				9944F5D224770C1A000CD576 /* CaseUpdateTest.swift in Sources */,
+				99A558F6250D58660069EA37 /* Helper+DataFromJsonTests.swift in Sources */,
 				99A558EF250D4A670069EA37 /* TestHelper+DataFromJson.swift in Sources */,
 				99A558F1250D4A800069EA37 /* TestHelper.swift in Sources */,
 			);
