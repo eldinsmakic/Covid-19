@@ -27,7 +27,7 @@ public class SelectCountryService
     public var countrysCoordonate: [Coordonate]?
 
     init() {
-        self.countrysCoordonate = getCoordonate()!
+        self.countrysCoordonate = getCoordonate()
     }
 
     private func getCoordonate() -> [Coordonate]?
