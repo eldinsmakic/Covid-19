@@ -15,27 +15,29 @@ struct CountryPickerView: View {
     @State var selectedCountry: String = "Countrys"
 
     var body: some View {
-        Picker(selectedCountry, selection: $container.countryPicker.selectedCountry) {
-                ForEach(container.countryPicker.countrys.sorted(by: <), id: \.key) { key, value  in
-                    Text(key).tag(value)
+        Picker(selectedCountry, selection: $container.countryPicker.selectedCountryIndex) {
+            ForEach(0..<container.countryPicker.countrys.count) { index  in
+                    Text(container.countryPicker.countrys[index]).tag(index)
                     }
                 }.pickerStyle(MenuPickerStyle())
         .frame(width: UIScreen.main.bounds.width, height: 40, alignment: .center)
-            .onReceive(container.countryPicker.$selectedCountry) { (index) in
+            .onReceive(container.countryPicker.$selectedCountryIndex) { (index) in
+                selectedCountry = container.countryPicker.countrys[index]
                 container.owidDataManager.getData(fromCountry: selectedCountry, at: Date())
-                selectedCountry = index
             }
     }
 }
 
 class CountryPicker: ObservableObject {
 
-    @Published var countrys: [String: String] = [:]
-    @Published var selectedCountry: String = "" {
+    @Published var countrys: [String] = []
+    @Published var selectedCountryIndex: Int = 0 {
         didSet {
             countryCoordonate = changeCoordonate()
+            selectedCountry = countrys[selectedCountryIndex]
         }
     }
+    var selectedCountry = ""
 
     let selectedCountryService = SelectCountryService()
 

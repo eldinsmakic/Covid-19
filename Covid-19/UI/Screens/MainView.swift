@@ -54,10 +54,10 @@ class ContainerCovid: ObservableObject {
                         $0 < $1
                     }
 
-                    for (key, value) in sorted {
-                        self.countryPicker.countrys[key] = value
+                    for (key, _) in sorted {
+                        self.countryPicker.countrys.append(key)
                     }
-                    self.countryPicker.selectedCountry = self.countryPicker.countrys.keys.first!
+
                     self.owidDataManager.dataIsLoaded = true
                     self.dataIsLoaded = true
             })
