@@ -13,12 +13,16 @@ extension Helper {
     struct DataFromJson {
 
         static func getData<T: Decodable>(fromJson json: String, withDataType type: T.Type ) -> T? {
+            return getData(fromJson: json, withDataType: type, decodedBy: self.jsonDecoder)
+        }
+
+        static func getData<T: Decodable>(fromJson json: String, withDataType type: T.Type, decodedBy decoder: JSONDecoder) -> T? {
             guard let url = Bundle.main.url(forResource: json, withExtension: "json")  else { return nil}
 
             do {
                 let data = try Data(contentsOf: url)
 
-               return try self.jsonDecoder.decode(T.self, from: data)
+               return try decoder.decode(T.self, from: data)
 
             } catch let error
             {
