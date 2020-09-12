@@ -1,5 +1,5 @@
 //
-//  Builders+DataCovidModel.swift
+//  Builder+DataCovidModel.swift
 //  Covid-19
 //
 //  Created by eldin smakic on 12/09/2020.

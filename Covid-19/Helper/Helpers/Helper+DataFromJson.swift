@@ -1,5 +1,5 @@
 //
-//  DataFromJson.swift
+//  Helper+DataFromJson.swift
 //  Covid-19
 //
 //  Created by eldin smakic on 12/09/2020.
