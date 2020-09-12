@@ -34,17 +34,9 @@ public class OwidDataManager: ObservableObject {
     }
 
     func loadLocalData() {
-        guard let url = Bundle.main.url(forResource: "localData", withExtension: "json")  else { return }
-
-        do {
-            let data = try Data(contentsOf: url)
-
-            datas = try self.jsonDecoder.decode([String: CovidResponseDTO].self, from: data)
-            dataIsLoaded = true
-        } catch let error
-        {
-            print("HHH \(error)")
-        }
+        guard let localdatas = Helper.DataFromJson.getData(fromJson: "localData", withDataType: [String: CovidResponseDTO].self) else { return }
+        datas = localdatas
+        dataIsLoaded = true
     }
 
     func getData(fromCountry country: String, at date: Date) {

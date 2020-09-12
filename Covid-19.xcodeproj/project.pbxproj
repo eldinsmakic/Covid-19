@@ -48,6 +48,8 @@
 		99C448F6247BD61800878DD4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 99C448F5247BD61800878DD4 /* .swiftlint.yml */; };
 		99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448F9247C3F0000878DD4 /* SelectCountryService.swift */; };
 		99C448FC247C599900878DD4 /* SelectCountryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */; };
+		99C56B1D250CB98200D36251 /* DataFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B1C250CB98200D36251 /* DataFromJson.swift */; };
+		99C56B1F250CBD0E00D36251 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B1E250CBD0E00D36251 /* Helper.swift */; };
 		99D0EC8924E8457A00E246A9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */; };
 		99EC2DF3250BCEE50025A218 /* countryCoordonate.json in Resources */ = {isa = PBXBuildFile; fileRef = 99EC2DF2250BCEE50025A218 /* countryCoordonate.json */; };
 		99EC2DF5250BCF810025A218 /* DesignSystem+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */; };
@@ -120,6 +122,8 @@
 		99C448F5247BD61800878DD4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		99C448F9247C3F0000878DD4 /* SelectCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryService.swift; sourceTree = "<group>"; };
 		99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryServiceTest.swift; sourceTree = "<group>"; };
+		99C56B1C250CB98200D36251 /* DataFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFromJson.swift; sourceTree = "<group>"; };
+		99C56B1E250CBD0E00D36251 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		99EC2DF2250BCEE50025A218 /* countryCoordonate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countryCoordonate.json; sourceTree = "<group>"; };
 		99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Map.swift"; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 		9923A61D2469E50C009A1B6B /* Covid-19 */ = {
 			isa = PBXGroup;
 			children = (
+				99C56B1B250CB95800D36251 /* Helper */,
 				9923A61E2469E50C009A1B6B /* AppDelegate.swift */,
 				99BE59F624FFED67005268CF /* Models */,
 				9997A43D247814CB00FB50EF /* DataManager */,
@@ -331,6 +336,15 @@
 				9944F5D424770D72000CD576 /* CaseUpdateModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		99C56B1B250CB95800D36251 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				99C56B1E250CBD0E00D36251 /* Helper.swift */,
+				99C56B1C250CB98200D36251 /* DataFromJson.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		99D0EC7D24E808DE00E246A9 /* FakeDataManager */ = {
@@ -679,6 +693,7 @@
 				99BE59F324FEAD38005268CF /* CountryPickerView.swift in Sources */,
 				99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */,
 				9944F5D524770D72000CD576 /* CaseUpdateModel.swift in Sources */,
+				99C56B1F250CBD0E00D36251 /* Helper.swift in Sources */,
 				9923A61F2469E50C009A1B6B /* AppDelegate.swift in Sources */,
 				9931EA1B24CA2C130096646D /* DesignSystem+Button.swift in Sources */,
 				9923910F2507D7BC00C68769 /* DesignSystem+SymptomCard.swift in Sources */,
@@ -687,6 +702,7 @@
 				9997A43F247814DA00FB50EF /* DataManager.swift in Sources */,
 				99767A6C24E316A00073D535 /* DataResponseDTO.swift in Sources */,
 				9931EA1524CA21E90096646D /* DesignSystem.swift in Sources */,
+				99C56B1D250CB98200D36251 /* DataFromJson.swift in Sources */,
 				9997A4412478156900FB50EF /* FakeLocalDataManager.swift in Sources */,
 				9931EA1924CA223D0096646D /* DesignSystem+Title.swift in Sources */,
 				9913CBFF24E3334000510114 /* OwidDataManager.swift in Sources */,

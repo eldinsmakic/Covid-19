@@ -32,17 +32,7 @@ public class SelectCountryService
 
     private func getCoordonate() -> [Coordonate]?
     {
-        guard let url = Bundle.main.url(forResource: "countryCoordonate", withExtension: "json")  else { return nil }
-
-        do {
-            let data = try Data(contentsOf: url)
-
-            return try self.jsonDecoder.decode([Coordonate].self, from: data)
-        } catch let error
-        {
-            print("HHH \(error)")
-            return nil
-        }
+        return Helper.DataFromJson.getData(fromJson: "countryCoordonate", withDataType: [Coordonate].self)
     }
 
     public func getCoordonate(fromCountry country: String) -> Coordonate?
