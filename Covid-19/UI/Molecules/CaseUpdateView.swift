@@ -39,7 +39,7 @@ struct CaseUpdateView: View {
                     totalNumber: owidDataManager.dataCovid?.caseUpdate.totalInfecteds,
                     newNumber: owidDataManager.dataCovid?.caseUpdate.newInfecteds,
                     color: .orange,
-                    subtitle: "infected"
+                    subtitle: "Infected"
                 )
 
                 Spacer()
@@ -48,7 +48,7 @@ struct CaseUpdateView: View {
                     totalNumber: owidDataManager.dataCovid?.caseUpdate.totalDeaths,
                     newNumber: owidDataManager.dataCovid?.caseUpdate.newDeaths,
                     color: .red,
-                    subtitle: "deaths"
+                    subtitle: "Deaths"
                 )
 
                 Spacer()
