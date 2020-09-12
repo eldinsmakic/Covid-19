@@ -28,6 +28,8 @@ struct HomeView: View {
                     if container.dataIsLoaded {
                         CountryPickerView(container: container)
                             .padding(.top, 10)
+                    } else {
+                        ProgressView()
                     }
 
                     CaseUpdateView(owidDataManager: container.owidDataManager)
