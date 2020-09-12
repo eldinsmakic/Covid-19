@@ -27,7 +27,6 @@
 		9931EA1B24CA2C130096646D /* DesignSystem+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9931EA1A24CA2C120096646D /* DesignSystem+Button.swift */; };
 		9944F5D224770C1A000CD576 /* CaseUpdateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5D124770C1A000CD576 /* CaseUpdateTest.swift */; };
 		9944F5D524770D72000CD576 /* CaseUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5D424770D72000CD576 /* CaseUpdateModel.swift */; };
-		9944F5DF24771114000CD576 /* TodaysDateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944F5DE24771114000CD576 /* TodaysDateService.swift */; };
 		995A2B342509020800AB37A9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995A2B332509020800AB37A9 /* HomeView.swift */; };
 		99767A6A24E315D00073D535 /* CovidResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99767A6924E315D00073D535 /* CovidResponseDTO.swift */; };
 		99767A6C24E316A00073D535 /* DataResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99767A6B24E316A00073D535 /* DataResponseDTO.swift */; };
@@ -48,9 +47,9 @@
 		99C448F6247BD61800878DD4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 99C448F5247BD61800878DD4 /* .swiftlint.yml */; };
 		99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448F9247C3F0000878DD4 /* SelectCountryService.swift */; };
 		99C448FC247C599900878DD4 /* SelectCountryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */; };
-		99C56B1D250CB98200D36251 /* DataFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B1C250CB98200D36251 /* DataFromJson.swift */; };
+		99C56B1D250CB98200D36251 /* Helper+DataFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B1C250CB98200D36251 /* Helper+DataFromJson.swift */; };
 		99C56B1F250CBD0E00D36251 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B1E250CBD0E00D36251 /* Helper.swift */; };
-		99C56B21250CBF4500D36251 /* DateFromData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B20250CBF4500D36251 /* DateFromData.swift */; };
+		99C56B21250CBF4500D36251 /* Helper+DateFromData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B20250CBF4500D36251 /* Helper+DateFromData.swift */; };
 		99D0EC8924E8457A00E246A9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */; };
 		99EC2DF3250BCEE50025A218 /* countryCoordonate.json in Resources */ = {isa = PBXBuildFile; fileRef = 99EC2DF2250BCEE50025A218 /* countryCoordonate.json */; };
 		99EC2DF5250BCF810025A218 /* DesignSystem+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */; };
@@ -101,7 +100,6 @@
 		9931EA1A24CA2C120096646D /* DesignSystem+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Button.swift"; sourceTree = "<group>"; };
 		9944F5D124770C1A000CD576 /* CaseUpdateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseUpdateTest.swift; sourceTree = "<group>"; };
 		9944F5D424770D72000CD576 /* CaseUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseUpdateModel.swift; sourceTree = "<group>"; };
-		9944F5DE24771114000CD576 /* TodaysDateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysDateService.swift; sourceTree = "<group>"; };
 		995A2B332509020800AB37A9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		99767A6924E315D00073D535 /* CovidResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidResponseDTO.swift; sourceTree = "<group>"; };
 		99767A6B24E316A00073D535 /* DataResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseDTO.swift; sourceTree = "<group>"; };
@@ -123,9 +121,9 @@
 		99C448F5247BD61800878DD4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		99C448F9247C3F0000878DD4 /* SelectCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryService.swift; sourceTree = "<group>"; };
 		99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryServiceTest.swift; sourceTree = "<group>"; };
-		99C56B1C250CB98200D36251 /* DataFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFromJson.swift; sourceTree = "<group>"; };
+		99C56B1C250CB98200D36251 /* Helper+DataFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+DataFromJson.swift"; sourceTree = "<group>"; };
 		99C56B1E250CBD0E00D36251 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		99C56B20250CBF4500D36251 /* DateFromData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFromData.swift; sourceTree = "<group>"; };
+		99C56B20250CBF4500D36251 /* Helper+DateFromData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+DateFromData.swift"; sourceTree = "<group>"; };
 		99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		99EC2DF2250BCEE50025A218 /* countryCoordonate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countryCoordonate.json; sourceTree = "<group>"; };
 		99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Map.swift"; sourceTree = "<group>"; };
@@ -309,17 +307,8 @@
 			children = (
 				99C448F9247C3F0000878DD4 /* SelectCountryService.swift */,
 				99EC2DF2250BCEE50025A218 /* countryCoordonate.json */,
-				9944F5DB247710F7000CD576 /* Time */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		9944F5DB247710F7000CD576 /* Time */ = {
-			isa = PBXGroup;
-			children = (
-				9944F5DE24771114000CD576 /* TodaysDateService.swift */,
-			);
-			path = Time;
 			sourceTree = "<group>";
 		};
 		9997A43D247814CB00FB50EF /* DataManager */ = {
@@ -343,9 +332,8 @@
 		99C56B1B250CB95800D36251 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				99F09EC7250CC32200D2C012 /* Helpers */,
 				99C56B1E250CBD0E00D36251 /* Helper.swift */,
-				99C56B1C250CB98200D36251 /* DataFromJson.swift */,
-				99C56B20250CBF4500D36251 /* DateFromData.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -388,6 +376,15 @@
 				9931EA1224CA21BE0096646D /* DesignSystem */,
 			);
 			path = Atoms;
+			sourceTree = "<group>";
+		};
+		99F09EC7250CC32200D2C012 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				99C56B1C250CB98200D36251 /* Helper+DataFromJson.swift */,
+				99C56B20250CBF4500D36251 /* Helper+DateFromData.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -705,7 +702,7 @@
 				9997A43F247814DA00FB50EF /* DataManager.swift in Sources */,
 				99767A6C24E316A00073D535 /* DataResponseDTO.swift in Sources */,
 				9931EA1524CA21E90096646D /* DesignSystem.swift in Sources */,
-				99C56B1D250CB98200D36251 /* DataFromJson.swift in Sources */,
+				99C56B1D250CB98200D36251 /* Helper+DataFromJson.swift in Sources */,
 				9997A4412478156900FB50EF /* FakeLocalDataManager.swift in Sources */,
 				9931EA1924CA223D0096646D /* DesignSystem+Title.swift in Sources */,
 				9913CBFF24E3334000510114 /* OwidDataManager.swift in Sources */,
@@ -713,8 +710,7 @@
 				99C448FA247C3F0000878DD4 /* SelectCountryService.swift in Sources */,
 				99BE59F124FEA4F6005268CF /* TopImageBannerView.swift in Sources */,
 				992391132507D9ED00C68769 /* DesignSystem+PreventionCard.swift in Sources */,
-				9944F5DF24771114000CD576 /* TodaysDateService.swift in Sources */,
-				99C56B21250CBF4500D36251 /* DateFromData.swift in Sources */,
+				99C56B21250CBF4500D36251 /* Helper+DateFromData.swift in Sources */,
 				9923910D2507D21300C68769 /* InfosAboutCovid.swift in Sources */,
 				995A2B342509020800AB37A9 /* HomeView.swift in Sources */,
 				9984AEFE24FBEAED00CC0340 /* CaseUpdateView.swift in Sources */,
