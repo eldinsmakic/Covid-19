@@ -11,9 +11,6 @@
 		56E7FC3F7F21DC3B33CC6EB6 /* Pods_Covid_19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B401530C830764916082CD4 /* Pods_Covid_19Tests.framework */; };
 		9913CBFB24E32B1A00510114 /* DataSetResponseDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913CBFA24E32B1A00510114 /* DataSetResponseDTOTests.swift */; };
 		9913CBFF24E3334000510114 /* OwidDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913CBFE24E3334000510114 /* OwidDataManager.swift */; };
-		9923621424791A8E009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
-		9923621524791AB8009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
-		9923621624791BD0009A7DAC /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9997A4422478165800FB50EF /* FakeData.json */; };
 		9923910D2507D21300C68769 /* InfosAboutCovid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923910C2507D21300C68769 /* InfosAboutCovid.swift */; };
 		9923910F2507D7BC00C68769 /* DesignSystem+SymptomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923910E2507D7BC00C68769 /* DesignSystem+SymptomCard.swift */; };
 		992391132507D9ED00C68769 /* DesignSystem+PreventionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992391122507D9ED00C68769 /* DesignSystem+PreventionCard.swift */; };
@@ -35,7 +32,6 @@
 		9984AEFE24FBEAED00CC0340 /* CaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984AEFD24FBEAED00CC0340 /* CaseUpdateView.swift */; };
 		9997A43C24771BD800FB50EF /* TodaysDateServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A43B24771BD800FB50EF /* TodaysDateServiceTest.swift */; };
 		9997A43F247814DA00FB50EF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A43E247814DA00FB50EF /* DataManager.swift */; };
-		9997A4412478156900FB50EF /* FakeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A4402478156900FB50EF /* FakeLocalDataManager.swift */; };
 		9997A44424781DFF00FB50EF /* FakeLocalDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */; };
 		99B9891C24FC242800406760 /* localData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B9891B24FC242800406760 /* localData.json */; };
 		99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EA24FD7EAA005268CF /* NumberView.swift */; };
@@ -111,8 +107,6 @@
 		9984AEFD24FBEAED00CC0340 /* CaseUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseUpdateView.swift; sourceTree = "<group>"; };
 		9997A43B24771BD800FB50EF /* TodaysDateServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysDateServiceTest.swift; sourceTree = "<group>"; };
 		9997A43E247814DA00FB50EF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		9997A4402478156900FB50EF /* FakeLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalDataManager.swift; sourceTree = "<group>"; };
-		9997A4422478165800FB50EF /* FakeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeData.json; sourceTree = "<group>"; };
 		9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalDataManagerTest.swift; sourceTree = "<group>"; };
 		99B9891B24FC242800406760 /* localData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localData.json; sourceTree = "<group>"; };
 		99BE59EA24FD7EAA005268CF /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
@@ -321,7 +315,6 @@
 		9997A43D247814CB00FB50EF /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				99D0EC7D24E808DE00E246A9 /* FakeDataManager */,
 				9913CBFC24E32E6300510114 /* owid-covid-data */,
 				9997A43E247814DA00FB50EF /* DataManager.swift */,
 			);
@@ -343,15 +336,6 @@
 				99C56B1E250CBD0E00D36251 /* Helper.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		99D0EC7D24E808DE00E246A9 /* FakeDataManager */ = {
-			isa = PBXGroup;
-			children = (
-				9997A4402478156900FB50EF /* FakeLocalDataManager.swift */,
-				9997A4422478165800FB50EF /* FakeData.json */,
-			);
-			path = FakeDataManager;
 			sourceTree = "<group>";
 		};
 		99D0EC8524E80BDA00E246A9 /* UI */ = {
@@ -531,7 +515,6 @@
 				99EC2DF7250BDDBF0025A218 /* styleMap.json in Resources */,
 				99C448F6247BD61800878DD4 /* .swiftlint.yml in Resources */,
 				9923A652246AD6A3009A1B6B /* README.md in Resources */,
-				9923621424791A8E009A7DAC /* FakeData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +522,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9923621524791AB8009A7DAC /* FakeData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +529,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9923621624791BD0009A7DAC /* FakeData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +711,6 @@
 				99F09ECD250CC3F400D2C012 /* Builder+CaseUpdateModel.swift in Sources */,
 				9931EA1524CA21E90096646D /* DesignSystem.swift in Sources */,
 				99C56B1D250CB98200D36251 /* Helper+DataFromJson.swift in Sources */,
-				9997A4412478156900FB50EF /* FakeLocalDataManager.swift in Sources */,
 				9931EA1924CA223D0096646D /* DesignSystem+Title.swift in Sources */,
 				9913CBFF24E3334000510114 /* OwidDataManager.swift in Sources */,
 				9923A6292469E50C009A1B6B /* Covid_19.xcdatamodeld in Sources */,
