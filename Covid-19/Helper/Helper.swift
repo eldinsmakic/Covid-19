@@ -6,4 +6,4 @@
 //  Copyright © 2020 eldin smakic. All rights reserved.
 //
 
-enum Helper {}
+public enum Helper {}

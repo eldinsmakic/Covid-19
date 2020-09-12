@@ -29,7 +29,7 @@ public class OwidDataManager: ObservableObject {
     func loadData() -> AnyPublisher<[String: CovidResponseDTO], Error> {
         return URLSession.shared.dataTaskPublisher(for: URL(string: urlString)!)
             .map(\.data)
-            .decode(type: [String: CovidResponseDTO].self, decoder: self.jsonDecoder)
+            .decode(type: [String: CovidResponseDTO].self, decoder: Helper.DataFromJson.jsonDecoder)
             .eraseToAnyPublisher()
     }
 
@@ -55,7 +55,7 @@ public class OwidDataManager: ObservableObject {
                 return
             }
 
-            let dataDate = self.dateFormater.date(from: data.date!)!
+            let dataDate = Helper.DateFromData.dateFormater.date(from: data.date!)!
 
             self.dataCovid = DataCovid(
                 date: dataDate,
@@ -96,12 +96,5 @@ public class OwidDataManager: ObservableObject {
         }
 
         return dict
-    }()
-
-    public lazy var dateFormater: DateFormatter = {
-        let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "yyyy-MM-dd"
-
-        return dateFormater
     }()
 }

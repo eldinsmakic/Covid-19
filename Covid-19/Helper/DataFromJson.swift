@@ -10,7 +10,7 @@ import Foundation
 
 extension Helper {
 
-    struct DataFromJson {
+    public struct DataFromJson {
 
         static func getData<T: Decodable>(fromJson json: String, withDataType type: T.Type ) -> T? {
             return getData(fromJson: json, withDataType: type, decodedBy: self.jsonDecoder)

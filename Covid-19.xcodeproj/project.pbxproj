@@ -50,6 +50,7 @@
 		99C448FC247C599900878DD4 /* SelectCountryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */; };
 		99C56B1D250CB98200D36251 /* DataFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B1C250CB98200D36251 /* DataFromJson.swift */; };
 		99C56B1F250CBD0E00D36251 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B1E250CBD0E00D36251 /* Helper.swift */; };
+		99C56B21250CBF4500D36251 /* DateFromData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C56B20250CBF4500D36251 /* DateFromData.swift */; };
 		99D0EC8924E8457A00E246A9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */; };
 		99EC2DF3250BCEE50025A218 /* countryCoordonate.json in Resources */ = {isa = PBXBuildFile; fileRef = 99EC2DF2250BCEE50025A218 /* countryCoordonate.json */; };
 		99EC2DF5250BCF810025A218 /* DesignSystem+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */; };
@@ -124,6 +125,7 @@
 		99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryServiceTest.swift; sourceTree = "<group>"; };
 		99C56B1C250CB98200D36251 /* DataFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFromJson.swift; sourceTree = "<group>"; };
 		99C56B1E250CBD0E00D36251 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		99C56B20250CBF4500D36251 /* DateFromData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFromData.swift; sourceTree = "<group>"; };
 		99D0EC8824E8457A00E246A9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		99EC2DF2250BCEE50025A218 /* countryCoordonate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countryCoordonate.json; sourceTree = "<group>"; };
 		99EC2DF4250BCF810025A218 /* DesignSystem+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Map.swift"; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			children = (
 				99C56B1E250CBD0E00D36251 /* Helper.swift */,
 				99C56B1C250CB98200D36251 /* DataFromJson.swift */,
+				99C56B20250CBF4500D36251 /* DateFromData.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				99BE59F124FEA4F6005268CF /* TopImageBannerView.swift in Sources */,
 				992391132507D9ED00C68769 /* DesignSystem+PreventionCard.swift in Sources */,
 				9944F5DF24771114000CD576 /* TodaysDateService.swift in Sources */,
+				99C56B21250CBF4500D36251 /* DateFromData.swift in Sources */,
 				9923910D2507D21300C68769 /* InfosAboutCovid.swift in Sources */,
 				995A2B342509020800AB37A9 /* HomeView.swift in Sources */,
 				9984AEFE24FBEAED00CC0340 /* CaseUpdateView.swift in Sources */,
