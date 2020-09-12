@@ -39,11 +39,4 @@ public class SelectCountryService
     {
         return self.countrysCoordonate?.first(where: { $0.name == country })
     }
-
-    lazy var jsonDecoder: JSONDecoder = {
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-
-        return jsonDecoder
-    }()
 }

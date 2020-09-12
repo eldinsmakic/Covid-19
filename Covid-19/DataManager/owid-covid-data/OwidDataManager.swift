@@ -98,13 +98,6 @@ public class OwidDataManager: ObservableObject {
         return dict
     }()
 
-    public lazy var jsonDecoder: JSONDecoder = {
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-
-        return jsonDecoder
-    }()
-
     public lazy var dateFormater: DateFormatter = {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd"
