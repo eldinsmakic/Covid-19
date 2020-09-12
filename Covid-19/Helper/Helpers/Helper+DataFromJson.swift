@@ -26,7 +26,7 @@ extension Helper {
 
             } catch let error
             {
-                print("HHH \(error)")
+                print("(Helper) Can't fetch data from Json \(error)")
                 return nil
             }
         }
