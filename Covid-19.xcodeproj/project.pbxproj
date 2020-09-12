@@ -28,10 +28,9 @@
 		99767A6C24E316A00073D535 /* DataResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99767A6B24E316A00073D535 /* DataResponseDTO.swift */; };
 		9984AEFE24FBEAED00CC0340 /* CaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984AEFD24FBEAED00CC0340 /* CaseUpdateView.swift */; };
 		9997A43F247814DA00FB50EF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A43E247814DA00FB50EF /* DataManager.swift */; };
-		99A558EB250D43C40069EA37 /* FakeDataResponseDTO.json in Resources */ = {isa = PBXBuildFile; fileRef = 99F09ED6250D402D00D2C012 /* FakeDataResponseDTO.json */; };
-		99A558EC250D43C80069EA37 /* FakeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99F09ED4250D3FEE00D2C012 /* FakeData.json */; };
 		99A558EF250D4A670069EA37 /* TestHelper+DataFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A558EE250D4A670069EA37 /* TestHelper+DataFromJson.swift */; };
 		99A558F1250D4A800069EA37 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A558F0250D4A800069EA37 /* TestHelper.swift */; };
+		99A558F3250D55450069EA37 /* FakeDataResponseDTO-with-less-param.json in Resources */ = {isa = PBXBuildFile; fileRef = 99A558F2250D55450069EA37 /* FakeDataResponseDTO-with-less-param.json */; };
 		99B9891C24FC242800406760 /* localData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B9891B24FC242800406760 /* localData.json */; };
 		99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EA24FD7EAA005268CF /* NumberView.swift */; };
 		99BE59ED24FD7EE0005268CF /* CircleCaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */; };
@@ -106,6 +105,7 @@
 		9997A43E247814DA00FB50EF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		99A558EE250D4A670069EA37 /* TestHelper+DataFromJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestHelper+DataFromJson.swift"; sourceTree = "<group>"; };
 		99A558F0250D4A800069EA37 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		99A558F2250D55450069EA37 /* FakeDataResponseDTO-with-less-param.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "FakeDataResponseDTO-with-less-param.json"; sourceTree = "<group>"; };
 		99B9891B24FC242800406760 /* localData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localData.json; sourceTree = "<group>"; };
 		99BE59EA24FD7EAA005268CF /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCaseUpdateView.swift; sourceTree = "<group>"; };
@@ -415,6 +415,7 @@
 			children = (
 				99F09ED4250D3FEE00D2C012 /* FakeData.json */,
 				99F09ED6250D402D00D2C012 /* FakeDataResponseDTO.json */,
+				99A558F2250D55450069EA37 /* FakeDataResponseDTO-with-less-param.json */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -531,7 +532,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99A558EC250D43C80069EA37 /* FakeData.json in Resources */,
 				99D0EC8924E8457A00E246A9 /* Launch Screen.storyboard in Resources */,
 				99EC2DF3250BCEE50025A218 /* countryCoordonate.json in Resources */,
 				99B9891C24FC242800406760 /* localData.json in Resources */,
@@ -539,7 +539,6 @@
 				99EC2DF7250BDDBF0025A218 /* styleMap.json in Resources */,
 				99C448F6247BD61800878DD4 /* .swiftlint.yml in Resources */,
 				9923A652246AD6A3009A1B6B /* README.md in Resources */,
-				99A558EB250D43C40069EA37 /* FakeDataResponseDTO.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +546,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99A558F3250D55450069EA37 /* FakeDataResponseDTO-with-less-param.json in Resources */,
 				99F09ED5250D3FEE00D2C012 /* FakeData.json in Resources */,
 				99F09ED7250D402D00D2C012 /* FakeDataResponseDTO.json in Resources */,
 			);
