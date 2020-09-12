@@ -22,7 +22,6 @@ struct DataCovid: Decodable
     }
 }
 
-
 /// Manage data from Covid-19
 /// will fetch data and return an observable
 protocol DataManager
