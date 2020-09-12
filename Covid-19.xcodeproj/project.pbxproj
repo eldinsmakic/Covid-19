@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		016E093F249E15AE8BFD6A39 /* Pods_Covid_19_Covid_19UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8143A1E563B3E65364CB289 /* Pods_Covid_19_Covid_19UITests.framework */; };
 		56E7FC3F7F21DC3B33CC6EB6 /* Pods_Covid_19Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B401530C830764916082CD4 /* Pods_Covid_19Tests.framework */; };
-		9913CBFB24E32B1A00510114 /* DataSetResponseDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913CBFA24E32B1A00510114 /* DataSetResponseDTOTests.swift */; };
 		9913CBFF24E3334000510114 /* OwidDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913CBFE24E3334000510114 /* OwidDataManager.swift */; };
 		9923910D2507D21300C68769 /* InfosAboutCovid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923910C2507D21300C68769 /* InfosAboutCovid.swift */; };
 		9923910F2507D7BC00C68769 /* DesignSystem+SymptomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923910E2507D7BC00C68769 /* DesignSystem+SymptomCard.swift */; };
@@ -32,7 +31,6 @@
 		9984AEFE24FBEAED00CC0340 /* CaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9984AEFD24FBEAED00CC0340 /* CaseUpdateView.swift */; };
 		9997A43C24771BD800FB50EF /* TodaysDateServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A43B24771BD800FB50EF /* TodaysDateServiceTest.swift */; };
 		9997A43F247814DA00FB50EF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A43E247814DA00FB50EF /* DataManager.swift */; };
-		9997A44424781DFF00FB50EF /* FakeLocalDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */; };
 		99B9891C24FC242800406760 /* localData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B9891B24FC242800406760 /* localData.json */; };
 		99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EA24FD7EAA005268CF /* NumberView.swift */; };
 		99BE59ED24FD7EE0005268CF /* CircleCaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */; };
@@ -78,7 +76,6 @@
 		2F1428612025CC8AC47DEB64 /* Pods-Covid-19.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19.release.xcconfig"; path = "Target Support Files/Pods-Covid-19/Pods-Covid-19.release.xcconfig"; sourceTree = "<group>"; };
 		8B401530C830764916082CD4 /* Pods_Covid_19Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Covid_19Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E8EBEA3C35E847F340F95B7 /* Pods-Covid-19-Covid-19UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19-Covid-19UITests.debug.xcconfig"; path = "Target Support Files/Pods-Covid-19-Covid-19UITests/Pods-Covid-19-Covid-19UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		9913CBFA24E32B1A00510114 /* DataSetResponseDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSetResponseDTOTests.swift; sourceTree = "<group>"; };
 		9913CBFE24E3334000510114 /* OwidDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwidDataManager.swift; sourceTree = "<group>"; };
 		9923910C2507D21300C68769 /* InfosAboutCovid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosAboutCovid.swift; sourceTree = "<group>"; };
 		9923910E2507D7BC00C68769 /* DesignSystem+SymptomCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+SymptomCard.swift"; sourceTree = "<group>"; };
@@ -107,7 +104,6 @@
 		9984AEFD24FBEAED00CC0340 /* CaseUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseUpdateView.swift; sourceTree = "<group>"; };
 		9997A43B24771BD800FB50EF /* TodaysDateServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysDateServiceTest.swift; sourceTree = "<group>"; };
 		9997A43E247814DA00FB50EF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalDataManagerTest.swift; sourceTree = "<group>"; };
 		99B9891B24FC242800406760 /* localData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localData.json; sourceTree = "<group>"; };
 		99BE59EA24FD7EAA005268CF /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCaseUpdateView.swift; sourceTree = "<group>"; };
@@ -263,11 +259,9 @@
 				9923A63A2469E513009A1B6B /* Info.plist */,
 				9944F5D124770C1A000CD576 /* CaseUpdateTest.swift */,
 				9997A43B24771BD800FB50EF /* TodaysDateServiceTest.swift */,
-				9997A44324781DFF00FB50EF /* FakeLocalDataManagerTest.swift */,
 				99C448FB247C599900878DD4 /* SelectCountryServiceTest.swift */,
 				99767A6D24E317ED0073D535 /* DataResponseDTOTests.swift */,
 				99767A6F24E31D4B0073D535 /* CovidResponseDTOTests.swift */,
-				9913CBFA24E32B1A00510114 /* DataSetResponseDTOTests.swift */,
 			);
 			path = "Covid-19Tests";
 			sourceTree = "<group>";
@@ -730,10 +724,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9997A44424781DFF00FB50EF /* FakeLocalDataManagerTest.swift in Sources */,
 				9997A43C24771BD800FB50EF /* TodaysDateServiceTest.swift in Sources */,
 				99C448FC247C599900878DD4 /* SelectCountryServiceTest.swift in Sources */,
-				9913CBFB24E32B1A00510114 /* DataSetResponseDTOTests.swift in Sources */,
 				9944F5D224770C1A000CD576 /* CaseUpdateTest.swift in Sources */,
 				99767A7024E31D4B0073D535 /* CovidResponseDTOTests.swift in Sources */,
 				99767A6E24E317ED0073D535 /* DataResponseDTOTests.swift in Sources */,
