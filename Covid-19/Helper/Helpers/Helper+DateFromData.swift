@@ -12,9 +12,9 @@ extension Helper {
 
     public struct DateFromData {
 
-        static func getDate() -> DateFromData
+        static func getDate() -> Date
         {
-            return DateFromData.init()
+            return Date()
         }
 
         static func dateToString(date: Date) -> String
