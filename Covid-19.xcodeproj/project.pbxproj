@@ -34,6 +34,7 @@
 		99A558F6250D58660069EA37 /* Helper+DataFromJsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A558F5250D58660069EA37 /* Helper+DataFromJsonTests.swift */; };
 		99A558F8250D5B4F0069EA37 /* Builder+DataCovidModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A558F7250D5B4F0069EA37 /* Builder+DataCovidModelTests.swift */; };
 		99A558FA250D5E3D0069EA37 /* Helper+DateFromDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A558F9250D5E3D0069EA37 /* Helper+DateFromDataTests.swift */; };
+		99A55903250F91CA0069EA37 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 99A55902250F91CA0069EA37 /* .travis.yml */; };
 		99B9891C24FC242800406760 /* localData.json in Resources */ = {isa = PBXBuildFile; fileRef = 99B9891B24FC242800406760 /* localData.json */; };
 		99BE59EB24FD7EAA005268CF /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EA24FD7EAA005268CF /* NumberView.swift */; };
 		99BE59ED24FD7EE0005268CF /* CircleCaseUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */; };
@@ -112,6 +113,7 @@
 		99A558F5250D58660069EA37 /* Helper+DataFromJsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+DataFromJsonTests.swift"; sourceTree = "<group>"; };
 		99A558F7250D5B4F0069EA37 /* Builder+DataCovidModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Builder+DataCovidModelTests.swift"; sourceTree = "<group>"; };
 		99A558F9250D5E3D0069EA37 /* Helper+DateFromDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+DateFromDataTests.swift"; sourceTree = "<group>"; };
+		99A55902250F91CA0069EA37 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		99B9891B24FC242800406760 /* localData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localData.json; sourceTree = "<group>"; };
 		99BE59EA24FD7EAA005268CF /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		99BE59EC24FD7EE0005268CF /* CircleCaseUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCaseUpdateView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		9923A6122469E50C009A1B6B = {
 			isa = PBXGroup;
 			children = (
+				99A55902250F91CA0069EA37 /* .travis.yml */,
 				99C448F5247BD61800878DD4 /* .swiftlint.yml */,
 				9923A651246AD6A3009A1B6B /* README.md */,
 				9923A61D2469E50C009A1B6B /* Covid-19 */,
@@ -551,6 +554,7 @@
 			files = (
 				99D0EC8924E8457A00E246A9 /* Launch Screen.storyboard in Resources */,
 				99EC2DF3250BCEE50025A218 /* countryCoordonate.json in Resources */,
+				99A55903250F91CA0069EA37 /* .travis.yml in Resources */,
 				99B9891C24FC242800406760 /* localData.json in Resources */,
 				9923A62B2469E512009A1B6B /* Assets.xcassets in Resources */,
 				99EC2DF7250BDDBF0025A218 /* styleMap.json in Resources */,
