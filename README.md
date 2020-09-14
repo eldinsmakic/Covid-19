@@ -1,4 +1,7 @@
 # COVID-19
+
+[![codecov](https://codecov.io/gh/eldinsmakic/Covid-19/branch/develop/graph/badge.svg)](https://codecov.io/gh/eldinsmakic/Covid-19)
+
 Check how many people are effected and how many already died and recovered. It also showing the symptoms of COVID-19 and how you can keep yourself safe. 
 
 The idea and design come from this video : https://www.youtube.com/watch?v=zx6uMCoW2gQ from **The Flutter Way** 
