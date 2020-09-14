@@ -11,5 +11,5 @@ jobs:
 
     - script:
          swiftlint
-      after_success:
+      after_script:
          bash <(curl -s https://codecov.io/bash)
