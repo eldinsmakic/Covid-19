@@ -3,6 +3,8 @@ osx_image: xcode12u #2
 
 install:
 - gem install xcpretty
+- gem install cocoapods
+- pod install
 
 jobs:
   include:
