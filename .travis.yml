@@ -6,7 +6,10 @@ install:
 
 jobs:
   include:
-    - script: xcodebuild clean build test -project RRCG.xcodeproj -scheme RRCG -destination "platform=iOS Simulator,name=iPhone 11,OS=14.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES | xcpretty -c
-      after_script: bash <(curl -s https://codecov.io/bash)
+     script:
+       - xcodebuild clean build test -project RRCG.xcodeproj -scheme RRCG -destination "platform=iOS Simulator,name=iPhone 11,OS=14.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES | xcpretty -c
 
-    - script: swiftlint
+    script:
+        - swiftlint
+    after_success:
+        - bash <(curl -s https://codecov.io/bash)
