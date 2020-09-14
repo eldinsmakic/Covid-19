@@ -6,10 +6,9 @@ install:
 
 jobs:
   include:
-     - script:
-       xcodebuild clean build test -project "Covid-19.xcodeproj" -scheme "Covid-19" -destination "platform=iOS Simulator,name=iPhone 11,OS=14.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES | xcpretty -c
+    - script: xcodebuild clean build test -project "Covid-19.xcodeproj" -scheme "Covid-19" -destination "platform=iOS Simulator,name=iPhone 11,OS=14.0" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -enableCodeCoverage YES | xcpretty -c
+      after_script: bash <(curl -s https://codecov.io/bash)
+    - script: swiftlint
 
-    - script:
-         swiftlint
-      after_script:
-         bash <(curl -s https://codecov.io/bash)
+
+
