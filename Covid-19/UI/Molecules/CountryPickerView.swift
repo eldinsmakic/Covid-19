@@ -33,8 +33,8 @@ class CountryPicker: ObservableObject {
     @Published var countrys: [String] = []
     @Published var selectedCountryIndex: Int = 0 {
         didSet {
-            countryCoordonate = changeCoordonate()
             selectedCountry = countrys[selectedCountryIndex]
+            countryCoordonate = changeCoordonate()
         }
     }
     var selectedCountry = ""
