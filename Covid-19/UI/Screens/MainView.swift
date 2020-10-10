@@ -22,6 +22,8 @@ struct MainView: View {
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
+                }.onAppear{
+                    container.fetchData()
                 }
 
             InfosAboutCovid()
@@ -44,6 +46,7 @@ class ContainerCovid: ObservableObject {
 
     func fetchData()
     {
+        print("fetching data..")
         cancelable = owidDataManager.loadData()
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in

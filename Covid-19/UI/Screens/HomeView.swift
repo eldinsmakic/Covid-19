@@ -20,9 +20,7 @@ struct HomeView: View {
                     imageOffset: 0,
                     imageIsRezisable: false,
                     text: "All you need is to stay at home"
-                ).onAppear{
-                    container.fetchData()
-                }
+                )
 
                 VStack {
                     if container.dataIsLoaded {
