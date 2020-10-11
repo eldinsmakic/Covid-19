@@ -41,7 +41,7 @@ class CountryPicker: ObservableObject {
 
     let selectedCountryService = SelectCountryService()
 
-    @Published var countryCoordonate = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    @Published var countryCoordonate = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
 
     func changeCoordonate() -> MKCoordinateRegion {
         if countrys.isEmpty {
@@ -51,7 +51,7 @@ class CountryPicker: ObservableObject {
                 return countryCoordonate
             }
 
-            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: coordonate.lat, longitude: coordonate.lng), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: coordonate.lat, longitude: coordonate.lng), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
         }
 
     }
