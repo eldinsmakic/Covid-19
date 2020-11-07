@@ -64,6 +64,7 @@ struct TopImageBannerView: View {
                     }.frame(width: UIScreen.main.bounds.width, height: 235)
         }.frame(width: UIScreen.main.bounds.width, height: 235, alignment: .bottom)
         .edgesIgnoringSafeArea(.top)
+        .background(Color(red: 0.98, green: 0.98, blue: 0.98))
     }
 }
 
